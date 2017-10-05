@@ -1,18 +1,24 @@
 <template>
   <div class="home">
-    <h1>{{ msg }}</h1>
+    <h1>{{ message }}</h1>
+    <Slider></Slider>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'home',
-  data () {
-    return {
-      msg: 'Welcome to Bugsters!'
+  import Slider from './Slider.vue'
+
+  export default {
+    name: 'Home',
+    data () {
+      return {
+        message: 'Welcome to Bugsters!'
+      }
+    },
+    components: {
+      Slider
     }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

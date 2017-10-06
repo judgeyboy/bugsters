@@ -2,11 +2,13 @@
   <div class="home">
     <h1>{{ message }}</h1>
     <Slider></Slider>
+    <LoginForm></LoginForm>
   </div>
 </template>
 
 <script>
   import Slider from './Slider.vue'
+  import LoginForm from './LoginForm.vue'
 
   export default {
     name: 'Home',
@@ -16,7 +18,8 @@
       }
     },
     components: {
-      Slider
+      Slider,
+      LoginForm
     }
   }
 </script>

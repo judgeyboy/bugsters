@@ -8,6 +8,9 @@
 </template>
 
 <script>
+
+import axios from 'axios'
+
 export default {
   name: 'LoginForm',
   data () {
@@ -19,7 +22,16 @@ export default {
   methods: {
     submit: function (submitEvent) {
       submitEvent.preventDefault()
-      alert('Logging into Bugsters')
+
+      const loginDetails = {
+        name: this.username,
+        password: this.password
+      }
+
+      axios
+        .post('https://bugsters-api.herokuapp.com/api/users/login', loginDetails, { headers: { 'Content-Type': 'application/json' } })
+        .then(response => console.log(response))
+        .catch(error => console.error(error))
     }
   }
 }

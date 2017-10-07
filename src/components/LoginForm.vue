@@ -1,7 +1,7 @@
 <template>
   <form v-on:submit="submit">
     <legend>Login</legend>
-    <input type="text" placeholder="Username" v-model="username">
+    <input type="text" placeholder="email" v-model="email">
     <input type="password" v-model="password">
     <input type="submit" value="Login">
   </form>
@@ -15,7 +15,7 @@ export default {
   name: 'LoginForm',
   data () {
     return {
-      username: '',
+      email: '',
       password: ''
     }
   },
@@ -24,12 +24,12 @@ export default {
       submitEvent.preventDefault()
 
       const loginDetails = {
-        name: this.username,
+        email: this.email,
         password: this.password
       }
 
       axios
-        .post('https://bugsters-api.herokuapp.com/api/users/login', loginDetails, { headers: { 'Content-Type': 'application/json' } })
+        .post('https://bugsters-api.herokuapp.com/account/login', loginDetails, { headers: { 'Content-Type': 'application/json' } })
         .then(response => console.log(response))
         .catch(error => console.error(error))
     }

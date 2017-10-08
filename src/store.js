@@ -11,17 +11,23 @@ const store = new Vuex.Store({
   },
 
   mutations: {
-    logIn (state) {
+    login (state) {
       state.loggedIn = true
+    },
+    logout (state) {
+      state.loggedIn = false
     }
   },
 
   actions: {
-    logIn ({ commit }, loginDetails) {
+    login ({ commit }, loginDetails) {
       accountService
         .logIn(loginDetails)
-        .then(() => commit('logIn'))
+        .then(() => commit('login'))
         .catch(error => console.error(error))
+    },
+    logout ({ commit }) {
+      commit('logout')
     }
   }
 

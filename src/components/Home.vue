@@ -2,25 +2,38 @@
   <div class="home">
     <h1>{{ message }}</h1>
     <Slider></Slider>
-    <LoginForm></LoginForm>
+    <Logout v-if="loggedIn"></Logout>
+    <LoginForm v-else></LoginForm>
   </div>
 </template>
 
 <script>
   import Slider from './Slider.vue'
   import LoginForm from './LoginForm.vue'
+  import Logout from './Logout.vue'
 
   export default {
+
     name: 'Home',
+
     data () {
       return {
         message: 'Welcome to Bugsters!'
       }
     },
+
+    computed: {
+      loggedIn () {
+        return this.$store.state.loggedIn
+      }
+    },
+
     components: {
       Slider,
-      LoginForm
+      LoginForm,
+      Logout
     }
+
   }
 </script>
 

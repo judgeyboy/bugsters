@@ -28,7 +28,7 @@ export default {
         password: this.password
       }
 
-      this.$store.dispatch('logIn', loginDetails)
+      this.$store.dispatch('login', loginDetails)
     }
   }
 

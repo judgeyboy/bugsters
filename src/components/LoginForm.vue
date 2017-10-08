@@ -30,7 +30,7 @@ export default {
 
       axios
         .post('https://bugsters-api.herokuapp.com/account/login', loginDetails, { headers: { 'Content-Type': 'application/json' } })
-        .then(response => console.log(response))
+        .then(response => this.$store.commit('logIn'))
         .catch(error => console.error(error))
     }
   }

@@ -1,8 +1,8 @@
 <template>
-  <form v-on:submit="submit">
+  <form @submit="submit">
     <legend>Login</legend>
     <input type="text" placeholder="email" v-model="email">
-    <input type="password" v-model="password">
+    <input type="password" placeholder="password" v-model="password">
     <input type="submit" value="Login">
   </form>
 </template>

@@ -3,7 +3,11 @@
     <h1>{{ message }}</h1>
     <Slider></Slider>
     <Logout v-if="loggedIn"></Logout>
-    <LoginForm v-else></LoginForm>
+    <div v-else>
+      <LoginForm></LoginForm>
+      <h2>or</h2>
+      <RegisterForm></RegisterForm>
+    </div>
   </div>
 </template>
 
@@ -11,6 +15,7 @@
   import Slider from './Slider.vue'
   import LoginForm from './LoginForm.vue'
   import Logout from './Logout.vue'
+  import RegisterForm from './RegisterForm.vue'
 
   export default {
 
@@ -31,7 +36,8 @@
     components: {
       Slider,
       LoginForm,
-      Logout
+      Logout,
+      RegisterForm
     }
 
   }

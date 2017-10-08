@@ -28,6 +28,12 @@ const store = new Vuex.Store({
     },
     logout ({ commit }) {
       commit('logout')
+    },
+    register ({ commit }, registerDetails) {
+      accountService
+        .register(registerDetails)
+        .then(() => console.log('Thank you for registering'))
+        .catch(error => console.log(error))
     }
   }
 

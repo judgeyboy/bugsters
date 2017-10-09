@@ -32,7 +32,7 @@
 
     computed: {
       loggedIn () {
-        return this.$store.state.loggedIn
+        return this.$store.state.accountModule.loggedIn
       }
     },
 

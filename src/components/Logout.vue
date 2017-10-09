@@ -18,12 +18,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="sass" scoped>
 
-a {
-  color: blueviolet;
-  font-weight: bold;
+a
+  color: blueviolet
+  font-weight: bold
   text-decoration-style: solid
-}
 
 </style>

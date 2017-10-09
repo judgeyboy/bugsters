@@ -5,9 +5,11 @@
     <Logout v-if="loggedIn"></Logout>
     <div v-else>
       <LoginForm></LoginForm>
-      <h2>or</h2>
+      <h3>or</h3>
       <RegisterForm></RegisterForm>
     </div>
+    <h2>Contact Us</h2>
+    <ContactForm></ContactForm>
   </div>
 </template>
 
@@ -16,6 +18,7 @@
   import LoginForm from './LoginForm.vue'
   import Logout from './Logout.vue'
   import RegisterForm from './RegisterForm.vue'
+  import ContactForm from './ContactForm.vue'
 
   export default {
 
@@ -37,7 +40,8 @@
       Slider,
       LoginForm,
       Logout,
-      RegisterForm
+      RegisterForm,
+      ContactForm
     }
 
   }

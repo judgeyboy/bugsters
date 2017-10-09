@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import accountService from './services/account'
+import contactService from './services/contact'
 
 Vue.use(Vuex)
 
@@ -33,6 +34,12 @@ const store = new Vuex.Store({
       accountService
         .register(registerDetails)
         .then(() => console.log('Thank you for registering'))
+        .catch(error => console.log(error))
+    },
+    contact ({ commit }, contactDetails) {
+      contactService
+        .send(contactDetails)
+        .then(() => console.log('Thank you for contacting us'))
         .catch(error => console.log(error))
     }
   }

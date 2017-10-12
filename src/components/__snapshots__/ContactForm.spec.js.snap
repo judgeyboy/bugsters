@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactForm component snapshot 1`] = `"<form><legend>Contact</legend> <input type=\\"text\\" placeholder=\\"name\\"> <br> <input type=\\"email\\" placeholder=\\"email\\"> <br> <input type=\\"text\\" placeholder=\\"subject\\"> <br> <textarea placeholder=\\"message\\"></textarea> <br> <input type=\\"submit\\" value=\\"Send\\"></form>"`;

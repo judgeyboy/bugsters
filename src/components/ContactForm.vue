@@ -1,5 +1,5 @@
 <template>
-  <form @submit="submit">
+  <form @submit.prevent="onSubmit">
     <legend>Contact</legend>
     <input type="text" placeholder="name" v-model="name"> <br />
     <input type="email" placeholder="email" v-model="email"> <br />
@@ -24,9 +24,7 @@ export default {
   },
 
   methods: {
-    submit: function (submitEvent) {
-      submitEvent.preventDefault()
-
+    onSubmit: function () {
       const contactDetails = {
         name: this.name,
         email: this.email,

@@ -9,8 +9,7 @@
     "start": "npm run dev",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
-    "test": "cross-env BABEL_ENV=test tape -r babel-register -r ./test/helpers/.setup.js test/*.spec.js",
-    "jest": "jest"
+    "test": "jest --watch"
   },
   "dependencies": {
     "axios": "0.16.2",

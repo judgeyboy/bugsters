@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { shallow } from 'vue-test-utils'
-import ContactForm from './ContactForm.vue'
+import ContactForm from './ContactForm'
 
 Vue.use(Vuex)
 
@@ -9,13 +9,11 @@ describe('ContactForm component', () => {
   let store
 
   beforeEach(() => {
-    let actions = {
-      contact : jest.fn()
-    }
-
     store = new Vuex.Store({
       state: {},
-      actions
+      actions: {
+        contact: jest.fn()
+      }
     })
   })
 
@@ -25,7 +23,7 @@ describe('ContactForm component', () => {
     expect($html).toMatchSnapshot()
   })
 
-  it('submit', () => {
+  it('should dispatch "contact" with contact details', () => {
     const wrapper = shallow(ContactForm, { store })
     let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
 
@@ -44,5 +42,4 @@ describe('ContactForm component', () => {
     expect(spy).toHaveBeenCalled()
     expect(spy).toHaveBeenCalledWith('contact', contactDetails)
   })
-
 })

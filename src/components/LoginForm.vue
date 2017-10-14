@@ -1,5 +1,5 @@
 <template>
-  <form @submit="submit">
+  <form @submit.prevent="onSubmit">
     <legend>Login</legend>
     <input type="text" placeholder="email" v-model="email">
     <input type="password" placeholder="password" v-model="password">
@@ -20,9 +20,7 @@ export default {
   },
 
   methods: {
-    submit: function (submitEvent) {
-      submitEvent.preventDefault()
-
+    onSubmit: function () {
       const loginDetails = {
         email: this.email,
         password: this.password

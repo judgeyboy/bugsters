@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <HeaderSection></HeaderSection>
+    <div class="slope"></div>
     <Logout v-if="loggedIn"></Logout>
     <div v-else>
       <LoginForm></LoginForm>
@@ -42,4 +43,9 @@ export default {
 <style lang="sass" scoped>
 h1
   font-weight: normal
+
+.slope
+  border-style: solid
+  border-width: 0 0 100px 100vw
+  border-color: $background-grey transparent transparent $background-grey
 </style>

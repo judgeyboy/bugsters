@@ -1,14 +1,19 @@
 <template>
   <div id="app">
+    <MenuBar></MenuBar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import MenuBar from './components/MenuBar'
 import './styles/base.sass'
 
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    MenuBar
+  }
 }
 </script>
 

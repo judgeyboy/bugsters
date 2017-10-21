@@ -8,6 +8,7 @@
         voluptua. At vero eos et
       </p>
     </div>
+    <h2>Verfügbares Budget</h2>
     <Slider></Slider>
   </div>
 </template>

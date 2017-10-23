@@ -10,6 +10,7 @@
     </div>
     <h2>Verfügbares Budget</h2>
     <Slider></Slider>
+    <button style="margin-top: 40px" class="button">Kaufen</button>
   </div>
 </template>
 

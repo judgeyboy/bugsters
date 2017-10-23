@@ -8,9 +8,9 @@
         voluptua. At vero eos et
       </p>
     </div>
-    <h2>Verfügbares Budget</h2>
+    <h3>Verfügbares Budget</h3>
     <Slider></Slider>
-    <button style="margin-top: 40px" class="button">Kaufen</button>
+    <button style="margin-top: 40px; margin-bottom: 40px" class="button">Kaufen</button>
   </div>
 </template>
 

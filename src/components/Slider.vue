@@ -5,7 +5,7 @@
            max="100"
            min="0"
            v-model="coverage" />
-    <h2>{{ price }}.- CHF</h2>
+    <h3>{{ price }}.- CHF</h3>
   </div>
 </template>
 

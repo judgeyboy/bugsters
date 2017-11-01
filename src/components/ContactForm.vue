@@ -1,10 +1,33 @@
 <template>
   <div class="contact-form">
     <form @submit.prevent="onSubmit">
-      <input type="text" placeholder="name" v-model="name"> <br />
-      <input type="email" placeholder="email" v-model="email"> <br />
-      <input type="text" placeholder="subject" v-model="subject"> <br />
-      <textarea placeholder="message" v-model="message"></textarea> <br />
+      <input type="text"
+             name="name"
+             placeholder="name"
+             v-model="name"
+             v-validate="'required'"
+             :class="{'is-danger': errors.has('name')}"> <br />
+
+      <input type="email"
+             name="email"
+             placeholder="email"
+             v-model="email"
+             v-validate="'required|email'"
+             :class="{'is-danger': errors.has('email')}"> <br />
+
+      <input type="text"
+             name="subject"
+             placeholder="subject"
+             v-model="subject"
+             v-validate="'required'"
+             :class="{'is-danger': errors.has('subject')}"> <br />
+
+      <textarea placeholder="message"
+                name="message"
+                v-model="message"
+                v-validate="'required'"
+                :class="{'is-danger': errors.has('message')}"></textarea> <br />
+
       <input type="submit" value="Send" class="button">
     </form>
   </div>
@@ -51,6 +74,9 @@ input[type=text], input[type=email], textarea
   font-size: 20px
   line-height: 40px
   margin-bottom: 20px
+
+.is-danger
+    border-color: red
 
 input[type=text], input[type=email]
   height: 40px

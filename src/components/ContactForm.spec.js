@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VeeValidate from 'vee-validate'
 import { shallow } from 'vue-test-utils'
 import ContactForm from './ContactForm'
 
 Vue.use(Vuex)
+Vue.use(VeeValidate)
 
 describe('ContactForm component', () => {
   let store

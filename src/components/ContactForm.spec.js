@@ -19,12 +19,6 @@ describe('ContactForm component', () => {
     })
   })
 
-  it('snapshot', () => {
-    const wrapper = shallow(ContactForm)
-    let $html = wrapper.vm.$el.outerHTML
-    expect($html).toMatchSnapshot()
-  })
-
   it('should dispatch "contact" with contact details', () => {
     const wrapper = shallow(ContactForm, { store })
     let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')

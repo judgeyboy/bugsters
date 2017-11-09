@@ -25,7 +25,7 @@
       <textarea placeholder="message"
                 name="message"
                 v-model="message"
-                v-validate="'required'"
+                v-validate="'required|max:200'"
                 :class="{'is-danger': errors.has('message')}"></textarea> <br />
 
       <input type="submit" value="Send" class="button">

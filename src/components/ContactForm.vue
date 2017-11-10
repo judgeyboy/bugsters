@@ -1,6 +1,6 @@
 <template>
   <div class="contact-form">
-    <form @submit.prevent="onSubmit">
+    <form @submit.prevent="handleSubmit">
       <input type="text"
              name="name"
              placeholder="name"
@@ -48,15 +48,22 @@ export default {
   },
 
   methods: {
-    onSubmit: function () {
-      const contactDetails = {
-        name: this.name,
-        email: this.email,
-        subject: this.subject,
-        message: this.message
-      }
+    handleSubmit () {
+      return this.$validator.validateAll().then(valid => {
+        if (!valid) {
+          alert('fix dem errors')
+          return
+        }
 
-      this.$store.dispatch('contact', contactDetails)
+        const contactDetails = {
+          name: this.name,
+          email: this.email,
+          subject: this.subject,
+          message: this.message
+        }
+
+        this.$store.dispatch('contact', contactDetails)
+      })
     }
   }
 

@@ -19,7 +19,36 @@ describe('ContactForm component', () => {
     })
   })
 
-  it('should dispatch "contact" with contact details', () => {
+  it('should call onSubmit when clicking the send button', () => {
+    const wrapper = shallow(ContactForm, { store })
+    let spy = jest.spyOn(wrapper.vm, 'handleSubmit')
+
+    const submitButton = wrapper.find('input[type=submit]')
+    submitButton.trigger('click')
+
+    expect(spy).toHaveBeenCalled()
+  })
+
+  it('should dispatch "contact" with contact details', async () => {
+    const wrapper = shallow(ContactForm, { store })
+    let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
+
+    const contactDetails = {
+      name: 'Sterling Archer',
+      email: 'duchess@spy-agency.com',
+      subject: 'Danger Zone',
+      message: 'This is an awesome message'
+    }
+
+    wrapper.setData(contactDetails)
+
+    await wrapper.vm.handleSubmit()
+
+    expect(spy).toHaveBeenCalled()
+    expect(spy).toHaveBeenCalledWith('contact', contactDetails)
+  })
+
+  it('should not submit the form if the form has errors (no message provided)', async () => {
     const wrapper = shallow(ContactForm, { store })
     let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
 
@@ -27,15 +56,13 @@ describe('ContactForm component', () => {
       name: 'Sterling Archer',
       email: 'duchess@spy-agency.com',
       subject: 'Danger Subject',
-      message: 'This is an awesome message'
+      message: ''
     }
 
     wrapper.setData(contactDetails)
 
-    const submitButton = wrapper.find('input[type=submit]')
-    submitButton.trigger('click')
+    await wrapper.vm.handleSubmit()
 
-    expect(spy).toHaveBeenCalled()
-    expect(spy).toHaveBeenCalledWith('contact', contactDetails)
+    expect(spy).not.toHaveBeenCalled()
   })
 })

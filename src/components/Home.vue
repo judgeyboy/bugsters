@@ -7,7 +7,7 @@
     <HowSection></HowSection>
     <div class="slope"></div>
     <h2>Contact Us</h2>
-    <ContactForm></ContactForm>
+    <ContactSection></ContactSection>
   </div>
 </template>
 
@@ -15,7 +15,7 @@
 import HeaderSection from './HeaderSection'
 import AboutSection from './AboutSection'
 import HowSection from './HowSection'
-import ContactForm from './ContactForm'
+import ContactSection from './ContactSection'
 
 export default {
   name: 'Home',
@@ -24,7 +24,7 @@ export default {
     HeaderSection,
     AboutSection,
     HowSection,
-    ContactForm
+    ContactSection
   }
 }
 </script>

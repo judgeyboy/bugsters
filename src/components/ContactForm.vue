@@ -62,7 +62,7 @@ export default {
           message: this.message
         }
 
-        this.$store.dispatch('contact', contactDetails)
+        this.$emit('submit', contactDetails)
       })
     }
   }

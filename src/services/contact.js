@@ -3,7 +3,7 @@ import axios from 'axios'
 class ContactService {
   send (contactDetails) {
     return axios
-      .post('https://bugsters-api.herokuapp.com/contact', contactDetails, { headers: { 'Content-Type': 'application/json' } })
+      .post('https://bugsters-api.herokuapp.com/mail/contact', contactDetails, { headers: { 'Content-Type': 'application/json' } })
   }
 }
 

@@ -40,6 +40,8 @@ export default {
 
   props: ['returnUrl'],
 
+  inject: ['$validator'],
+
   methods: {
     onSubmit: function () {
       return this.$validator.validateAll().then(valid => {

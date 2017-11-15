@@ -47,6 +47,8 @@ export default {
     }
   },
 
+  inject: ['$validator'],
+
   methods: {
     handleSubmit () {
       return this.$validator.validateAll().then(valid => {

@@ -6,7 +6,7 @@ import router from './router'
 import store from './store/'
 import VeeValidate from 'vee-validate'
 
-Vue.use(VeeValidate)
+Vue.use(VeeValidate, { inject: false })
 
 Vue.config.productionTip = false
 

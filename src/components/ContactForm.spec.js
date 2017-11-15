@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VeeValidate from 'vee-validate'
+import VeeValidate, { Validator } from 'vee-validate'
 import { shallow } from 'vue-test-utils'
 import ContactForm from './ContactForm'
 
@@ -8,7 +8,9 @@ Vue.use(VeeValidate)
 describe('ContactForm component', () => {
 
   it('should call onSubmit when clicking the send button', () => {
-    const wrapper = shallow(ContactForm)
+    const wrapper = shallow(ContactForm, {
+      provide: { $validator: new Validator() }
+    })
     let spy = jest.spyOn(wrapper.vm, 'handleSubmit')
 
     const submitButton = wrapper.find('input[type=submit]')
@@ -18,7 +20,9 @@ describe('ContactForm component', () => {
   })
 
   it('should emit "submit" event with contact details', async () => {
-    const wrapper = shallow(ContactForm)
+    const wrapper = shallow(ContactForm, {
+      provide: { $validator: new Validator() }
+    })
     let spy = jest.spyOn(wrapper.vm, '$emit')
 
     const contactDetails = {
@@ -36,7 +40,9 @@ describe('ContactForm component', () => {
   })
 
   it('should not emit "submit" event if the form has errors', async () => {
-    const wrapper = shallow(ContactForm)
+    const wrapper = shallow(ContactForm, {
+      provide: { $validator: new Validator() }
+    })
     let spy = jest.spyOn(wrapper.vm, '$emit')
 
     const invalidContactDetails = {

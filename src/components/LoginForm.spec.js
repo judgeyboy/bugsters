@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import VeeValidate from 'vee-validate'
+import VeeValidate, { Validator } from 'vee-validate'
 import { shallow } from 'vue-test-utils'
 import LoginForm from './LoginForm'
 
@@ -24,7 +24,10 @@ describe('LoginForm component', () => {
   })
 
   it('should dispatch "login" with login details', async () => {
-    const wrapper = shallow(LoginForm, { store })
+    const wrapper = shallow(LoginForm, {
+      store,
+      provide: { $validator: new Validator() }
+    })
     const spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
 
     const loginDetails = {
@@ -41,7 +44,10 @@ describe('LoginForm component', () => {
   })
 
   it('should not dispatch "login" if the form has errors', async () => {
-    const wrapper = shallow(LoginForm, { store })
+    const wrapper = shallow(LoginForm, {
+      store,
+      provide: { $validator: new Validator() }
+    })
     let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
 
     const invalidLoginDetails = {
@@ -61,7 +67,8 @@ describe('LoginForm component', () => {
       store,
       mocks: {
         $router
-      }
+      },
+      provide: { $validator: new Validator() }
     })
     const spy = jest.spyOn(wrapper.vm.$router, 'push')
 
@@ -70,7 +77,6 @@ describe('LoginForm component', () => {
       password: 'DangerZone!'
     }
     wrapper.setData(loginDetails)
-
     wrapper.setProps({ returnUrl: '/about' })
 
     await wrapper.vm.onSubmit()
@@ -97,7 +103,5 @@ describe('LoginForm component', () => {
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()
   })
-
-
 
 })

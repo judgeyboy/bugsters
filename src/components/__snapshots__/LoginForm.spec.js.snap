@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginForm component snapshot 1`] = `"<form><legend>Login</legend> <input type=\\"text\\" placeholder=\\"email\\"> <input type=\\"password\\" placeholder=\\"password\\"> <input type=\\"submit\\" value=\\"Login\\"></form>"`;
+exports[`LoginForm component should display login error if login attempt failed 1`] = `"<div class=\\"login-form\\"><form><legend>Login</legend> <input type=\\"text\\" placeholder=\\"email\\"> <input type=\\"password\\" placeholder=\\"password\\"> <input type=\\"submit\\" value=\\"Login\\"></form> <div class=\\"error-message\\" style=\\"\\"><span>Username or password does not exist!</span></div></div>"`;
+
+exports[`LoginForm component snapshot 1`] = `"<div class=\\"login-form\\"><form><legend>Login</legend> <input type=\\"text\\" placeholder=\\"email\\"> <input type=\\"password\\" placeholder=\\"password\\"> <input type=\\"submit\\" value=\\"Login\\"></form> <div class=\\"error-message\\" style=\\"display: none;\\"><span>Username or password does not exist!</span></div></div>"`;

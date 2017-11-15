@@ -5,6 +5,10 @@ import LoginForm from './LoginForm'
 
 Vue.use(Vuex)
 
+const $router = {
+  push: jest.fn()
+}
+
 describe('LoginForm component', () => {
   let store
 
@@ -39,5 +43,29 @@ describe('LoginForm component', () => {
 
     expect(spy).toHaveBeenCalled()
     expect(spy).toHaveBeenCalledWith('login', loginDetails)
+  })
+
+  it('should redirect to a path after login success', async () => {
+    const wrapper = shallow(LoginForm, {
+      store,
+      mocks: {
+        $router
+      }
+    })
+    const spy = jest.spyOn(wrapper.vm.$router, 'push')
+    wrapper.setProps({ returnUrl: '/about' })
+
+    await wrapper.vm.onSubmit()
+
+    expect(spy).toHaveBeenCalledWith({ path: '/about' })
+  })
+
+  it('should display login error if login attempt failed', () => {
+    const wrapper = shallow(LoginForm)
+
+    wrapper.setData({ loginFailed: true })
+
+    const $html = wrapper.vm.$el.outerHTML
+    expect($html).toMatchSnapshot()
   })
 })

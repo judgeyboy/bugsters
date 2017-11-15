@@ -17,10 +17,9 @@ const accountModule = {
 
   actions: {
     login ({ commit }, loginDetails) {
-      accountService
+      return accountService
         .logIn(loginDetails)
         .then(() => commit('login'))
-        .catch(error => console.error(error))
     },
 
     logout ({ commit }) {

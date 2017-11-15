@@ -6,7 +6,9 @@
       </span>
     </div>
     <div class="menu-bar__dashboard">
-      <span>DASHBOARD</span>
+      <span>
+        <router-link to="/dashboard">DASHBOARD</router-link>
+      </span>
     </div>
   </div>
 </template>

@@ -15,7 +15,7 @@ describe('OrderForm component', () => {
     store = new Vuex.Store({
       state: {},
       actions: {
-        submitOrder: jest.fn()
+        order: jest.fn()
       }
     })
   })
@@ -45,14 +45,14 @@ describe('OrderForm component', () => {
     expect(spy).toHaveBeenCalledWith('order-form')
   })
 
-  it('should log a message with order details', async () => {
+  it('should dispatch "order" with order details', async () => {
     const wrapper = shallow(OrderForm, {
       store,
       provide: {
         $validator: new Validator()
       }
     })
-    let spy = jest.spyOn(console, 'log')
+    let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
 
     const orderDetails = {
       budget: '300.-',
@@ -67,7 +67,7 @@ describe('OrderForm component', () => {
 
     await wrapper.vm.handleSubmit('order-form')
 
-    expect(spy).toHaveBeenCalledWith('dispatching "submitOrder" action...', orderDetails)
+    expect(spy).toHaveBeenCalledWith('order', orderDetails)
     spy.mockReset() // - why do I have to do this?
   })
 
@@ -78,7 +78,7 @@ describe('OrderForm component', () => {
         $validator: new Validator()
       }
     })
-    let spy = jest.spyOn(console, 'log')
+    let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
 
     const invalidOrderDetails = {
       budget: '300.-',

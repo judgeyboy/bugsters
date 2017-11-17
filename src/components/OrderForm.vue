@@ -75,7 +75,7 @@ export default {
           message: this.message
         }
 
-        console.log('dispatching "submitOrder" action...', orderDetails)
+        this.$store.dispatch('order', orderDetails)
       })
     }
   }

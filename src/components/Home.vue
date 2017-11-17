@@ -6,6 +6,7 @@
     <div class="slope--inverted"></div>
     <HowSection></HowSection>
     <div class="slope"></div>
+    <OrderForm></OrderForm>
     <h2>Contact Us</h2>
     <ContactSection></ContactSection>
   </div>
@@ -15,6 +16,7 @@
 import HeaderSection from './HeaderSection'
 import AboutSection from './AboutSection'
 import HowSection from './HowSection'
+import OrderForm from './OrderForm'
 import ContactSection from './ContactSection'
 
 export default {
@@ -24,6 +26,7 @@ export default {
     HeaderSection,
     AboutSection,
     HowSection,
+    OrderForm,
     ContactSection
   }
 }

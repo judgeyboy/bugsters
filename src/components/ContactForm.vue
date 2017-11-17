@@ -1,32 +1,32 @@
 <template>
   <div class="contact-form">
-    <form @submit.prevent="handleSubmit">
+    <form @submit.prevent="handleSubmit('contact-form')" data-vv-scope="contact-form">
       <input type="text"
              name="name"
              placeholder="name"
              v-model="name"
              v-validate="'required'"
-             :class="{'is-danger': errors.has('name')}"> <br />
+             :class="{'is-danger': errors.has('contact-form.name')}"> <br />
 
       <input type="email"
              name="email"
              placeholder="email"
              v-model="email"
              v-validate="'required|email'"
-             :class="{'is-danger': errors.has('email')}"> <br />
+             :class="{'is-danger': errors.has('contact-form.email')}"> <br />
 
       <input type="text"
              name="subject"
              placeholder="subject"
              v-model="subject"
              v-validate="'required'"
-             :class="{'is-danger': errors.has('subject')}"> <br />
+             :class="{'is-danger': errors.has('contact-form.subject')}"> <br />
 
       <textarea placeholder="message"
                 name="message"
                 v-model="message"
                 v-validate="'required|max:200'"
-                :class="{'is-danger': errors.has('message')}"></textarea> <br />
+                :class="{'is-danger': errors.has('contact-form.message')}"></textarea> <br />
 
       <input type="submit" value="Send" class="button">
     </form>
@@ -50,8 +50,8 @@ export default {
   inject: ['$validator'],
 
   methods: {
-    handleSubmit () {
-      return this.$validator.validateAll().then(valid => {
+    handleSubmit (scope) {
+      return this.$validator.validateAll(scope).then(valid => {
         if (!valid) {
           alert('fix dem errors')
           return

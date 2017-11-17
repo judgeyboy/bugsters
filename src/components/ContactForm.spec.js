@@ -7,7 +7,7 @@ Vue.use(VeeValidate)
 
 describe('ContactForm component', () => {
 
-  it('should call onSubmit when clicking the send button', () => {
+  it('should call handleSubmit when clicking the send button', () => {
     const wrapper = shallow(ContactForm, {
       provide: { $validator: new Validator() }
     })
@@ -16,7 +16,7 @@ describe('ContactForm component', () => {
     const submitButton = wrapper.find('input[type=submit]')
     submitButton.trigger('click')
 
-    expect(spy).toHaveBeenCalled()
+    expect(spy).toHaveBeenCalledWith('contact-form')
   })
 
   it('should emit "submit" event with contact details', async () => {
@@ -34,7 +34,7 @@ describe('ContactForm component', () => {
 
     wrapper.setData(contactDetails)
 
-    await wrapper.vm.handleSubmit()
+    await wrapper.vm.handleSubmit('contact-form')
 
     expect(spy).toHaveBeenCalledWith('submit', contactDetails)
   })
@@ -54,7 +54,7 @@ describe('ContactForm component', () => {
 
     wrapper.setData(invalidContactDetails)
 
-    await wrapper.vm.handleSubmit()
+    await wrapper.vm.handleSubmit('contact-form')
 
     expect(spy).not.toHaveBeenCalled()
   })

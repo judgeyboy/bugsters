@@ -24,6 +24,13 @@
              :class="{'is-danger': errors.has('order-form.email')}"> <br />
 
       <input type="text"
+             name="phone"
+             placeholder="phone"
+             v-model="phone"
+             v-validate="'required'"
+             :class="{'is-danger': errors.has('order-form.phone')}"> <br />
+
+      <input type="text"
              name="url"
              placeholder="url"
              v-model="url"
@@ -52,7 +59,8 @@ export default {
       name: '',
       email: '',
       url: '',
-      message: ''
+      message: '',
+      phone: ''
     }
   },
 
@@ -72,7 +80,8 @@ export default {
           name: this.name,
           email: this.email,
           url: this.url,
-          message: this.message
+          message: this.message,
+          phone: this.phone
         }
 
         this.$store.dispatch('order', orderDetails)

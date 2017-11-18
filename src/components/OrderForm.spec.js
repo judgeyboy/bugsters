@@ -60,7 +60,8 @@ describe('OrderForm component', () => {
       name: 'Sterling Archer',
       email: 'duchess@spy-agency.com',
       url: 'https://sterling-malory-archer.com',
-      message: 'This is an awesome message'
+      message: 'This is an awesome message',
+      phone: '0041794672849'
     }
 
     wrapper.setData(orderDetails)
@@ -68,7 +69,6 @@ describe('OrderForm component', () => {
     await wrapper.vm.handleSubmit('order-form')
 
     expect(spy).toHaveBeenCalledWith('order', orderDetails)
-    spy.mockReset() // - why do I have to do this?
   })
 
   it('should not log message if the form has errors', async () => {

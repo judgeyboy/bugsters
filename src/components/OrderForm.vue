@@ -1,5 +1,5 @@
 <template>
-  <div class="order-form">
+  <div>
     <form @submit.prevent="handleSubmit('order-form')" data-vv-scope="order-form">
 
       <input type="text"
@@ -43,7 +43,7 @@
                 v-validate="'max:200'"
                 :class="{'is-danger': errors.has('order-form.message')}"></textarea> <br />
 
-      <input type="submit" value="Send" class="button">
+      <input type="submit" value="Send" class="btn btn-primary">
     </form>
   </div>
 </template>
@@ -90,8 +90,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass" scoped>
-.is-danger
-    border-color: red
-</style>

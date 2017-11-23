@@ -1,8 +1,8 @@
 <template>
-  <div class="about-section">
+  <div>
     <h2>What We Do</h2>
-    <div class="about-section__container">
-      <div class="about-section__container-item">
+    <div>
+      <div>
         <h4>Mobile Devices</h4>
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -12,7 +12,7 @@
           kasd gubergren, no
         </p>
       </div>
-      <div class="about-section__container-item">
+      <div>
         <h4>Desktop</h4>
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -22,7 +22,7 @@
           kasd gubergren, no
         </p>
       </div>
-      <div class="about-section__container-item">
+      <div>
         <h4>Browser</h4>
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -32,7 +32,7 @@
           kasd gubergren, no
         </p>
       </div>
-      <div class="about-section__container-item">
+      <div>
         <h4>Explorative Testing</h4>
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -51,19 +51,3 @@ export default {
   name: 'AboutSection'
 }
 </script>
-
-<style lang="sass" scoped>
-.about-section
-
-  &__container
-    margin-top: 100px
-    display: flex
-    justify-content: space-around
-
-    &-item
-      width: 180px
-
-      p
-        text-align: justify
-</style>
-

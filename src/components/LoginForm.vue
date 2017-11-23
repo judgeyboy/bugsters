@@ -1,5 +1,5 @@
 <template>
-  <div class="login-form">
+  <div>
     <form @submit.prevent="onSubmit">
 
       <input type="text"
@@ -18,7 +18,7 @@
 
       <input type="submit" value="Login">
     </form>
-    <div v-show="loginFailed" class="error-message">
+    <div v-show="loginFailed">
       <span>Username or password does not exist!</span>
     </div>
   </div>
@@ -69,8 +69,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass" scoped>
-.is-danger
-    border-color: red
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-section">
+  <div>
 
     <div v-if="contactState === 'clean'" class="contact-section__form">
       <ContactForm @submit="handleFormSubmit"></ContactForm>

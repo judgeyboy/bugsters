@@ -1,8 +1,8 @@
 <template>
-  <div class="how-section">
+  <div>
     <h2>How We Do</h2>
-    <div class="how-section__container">
-      <div class="how-section__container-item">
+    <div>
+      <div>
         <h4>Experience</h4>
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -12,7 +12,7 @@
           kasd gubergren, no
         </p>
       </div>
-      <div class="how-section__container-item">
+      <div>
         <h4>With Love</h4>
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -22,7 +22,7 @@
           kasd gubergren, no
         </p>
       </div>
-      <div class="how-section__container-item">
+      <div>
         <h4>Devices</h4>
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -32,7 +32,7 @@
           kasd gubergren, no
         </p>
       </div>
-      <div class="how-section__container-item">
+      <div>
         <h4>Customer Dashboard</h4>
         <p>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -51,19 +51,3 @@ export default {
   name: 'HowSection'
 }
 </script>
-
-<style lang="sass" scoped>
-.how-section
-  background-color: $background-grey
-
-  &__container
-    margin-top: 100px
-    display: flex
-    justify-content: space-around
-
-    &-item
-      width: 180px
-
-      p
-        text-align: justify
-</style>

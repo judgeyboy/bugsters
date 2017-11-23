@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-form">
+  <div>
     <form @submit.prevent="handleSubmit('contact-form')" data-vv-scope="contact-form">
       <input type="text"
              name="name"
@@ -28,7 +28,7 @@
                 v-validate="'required|max:200'"
                 :class="{'is-danger': errors.has('contact-form.message')}"></textarea> <br />
 
-      <input type="submit" value="Send" class="button">
+      <input type="submit" value="Send" class="btn btn-primary">
     </form>
   </div>
 </template>
@@ -71,25 +71,3 @@ export default {
 
 }
 </script>
-
-<style lang="sass" scoped>
-.contact-form
-  max-width: 400px
-  margin: 40px auto
-
-input[type=text], input[type=email], textarea
-  border-radius: 4px
-  width: 100%
-  font-size: 20px
-  line-height: 40px
-  margin-bottom: 20px
-
-.is-danger
-    border-color: red
-
-input[type=text], input[type=email]
-  height: 40px
-
-textarea
-  height: 120px
-</style>

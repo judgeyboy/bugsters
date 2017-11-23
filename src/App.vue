@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <MenuBar></MenuBar>
     <router-view></router-view>
   </div>
@@ -22,5 +22,4 @@ export default {
   font-family: $font-stack
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-  text-align: center
 </style>

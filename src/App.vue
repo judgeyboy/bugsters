@@ -19,7 +19,6 @@ export default {
 
 <style lang="sass">
 #app
-  font-family: $font-stack
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 </style>

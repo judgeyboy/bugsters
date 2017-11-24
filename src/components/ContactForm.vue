@@ -6,11 +6,11 @@
 
       <div class="form-group">
         <div class="col-3">
-          <label class="form-label" for="name">Name</label>
+          <label class="form-label" for="contact-name">Name</label>
         </div>
         <div class="col-9">
           <input type="text"
-                 id="name"
+                 id="contact-name"
                  class="form-input"
                  name="name"
                  placeholder="name"
@@ -22,11 +22,11 @@
 
       <div class="form-group">
         <div class="col-3">
-          <label class="form-label" for="email">Email</label>
+          <label class="form-label" for="contact-email">Email</label>
         </div>
         <div class="col-9">
           <input type="email"
-                 id="email"
+                 id="contact-email"
                  class="form-input"
                  name="email"
                  placeholder="email"
@@ -38,11 +38,11 @@
 
       <div class="form-group">
         <div class="col-3">
-          <label class="form-label" for="subject">Subject</label>
+          <label class="form-label" for="contact-subject">Subject</label>
         </div>
         <div class="col-9">
           <input type="text"
-                 id="subject"
+                 id="contact-subject"
                  class="form-input"
                  name="subject"
                  placeholder="subject"
@@ -54,11 +54,11 @@
 
       <div class="form-group">
         <div class="col-3">
-          <label class="form-label" for="message">Message</label>
+          <label class="form-label" for="contact-message">Message</label>
         </div>
         <div class="col-9">
           <textarea placeholder="message"
-                    id="message"
+                    id="contact-message"
                     class="form-input"
                     name="message"
                     v-model="message"

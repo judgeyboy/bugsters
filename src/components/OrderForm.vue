@@ -1,47 +1,103 @@
 <template>
   <div>
-    <form @submit.prevent="handleSubmit('order-form')" data-vv-scope="order-form">
+    <form class="form-horizontal"
+          @submit.prevent="handleSubmit('order-form')"
+          data-vv-scope="order-form">
 
-      <input type="text"
-             name="company"
-             placeholder="company"
-             v-model="company"
-             v-validate="'required'"
-             :class="{'is-danger': errors.has('order-form.company')}"> <br />
+      <div class="form-group">
+        <div class="col-3">
+          <label class="form-label" for="order-company">Company</label>
+        </div>
+        <div class="col-9">
+          <input type="text"
+                 id="order-company"
+                 class="form-input"
+                 name="company"
+                 placeholder="company"
+                 v-model="company"
+                 v-validate="'required'"
+                 :class="{'is-error': errors.has('order-form.company')}">
+        </div>
+      </div>
 
-      <input type="text"
-             name="name"
-             placeholder="name"
-             v-model="name"
-             v-validate="'required'"
-             :class="{'is-danger': errors.has('order-form.name')}"> <br />
+      <div class="form-group">
+        <div class="col-3">
+          <label class="form-label" for="order-name">Name</label>
+        </div>
+        <div class="col-9">
+          <input type="text"
+                 id="order-name"
+                 class="form-input"
+                 name="name"
+                 placeholder="name"
+                 v-model="name"
+                 v-validate="'required'"
+                 :class="{'is-error': errors.has('order-form.name')}">
+        </div>
+      </div>
 
-      <input type="email"
-             name="email"
-             placeholder="email"
-             v-model="email"
-             v-validate="'required|email'"
-             :class="{'is-danger': errors.has('order-form.email')}"> <br />
+      <div class="form-group">
+        <div class="col-3">
+          <label class="form-label" for="order-email">Email</label>
+        </div>
+        <div class="col-9">
+          <input type="email"
+                 id="order-email"
+                 class="form-input"
+                 name="email"
+                 placeholder="email"
+                 v-model="email"
+                 v-validate="'required|email'"
+                 :class="{'is-error': errors.has('order-form.email')}">
+        </div>
+      </div>
 
-      <input type="text"
-             name="phone"
-             placeholder="phone"
-             v-model="phone"
-             v-validate="'required'"
-             :class="{'is-danger': errors.has('order-form.phone')}"> <br />
+      <div class="form-group">
+        <div class="col-3">
+          <label class="form-label" for="order-phone">Phone</label>
+        </div>
+        <div class="col-9">
+          <input type="text"
+                 id="order-phone"
+                 class="form-input"
+                 name="phone"
+                 placeholder="phone"
+                 v-model="phone"
+                 v-validate="'required'"
+                 :class="{'is-error': errors.has('order-form.phone')}">
+        </div>
+      </div>
 
-      <input type="text"
-             name="url"
-             placeholder="url"
-             v-model="url"
-             v-validate="'required|url'"
-             :class="{'is-danger': errors.has('order-form.url')}"> <br />
+      <div class="form-group">
+        <div class="col-3">
+          <label class="form-label" for="order-url">Page Url</label>
+        </div>
+        <div class="col-9">
+          <input type="text"
+                 id="order-url"
+                 class="form-input"
+                 name="url"
+                 placeholder="url"
+                 v-model="url"
+                 v-validate="'required|url'"
+                 :class="{'is-error': errors.has('order-form.url')}">
+        </div>
+      </div>
 
-      <textarea placeholder="message"
-                name="message"
-                v-model="message"
-                v-validate="'max:200'"
-                :class="{'is-danger': errors.has('order-form.message')}"></textarea> <br />
+      <div class="form-group">
+        <div class="col-3">
+          <label class="form-label" for="order-message">Message</label>
+        </div>
+        <div class="col-9">
+          <textarea placeholder="message"
+                    id="order-message"
+                    class="form-input"
+                    name="message"
+                    v-model="message"
+                    v-validate="'max:200'"
+                    :class="{'is-error': errors.has('order-form.message')}"></textarea>
+        </div>
+      </div>
 
       <input type="submit" value="Send" class="btn btn-primary">
     </form>

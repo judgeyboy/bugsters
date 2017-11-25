@@ -1,5 +1,7 @@
 <template>
-  <a @click="scrollTo()">{{this.$slots.default[0].text}}</a>
+  <a @click="scrollTo()">
+    <slot></slot>
+  </a>
 </template>
 
 <script>

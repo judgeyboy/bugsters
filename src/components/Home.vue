@@ -1,12 +1,14 @@
 <template>
+<div>
+  <HeaderSection></HeaderSection>
   <div class="container">
-    <HeaderSection></HeaderSection>
     <AboutSection></AboutSection>
     <HowSection></HowSection>
     <OrderForm></OrderForm>
     <h2>Contact Us</h2>
     <ContactSection></ContactSection>
   </div>
+</div>
 </template>
 
 <script>

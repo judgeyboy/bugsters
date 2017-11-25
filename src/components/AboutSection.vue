@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>What We Do</h2>
+    <h2 id="about">What We Do</h2>
     <div>
       <div>
         <h4>Mobile Devices</h4>

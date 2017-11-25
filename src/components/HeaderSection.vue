@@ -1,16 +1,14 @@
 <template>
   <div class="header-section">
-    <img class="header-section__logo" src="../assets/bugsters.png">
-    <div class="header-section_slogan">
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et
-      </p>
+    <div class="container">
+      <div class="columns">
+        <div class="column col-12">
+          <h1>Welcome to Bugsters!</h1>
+          <h2>Home of Professional Software Testers</h2>
+          <a @click="smoothScroll()">Read More</a>
+        </div>
+      </div>
     </div>
-    <h3>Verfügbares Budget</h3>
-    <Slider></Slider>
-    <button class="btn btn-lg btn-primary">Read More</button>
   </div>
 </template>
 
@@ -21,9 +19,27 @@ export default {
   name: 'HeaderSection',
   components: {
     Slider
+  },
+  methods: {
+    smoothScroll: function () {
+      document.querySelector('#about').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
   }
 }
 </script>
 
 <style lang="sass">
+.header-section
+  height: 100vh
+  width: 100vw
+  background-color: #4346D1
+  color: white
+  text-align: center
+
+  a
+    color: white
+    bottom: 0
 </style>

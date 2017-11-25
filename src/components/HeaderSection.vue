@@ -5,7 +5,7 @@
         <div class="column col-12">
           <h1>Welcome to Bugsters!</h1>
           <h2>Home of Professional Software Testers</h2>
-          <a @click="smoothScroll()">Read More</a>
+          <scroll-link location="#about">Read More</scroll-link>
         </div>
       </div>
     </div>
@@ -14,19 +14,13 @@
 
 <script>
 import Slider from './Slider'
+import ScrollLink from './ScrollLink'
 
 export default {
   name: 'HeaderSection',
   components: {
-    Slider
-  },
-  methods: {
-    smoothScroll: function () {
-      document.querySelector('#about').scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      })
-    }
+    Slider,
+    ScrollLink
   }
 }
 </script>

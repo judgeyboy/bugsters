@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { ACCOUNT_LOGIN } from '../store/actionTypes'
+
 export default {
 
   name: 'LoginForm',
@@ -55,7 +57,7 @@ export default {
           password: this.password
         }
 
-        this.$store.dispatch('login', loginDetails)
+        this.$store.dispatch(ACCOUNT_LOGIN, loginDetails)
           .then(() => {
             if (this.returnUrl) {
               this.$router.push({ path: this.returnUrl })

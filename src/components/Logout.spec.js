@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import {shallow} from 'vue-test-utils'
+import { shallow } from 'vue-test-utils'
 import Logout from './Logout'
+import { ACCOUNT_LOGOUT } from '../store/actionTypes'
+
 
 Vue.use(Vuex)
 
@@ -12,7 +14,7 @@ describe('Logout component', () => {
     store = new Vuex.Store({
       state: {},
       actions: {
-        logout: jest.fn()
+        [ACCOUNT_LOGOUT]: jest.fn()
       }
     })
   })
@@ -31,7 +33,7 @@ describe('Logout component', () => {
     logoutButton.trigger('click')
 
     expect(spy).toHaveBeenCalled()
-    expect(spy).toHaveBeenCalledWith('logout')
+    expect(spy).toHaveBeenCalledWith(ACCOUNT_LOGOUT)
   })
 
 })

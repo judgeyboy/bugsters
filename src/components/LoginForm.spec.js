@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import VeeValidate, { Validator } from 'vee-validate'
 import { shallow } from 'vue-test-utils'
 import LoginForm from './LoginForm'
+import { ACCOUNT_LOGIN } from '../store/actionTypes'
 
 Vue.use(Vuex)
 Vue.use(VeeValidate)
@@ -18,7 +19,7 @@ describe('LoginForm component', () => {
     store = new Vuex.Store({
       state: {},
       actions: {
-        login: jest.fn()
+        [ACCOUNT_LOGIN]: jest.fn()
       }
     })
   })
@@ -40,7 +41,7 @@ describe('LoginForm component', () => {
     await wrapper.vm.onSubmit()
 
     expect(spy).toHaveBeenCalled()
-    expect(spy).toHaveBeenCalledWith('login', loginDetails)
+    expect(spy).toHaveBeenCalledWith(ACCOUNT_LOGIN, loginDetails)
   })
 
   it('should not dispatch "login" if the form has errors', async () => {

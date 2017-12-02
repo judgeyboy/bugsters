@@ -5,13 +5,15 @@
 </template>
 
 <script>
+import { ACCOUNT_LOGOUT } from '../store/actionTypes'
+
 export default {
 
   name: 'Logout',
 
   methods: {
     logout: function () {
-      this.$store.dispatch('logout')
+      this.$store.dispatch(ACCOUNT_LOGOUT)
     }
   }
 

@@ -1,4 +1,5 @@
 import accountService from '../../../services/account'
+import mutations from './mutations'
 import * as mutationTypes from '../../mutationTypes'
 import * as actionTypes from '../../actionTypes'
 
@@ -7,15 +8,7 @@ const accountModule = {
     loggedIn: false
   },
 
-  mutations: {
-    [mutationTypes.ACCOUNT_LOGIN] (state) {
-      state.loggedIn = true
-    },
-
-    [mutationTypes.ACCOUNT_LOGOUT] (state) {
-      state.loggedIn = false
-    }
-  },
+  mutations,
 
   actions: {
     [actionTypes.ACCOUNT_LOGIN] ({ commit }, loginDetails) {

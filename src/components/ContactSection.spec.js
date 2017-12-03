@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { shallow } from 'vue-test-utils'
 import ContactSection from './ContactSection'
+import { CONTACT_SEND } from '../store/actionTypes'
 
 Vue.use(Vuex)
 
@@ -88,7 +89,7 @@ describe('ContactSection component', () => {
                 contactState: 'clean'
               },
               actions: {
-                contact: jest.fn()
+                [CONTACT_SEND]: jest.fn()
               }
             }
           }
@@ -103,7 +104,7 @@ describe('ContactSection component', () => {
 
       wrapper.vm.handleFormSubmit(values)
 
-      expect(spy).toHaveBeenCalledWith('contact', values)
+      expect(spy).toHaveBeenCalledWith(CONTACT_SEND, values)
     })
 
   })

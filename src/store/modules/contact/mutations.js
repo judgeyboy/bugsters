@@ -1,5 +1,7 @@
+import { CONTACT_SET_STATE } from '../../mutationTypes'
+
 const mutations = {
-  setContactState (state, contactState) {
+  [CONTACT_SET_STATE] (state, contactState) {
     state.contactState = contactState
   }
 }

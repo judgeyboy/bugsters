@@ -19,6 +19,7 @@
 
 <script>
 import ContactForm from './ContactForm'
+import { CONTACT_SEND } from '../store/actionTypes'
 
 export default {
   name: 'ContactSection',
@@ -35,7 +36,7 @@ export default {
 
   methods: {
     handleFormSubmit (contactDetails) {
-      this.$store.dispatch('contact', contactDetails)
+      this.$store.dispatch(CONTACT_SEND, contactDetails)
     }
   }
 }

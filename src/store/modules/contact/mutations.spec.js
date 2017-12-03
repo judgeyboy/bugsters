@@ -1,13 +1,14 @@
 import mutations from './mutations'
+import { CONTACT_SET_STATE } from '../../mutationTypes'
 
 describe('ContactModule Mutations', () => {
 
-  it('SET_CONTACT_STATE should set state.contactState to "success"', () => {
+  it('CONTACT_SET_STATE should set state.contactState to "success"', () => {
     const state = {
       contactState: 'clean'
     }
 
-    mutations.setContactState(state, 'success')
+    mutations[CONTACT_SET_STATE](state, 'success')
     expect(state.contactState).toBe('success')
   })
 

@@ -9,7 +9,13 @@ class AccountService {
 
   logIn (loginDetails) {
     return axios
-      .post('https://bugsters-api.herokuapp.com/account/login', loginDetails, { headers: { 'Content-Type': 'application/json' } })
+      .post(
+        'https://bugsters-api.herokuapp.com/account/login',
+        loginDetails, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
   }
 }
 

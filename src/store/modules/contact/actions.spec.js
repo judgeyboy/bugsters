@@ -1,9 +1,10 @@
+import sinon from 'sinon'
+
 import actions from './actions'
 import { CONTACT_SEND } from '../../actionTypes'
 import { CONTACT_SET_STATE } from '../../mutationTypes'
 import { testAction } from '../../../../testHelpers'
 import contactService from '../../../services/contact'
-import sinon from 'sinon'
 
 describe('ContactModule Actions', () => {
 
@@ -13,7 +14,7 @@ describe('ContactModule Actions', () => {
     serviceStub.restore()
   })
 
-  it('Contact action should invoke mutation "setContactState" with "success"', done => {
+  it('CONTACT_SEND action should invoke mutation "CONTACT_SET_STATE" with "success"', done => {
     serviceStub = sinon.stub(contactService, 'send').resolves()
 
     testAction(actions[CONTACT_SEND], null, {}, [
@@ -21,7 +22,7 @@ describe('ContactModule Actions', () => {
     ], done)
   })
 
-  it('Contact action should invoke mutation "setContactState" with "error"', done => {
+  it('CONTACT_SEND action should invoke mutation "CONTACT_SET_STATE" with "error"', done => {
     serviceStub = sinon.stub(contactService, 'send').rejects()
 
     testAction(actions[CONTACT_SEND], null, {}, [

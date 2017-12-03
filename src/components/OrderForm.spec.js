@@ -2,7 +2,9 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VeeValidate, { Validator } from 'vee-validate'
 import { shallow } from 'vue-test-utils'
+
 import OrderForm from './OrderForm'
+import { ORDER_SEND } from '../store/actionTypes'
 
 Vue.use(Vuex)
 Vue.use(VeeValidate)
@@ -15,7 +17,7 @@ describe('OrderForm component', () => {
     store = new Vuex.Store({
       state: {},
       actions: {
-        order: jest.fn()
+        [ORDER_SEND]: jest.fn()
       }
     })
   })
@@ -45,7 +47,7 @@ describe('OrderForm component', () => {
     expect(spy).toHaveBeenCalledWith('order-form')
   })
 
-  it('should dispatch "order" with order details', async () => {
+  it('should dispatch "ORDER_SEND" with order details', async () => {
     const wrapper = shallow(OrderForm, {
       store,
       provide: {
@@ -68,7 +70,7 @@ describe('OrderForm component', () => {
 
     await wrapper.vm.handleSubmit('order-form')
 
-    expect(spy).toHaveBeenCalledWith('order', orderDetails)
+    expect(spy).toHaveBeenCalledWith(ORDER_SEND, orderDetails)
   })
 
   it('should not log message if the form has errors', async () => {

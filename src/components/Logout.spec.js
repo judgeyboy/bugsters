@@ -2,8 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { shallow } from 'vue-test-utils'
 import Logout from './Logout'
-import { ACCOUNT_LOGOUT } from '../store/actionTypes'
-
+import { ACCOUNT_LOGOUT } from '@/store/actionTypes'
 
 Vue.use(Vuex)
 

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { ACCOUNT_LOGOUT } from '../store/actionTypes'
+import { ACCOUNT_LOGOUT } from '@/store/actionTypes'
 
 export default {
 

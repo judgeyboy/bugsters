@@ -16,8 +16,6 @@ describe('Account Service', () => {
   it('logIn should make correct POST request', async () => {
     let axiosStub = sinon.stub(axios, 'post').resolves()
 
-    axiosStub.calledWith
-
     const loginDetails = {
       username: 'sterling',
       password: 'DangerZone!'

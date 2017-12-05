@@ -11,17 +11,21 @@
 
     <div class="column col-6 col-mx-auto">
       <OrderForm />
+      <OrderSuccess />
     </div>
+
   </div>
 </template>
 
 <script>
 import OrderForm from '@/components/OrderForm'
+import OrderSuccess from '@/components/OrderSuccess'
 
 export default {
   name: 'OrderSection',
   components: {
-    OrderForm
+    OrderForm,
+    OrderSuccess
   }
 }
 </script>

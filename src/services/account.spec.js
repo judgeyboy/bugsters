@@ -1,8 +1,8 @@
 import sinon from 'sinon'
-import axios from 'axios'
 
 import accountService from './account'
 import store from '../store'
+import api from './api'
 
 describe('Account Service', () => {
 
@@ -14,7 +14,7 @@ describe('Account Service', () => {
   })
 
   it('logIn should make correct POST request', async () => {
-    let axiosStub = sinon.stub(axios, 'post').resolves()
+    let apiStub = sinon.stub(api, 'post').resolves()
 
     const loginDetails = {
       username: 'sterling',
@@ -22,17 +22,7 @@ describe('Account Service', () => {
     }
 
     await accountService.logIn(loginDetails)
-    expect(axiosStub.calledWith(
-      "https://bugsters-api.herokuapp.com/account/login",
-      {
-        "password": "DangerZone!",
-        "username": "sterling"
-      },
-      {
-        "headers": {
-          "Content-Type": "application/json"
-        }
-      })).toBe(true)
+    expect(apiStub.calledWith("/account/login", loginDetails)).toBe(true)
   })
 
 })

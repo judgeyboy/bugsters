@@ -1,10 +1,11 @@
-import axios from 'axios'
+import api from './api'
 
 class OrderService {
+
   send (orderDetails) {
-    return axios
-      .post('https://bugsters-api.herokuapp.com/order', orderDetails, { headers: { 'Content-Type': 'application/json' } })
+    return api.post('/order', orderDetails)
   }
+
 }
 
 export default new OrderService()

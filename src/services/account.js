@@ -1,5 +1,5 @@
-import axios from 'axios'
 import store from '../store'
+import api from './api'
 
 class AccountService {
 
@@ -8,14 +8,7 @@ class AccountService {
   }
 
   logIn (loginDetails) {
-    return axios
-      .post(
-        'https://bugsters-api.herokuapp.com/account/login',
-        loginDetails, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
+    return api.post('/account/login', loginDetails)
   }
 }
 

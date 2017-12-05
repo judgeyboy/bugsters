@@ -1,10 +1,11 @@
-import axios from 'axios'
+import api from './api'
 
 class ContactService {
+
   send (contactDetails) {
-    return axios
-      .post('https://bugsters-api.herokuapp.com/mail/contact', contactDetails, { headers: { 'Content-Type': 'application/json' } })
+    return api.post('/mail/contact', contactDetails)
   }
+
 }
 
 export default new ContactService()

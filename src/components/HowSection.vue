@@ -1,7 +1,7 @@
 <template>
   <div class="columns">
     <div class="column col-12">
-      <h2 style="text-align: center">How We Do It</h2>
+      <h2 class="text-center">How We Do It</h2>
     </div>
 
     <div class="column col-3 col-md-6 col-xs-12">

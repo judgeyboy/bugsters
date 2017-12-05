@@ -4,7 +4,7 @@
   <div class="container">
     <AboutSection></AboutSection>
     <HowSection></HowSection>
-    <OrderForm></OrderForm>
+    <OrderSection></OrderSection>
     <h2>Contact Us</h2>
     <ContactSection></ContactSection>
   </div>
@@ -15,8 +15,8 @@
 import HeaderSection from './HeaderSection'
 import AboutSection from './AboutSection'
 import HowSection from './HowSection'
-import OrderForm from './OrderForm'
 import ContactSection from './ContactSection'
+import OrderSection from '@/containers/OrderSection'
 
 export default {
   name: 'Home',
@@ -25,8 +25,8 @@ export default {
     HeaderSection,
     AboutSection,
     HowSection,
-    OrderForm,
-    ContactSection
+    ContactSection,
+    OrderSection
   }
 }
 </script>

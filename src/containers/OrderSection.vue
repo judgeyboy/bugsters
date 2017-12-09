@@ -1,19 +1,17 @@
 <template>
-  <div class="columns">
+  <div class="order-section">
+    <div class="columns">
 
-    <div class="column col-12">
-      <h2 class="text-center">Need A Test?</h2>
-      <p>
-        Use the slider to select how much you would like to invest in testing your application
-        and provide us with your details. We'll do the rest. Of course we'll send you an offer...
-      </p>
+      <div class="column col-12">
+        <h2 class="text-center">Need A Test?</h2>
+      </div>
+
+      <div class="column col-6 col-mx-auto">
+        <OrderForm />
+        <OrderSuccess />
+      </div>
+
     </div>
-
-    <div class="column col-6 col-mx-auto">
-      <OrderForm />
-      <OrderSuccess />
-    </div>
-
   </div>
 </template>
 

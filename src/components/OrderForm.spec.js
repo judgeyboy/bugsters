@@ -57,7 +57,7 @@ describe('OrderForm component', () => {
     let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
 
     const orderDetails = {
-      budget: '300.-',
+      budget: 500,
       company: 'International Spying Agency',
       name: 'Sterling Archer',
       email: 'duchess@spy-agency.com',
@@ -83,7 +83,7 @@ describe('OrderForm component', () => {
     let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
 
     const invalidOrderDetails = {
-      budget: '300.-',
+      budget: 1200,
       company: 'International Spying Agency',
       name: 'Sterling Archer',
       email: 'duchess@spy-agency.com',

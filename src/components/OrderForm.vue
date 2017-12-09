@@ -1,8 +1,31 @@
 <template>
   <div>
+
+    <p>
+      Use the slider to select how much you would like to invest in testing your application
+      and provide us with your details. We'll do the rest. Of course we'll send you an offer...
+    </p>
+
     <form class="form-horizontal"
           @submit.prevent="handleSubmit('order-form')"
           data-vv-scope="order-form">
+
+      <div class="form-group">
+        <div class="col-3">
+          <label class="form-label" for="order-budget">Budget</label>
+        </div>
+        <div class="col-6">
+          <input class="form-input"
+                 type="range"
+                 max="2500"
+                 min="200"
+                 step="100"
+                 v-model="budget" />
+        </div>
+        <div class="col-3">
+          <label class="form-label text-center"><strong>{{ budget }} .- CHF</strong></label>
+        </div>
+      </div>
 
       <div class="form-group">
         <div class="col-3">
@@ -112,7 +135,7 @@ export default {
 
   data () {
     return {
-      budget: '300.-',
+      budget: 500,
       company: '',
       name: '',
       email: '',

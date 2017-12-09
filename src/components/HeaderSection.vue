@@ -13,13 +13,11 @@
 </template>
 
 <script>
-import Slider from './Slider'
 import ScrollLink from './ScrollLink'
 
 export default {
   name: 'HeaderSection',
   components: {
-    Slider,
     ScrollLink
   }
 }

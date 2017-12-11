@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import { shallow } from 'vue-test-utils'
 
 import ContactSection from './ContactSection'
-import { CONTACT_SEND } from '../store/actionTypes'
+import { CONTACT_SEND } from '@/store/actionTypes'
 
 Vue.use(Vuex)
 

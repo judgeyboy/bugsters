@@ -18,8 +18,8 @@
 
 
 <script>
-import ContactForm from './ContactForm'
-import { CONTACT_SEND } from '../store/actionTypes'
+import ContactForm from '@/components/ContactForm'
+import { CONTACT_SEND } from '@/store/actionTypes'
 
 export default {
   name: 'ContactSection',

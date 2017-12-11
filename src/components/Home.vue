@@ -15,7 +15,7 @@
 import HeaderSection from './HeaderSection'
 import AboutSection from './AboutSection'
 import HowSection from './HowSection'
-import ContactSection from './ContactSection'
+import ContactSection from '@/containers/ContactSection'
 import OrderSection from '@/containers/OrderSection'
 
 export default {

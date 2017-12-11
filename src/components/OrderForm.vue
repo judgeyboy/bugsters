@@ -128,7 +128,6 @@
 </template>
 
 <script>
-import { ORDER_SEND } from '../store/actionTypes'
 
 export default {
   name: 'OrderForm',
@@ -165,7 +164,7 @@ export default {
           phone: this.phone
         }
 
-        this.$store.dispatch(ORDER_SEND, orderDetails)
+        this.$emit('submit', orderDetails)
       })
     }
   }

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { shallow } from 'vue-test-utils'
+
 import ContactSection from './ContactSection'
 import { CONTACT_SEND } from '../store/actionTypes'
 
@@ -20,6 +21,7 @@ describe('ContactSection component', () => {
         }
       })
     })
+
     expect(wrapper.vm.handleFormSubmit).toBeDefined()
   })
 

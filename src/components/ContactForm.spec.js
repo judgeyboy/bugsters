@@ -1,11 +1,22 @@
 import Vue from 'vue'
 import VeeValidate, { Validator } from 'vee-validate'
 import { shallow } from 'vue-test-utils'
+
 import ContactForm from './ContactForm'
 
 Vue.use(VeeValidate)
 
 describe('ContactForm component', () => {
+
+  it('should be a vue instance', () => {
+    const wrapper = shallow(ContactForm, {
+      provide: {
+        $validator: new Validator()
+      }
+    })
+
+    expect(wrapper.isVueInstance()).toBe(true)
+  })
 
   it('should call handleSubmit when clicking the send button', () => {
     const wrapper = shallow(ContactForm, {

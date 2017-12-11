@@ -1,44 +1,30 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
 import VeeValidate, { Validator } from 'vee-validate'
 import { shallow } from 'vue-test-utils'
 
 import OrderForm from './OrderForm'
-import { ORDER_SEND } from '../store/actionTypes'
 
-Vue.use(Vuex)
 Vue.use(VeeValidate)
 
 describe('OrderForm component', () => {
 
-  let store
-
-  beforeEach(() => {
-    store = new Vuex.Store({
-      state: {},
-      actions: {
-        [ORDER_SEND]: jest.fn()
-      }
-    })
-  })
-
   it('should be a vue instance', () => {
     const wrapper = shallow(OrderForm, {
-      store,
       provide: {
         $validator: new Validator()
       }
     })
-    expect(wrapper.isVueInstance).toBeTruthy()
+
+    expect(wrapper.isVueInstance()).toBe(true)
   })
 
   it('should call handleSubmit when clicking the send button', () => {
     const wrapper = shallow(OrderForm, {
-      store,
       provide: {
         $validator: new Validator()
       }
     })
+
     let spy = jest.spyOn(wrapper.vm, 'handleSubmit')
 
     const submitButton = wrapper.find('input[type=submit]')
@@ -47,14 +33,13 @@ describe('OrderForm component', () => {
     expect(spy).toHaveBeenCalledWith('order-form')
   })
 
-  it('should dispatch "ORDER_SEND" with order details', async () => {
+  it('should emit "submit" event with order details', async () => {
     const wrapper = shallow(OrderForm, {
-      store,
       provide: {
         $validator: new Validator()
       }
     })
-    let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
+    let spy = jest.spyOn(wrapper.vm, '$emit')
 
     const orderDetails = {
       budget: 500,
@@ -70,17 +55,17 @@ describe('OrderForm component', () => {
 
     await wrapper.vm.handleSubmit('order-form')
 
-    expect(spy).toHaveBeenCalledWith(ORDER_SEND, orderDetails)
+    expect(spy).toHaveBeenCalledWith('submit', orderDetails)
   })
 
-  it('should not log message if the form has errors', async () => {
+  it('should not emit "submit" event if the form has errors', async () => {
     const wrapper = shallow(OrderForm, {
-      store,
       provide: {
         $validator: new Validator()
       }
     })
-    let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
+
+    let spy = jest.spyOn(wrapper.vm, '$emit')
 
     const invalidOrderDetails = {
       budget: 1200,

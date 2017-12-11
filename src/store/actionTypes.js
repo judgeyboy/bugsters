@@ -8,8 +8,3 @@ export const ACCOUNT_LOGOUT = 'ACCOUNT_LOGOUT'
   Contact Actions
 */
 export const CONTACT_SEND = 'CONTACT_SEND'
-
-/*
-  Order Actions
-*/
-export const ORDER_SEND = 'ORDER_SEND'

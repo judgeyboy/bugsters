@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderError Component should match snapshot 1`] = `
+"<div class=\\"order-error\\"><h2 class=\\"text-center\\">Error :(</h2> <p>
+    Oh well this is embarrassing! It looks like
+    something went horribly wrong...please try again
+  </p></div>"
+`;

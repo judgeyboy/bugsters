@@ -5,7 +5,6 @@
     <AboutSection></AboutSection>
     <HowSection></HowSection>
     <OrderSection></OrderSection>
-    <h2>Contact Us</h2>
     <ContactSection></ContactSection>
   </div>
 </div>

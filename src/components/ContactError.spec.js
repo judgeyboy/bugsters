@@ -1,16 +1,16 @@
 import { shallow } from 'vue-test-utils'
 
-import OrderSuccess from './OrderSuccess'
+import ContactError from './ContactError'
 
-describe('OrderSuccess Component', () => {
+describe('ContactError Component', () => {
 
   it('should be a Vue instance', () => {
-    const wrapper = shallow(OrderSuccess)
+    const wrapper = shallow(ContactError)
     expect(wrapper.isVueInstance()).toBe(true)
   })
 
   it('should match snapshot', () => {
-    const wrapper = shallow(OrderSuccess)
+    const wrapper = shallow(ContactError)
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()
   })

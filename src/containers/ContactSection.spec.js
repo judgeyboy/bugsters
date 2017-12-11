@@ -1,114 +1,82 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
 import { shallow } from 'vue-test-utils'
+import sinon from 'sinon'
 
 import ContactSection from './ContactSection'
-import { CONTACT_SEND } from '@/store/actionTypes'
-
-Vue.use(Vuex)
+import ContactService from '@/services/contact'
 
 describe('ContactSection component', () => {
 
-  it('should contain a form submit handler "handleFormSubmit"', () => {
-    const wrapper = shallow(ContactSection, {
-      store: new Vuex.Store({
-        modules: {
-          contactModule: {
-            state: {
-              contactState: 'clean'
-            }
-          }
-        }
-      })
-    })
+  it('should be a Vue instance', () => {
+    const wrapper = shallow(ContactSection)
+    expect(wrapper.isVueInstance()).toBe(true)
+  })
 
+  it('should contain a form submit handler "handleFormSubmit"', () => {
+    const wrapper = shallow(ContactSection)
     expect(wrapper.vm.handleFormSubmit).toBeDefined()
   })
 
-  it('should render only the form if contactState is "clean"', () => {
-    const wrapper = shallow(ContactSection, {
-      store: new Vuex.Store({
-        modules: {
-          contactModule: {
-            state: {
-              contactState: 'clean'
-            }
-          }
-        }
-      })
-    })
-
-    expect(wrapper.contains('.contact-section__form')).toBeTruthy()
-    expect(wrapper.contains('.contact-section__success')).toBeFalsy()
-    expect(wrapper.contains('.contact-section__error')).toBeFalsy()
+  it('should have "open" as default contactState', () => {
+    const wrapper = shallow(ContactSection)
+    expect(wrapper.vm.contactState).toBe('open')
   })
 
-  it('should render only the success if contactState is "success"', () => {
-    const wrapper = shallow(ContactSection, {
-      store: new Vuex.Store({
-        modules: {
-          contactModule: {
-            state: {
-              contactState: 'success'
-            }
-          }
-        }
-      })
-    })
+  it('should call contactService with contactDetails', async () => {
+    const wrapper = shallow(ContactSection)
+    const serviceStub = sinon.stub(ContactService, 'send').resolves()
 
-    expect(wrapper.contains('.contact-section__form')).toBeFalsy()
-    expect(wrapper.contains('.contact-section__success')).toBeTruthy()
-    expect(wrapper.contains('.contact-section__error')).toBeFalsy()
+    const contactDetails = {
+      name: 'Sterling Archer',
+      email: 'duchess@spy-agency.com',
+      subject: 'Danger Zone',
+      message: 'This is an awesome message'
+    }
+
+    await wrapper.vm.handleFormSubmit(contactDetails)
+
+    expect(serviceStub.calledWith(contactDetails)).toBe(true)
+
+    serviceStub.restore()
   })
 
-  it('should render only the error if contactState is "error"', () => {
-    const wrapper = shallow(ContactSection, {
-      store: new Vuex.Store({
-        modules: {
-          contactModule: {
-            state: {
-              contactState: 'error'
-            }
-          }
-        }
-      })
+  it('should call contactSuccess', async () => {
+    const wrapper = shallow(ContactSection)
+    const spy = jest.spyOn(wrapper.vm, 'contactSuccess')
+    const serviceStub = sinon.stub(ContactService, 'send').resolves()
+
+    await wrapper.vm.handleFormSubmit()
+
+    wrapper.vm.$nextTick(() => {
+      expect(spy).toHaveBeenCalled()
     })
 
-    expect(wrapper.contains('.contact-section__form')).toBeFalsy()
-    expect(wrapper.contains('.contact-section__success')).toBeFalsy()
-    expect(wrapper.contains('.contact-section__error')).toBeTruthy()
+    serviceStub.restore()
   })
 
+  it('should call contactError', async () => {
+    const wrapper = shallow(ContactSection)
+    const spy = jest.spyOn(wrapper.vm, 'contactError')
+    const serviceStub = sinon.stub(ContactService, 'send').rejects()
 
-  describe('handleFormSubmit function', () => {
+    await wrapper.vm.handleFormSubmit()
 
-    it('should dispatch "contact" with contact details', () => {
-      const wrapper = shallow(ContactSection, {
-        store: new Vuex.Store({
-          modules: {
-            contactModule: {
-              state: {
-                contactState: 'clean'
-              },
-              actions: {
-                [CONTACT_SEND]: jest.fn()
-              }
-            }
-          }
-        })
-      })
-      let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
-
-      const values = {
-        foo: 'bar',
-        baz: 'foo'
-      }
-
-      wrapper.vm.handleFormSubmit(values)
-
-      expect(spy).toHaveBeenCalledWith(CONTACT_SEND, values)
+    wrapper.vm.$nextTick(() => {
+      expect(spy).toHaveBeenCalled()
     })
 
+    serviceStub.restore()
+  })
+
+  it('ContactSuccess should set contactState to "success"', () => {
+    const wrapper = shallow(ContactSection)
+    wrapper.vm.contactSuccess()
+    expect(wrapper.vm.contactState).toBe('success')
+  })
+
+  it('ContactError should set contactState to "error"', () => {
+    const wrapper = shallow(ContactSection)
+    wrapper.vm.contactError()
+    expect(wrapper.vm.contactState).toBe('error')
   })
 
 })

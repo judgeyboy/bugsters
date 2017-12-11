@@ -1,16 +1,20 @@
 <template>
-  <div>
+  <div class="contact-section">
+    <div class="columns">
 
-    <div v-if="contactState === 'clean'" class="contact-section__form">
-      <ContactForm @submit="handleFormSubmit"></ContactForm>
-    </div>
+      <div class="column col-12">
+        <h2 class="text-center">Contact Us</h2>
+      </div>
 
-    <div v-if="contactState === 'success'" class="contact-section__success">
-      <h2>SUCCESS ;)</h2>
-    </div>
+      <div class="column col-6 col-mx-auto">
+        <ContactForm @submit="handleFormSubmit"
+                     v-if="contactState === 'open'" />
 
-    <div v-if="contactState === 'error'" class="contact-section__error">
-      <h2>ERROR ;(</h2>
+        <ContactSuccess v-if="contactState === 'success'" />
+
+        <ContactError v-if="contactState === 'error'" />
+      </div>
+
     </div>
 
   </div>
@@ -19,24 +23,38 @@
 
 <script>
 import ContactForm from '@/components/ContactForm'
-import { CONTACT_SEND } from '@/store/actionTypes'
+import ContactSuccess from '@/components/ContactSuccess'
+import ContactError from '@/components/ContactError'
+import ContactService from '@/services/contact'
 
 export default {
   name: 'ContactSection',
 
-  components: {
-    ContactForm
+  data () {
+    return {
+      contactState: 'open'
+    }
   },
 
-  computed: {
-    contactState () {
-      return this.$store.state.contactModule.contactState
-    }
+  components: {
+    ContactForm,
+    ContactSuccess,
+    ContactError
   },
 
   methods: {
     handleFormSubmit (contactDetails) {
-      this.$store.dispatch(CONTACT_SEND, contactDetails)
+      ContactService.send(contactDetails)
+        .then(this.contactSuccess)
+        .catch(this.contactError)
+    },
+
+    contactSuccess () {
+      this.contactState = 'success'
+    },
+
+    contactError () {
+      this.contactState = 'error'
     }
   }
 }

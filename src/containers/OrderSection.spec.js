@@ -6,7 +6,7 @@ import OrderService from '@/services/order'
 
 describe('OrderSection Container', () => {
 
-  it('should be a vue instance', () => {
+  it('should be a Vue instance', () => {
     const wrapper = shallow(OrderSection)
     expect(wrapper.isVueInstance()).toBe(true)
   })
@@ -14,6 +14,11 @@ describe('OrderSection Container', () => {
   it('should contain a form submit handler "handleFormSubmit"', () => {
     const wrapper = shallow(OrderSection)
     expect(wrapper.vm.handleFormSubmit).toBeDefined()
+  })
+
+  it('should have "open" as default orderState', () => {
+    const wrapper = shallow(OrderSection)
+    expect(wrapper.vm.orderState).toBe('open')
   })
 
   it('should call orderService with orderDetails', async () => {

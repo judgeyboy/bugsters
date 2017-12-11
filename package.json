@@ -88,6 +88,7 @@
       "/node_modules/",
       "<rootDir>/testHelpers.js"
     ],
+    "mapCoverage": true,
     "moduleNameMapper": {
       "^@(.*)$": "<rootDir>/src$1",
       "^vue$": "vue/dist/vue.common.js"

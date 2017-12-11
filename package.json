@@ -84,6 +84,10 @@
     "not ie <= 8"
   ],
   "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/testHelpers.js"
+    ],
     "moduleNameMapper": {
       "^@(.*)$": "<rootDir>/src$1",
       "^vue$": "vue/dist/vue.common.js"

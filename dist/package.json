@@ -1,0 +1,10 @@
+{
+  "name": "bugsters-frontend",
+  "version": "1.0.0",
+  "description": "The frontend code for the awesome Bugsters web app",
+  "author": "Bugsters (devs@bugsters.ch)",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm install express"
+  }
+}

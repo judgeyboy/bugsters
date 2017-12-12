@@ -1,29 +1,31 @@
 <template>
-  <div class="home">
-    <h1>{{ message }}</h1>
-    <Slider></Slider>
+<div>
+  <HeaderSection></HeaderSection>
+  <div class="container">
+    <AboutSection></AboutSection>
+    <HowSection></HowSection>
+    <OrderSection></OrderSection>
+    <ContactSection></ContactSection>
   </div>
+</div>
 </template>
 
 <script>
-  import Slider from './Slider.vue'
+import HeaderSection from './HeaderSection'
+import AboutSection from './AboutSection'
+import HowSection from './HowSection'
+import ContactSection from '@/containers/ContactSection'
+import OrderSection from '@/containers/OrderSection'
 
-  export default {
-    name: 'Home',
-    data () {
-      return {
-        message: 'Welcome to Bugsters!'
-      }
-    },
-    components: {
-      Slider
-    }
+export default {
+  name: 'Home',
+
+  components: {
+    HeaderSection,
+    AboutSection,
+    HowSection,
+    ContactSection,
+    OrderSection
   }
-</script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1 {
-  font-weight: normal;
 }
-</style>
+</script>

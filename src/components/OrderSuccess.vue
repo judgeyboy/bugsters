@@ -1,0 +1,19 @@
+<template>
+  <div class="order-success">
+    <h2 class="text-center">Success :)</h2>
+    <p>
+      Great! We've received your request.
+      We'll plan the test and send you an offer within two working days.
+      Your request number is <strong>#20948</strong>.
+    </p>
+    <p>
+      In the mean time, if you have any questions, please don't hesitate to contact us
+    </p>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'OrderSuccess'
+}
+</script>

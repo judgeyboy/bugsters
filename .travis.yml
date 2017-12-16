@@ -1,3 +1,8 @@
 language: node_js
 node_js:
-  - "8.4.0"
+- 8.4.0
+deploy:
+  provider: heroku
+  api_key:
+    secure: m/Bx26drgPw1EWzXfOneGEkNJcGzDmS/B7R7d8nAqJ/YTYIeVA9Ws2YlwmOLC/DilfyQMcEC3IPS/j9RzrhmhEQVh71YvnC7NbvTGvYh1YW7FJtClREqZS/lE5cwrs9kmFwrO6bM7QjnXL5N1FK8OMMhIzghpeT7ABFeqSWZOnvfRS4ch0x6J21bqYvLlqXS/K40Ekxur6yjgbTpUq8qf7qK8IwUIofPH4y0K3aAD5+6QYnuzFunUrmTYKfq59NvHBDYRS5nov0i0o8w81H5uSUcCTOeJDlZNFiXdlpAss0k5vP2KazSTkgEL219MoB+sK3DqgAbUGw1G7enxwm1eXW1j9HlJgo9KkyXO2j0KSorffwETPsbVbeoHXX9I/WXC2ogzzi8270Kgt4z3SVy/901AqW+4O8obZ95qFZIANpMAwTE4c9pcjod7IHRhvsRA0xKcfdpzb0gbJFeyRh+LWrD6/IRTEFIcqw5MWLPzhZz89Gdg+Kcsbepu5f9kt3L9p1r0gBq2MtnGmvtlhvMEH+Dp6lRQ44RU5lidGtOr5Z73Ga01A/QwE9RnuHJ1M+JkHx2stUm2N9zZg4b94WOvIHDkgO5FBoCsSQ5NlXAeWgf/jjuGqAjYSi2BC+KI+wrgLMlWudURIaNkG0uu0rRL4sItgdQiK0D7kP2+eSxVXQ=
+  app: bugsters

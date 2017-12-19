@@ -70,10 +70,11 @@ describe('OrderSection Container', () => {
     serviceStub.restore()
   })
 
-  it('OrderSuccess should set orderState to "success"', () => {
+  it('OrderSuccess should set orderState and set orderId', () => {
     const wrapper = shallow(OrderSection)
-    wrapper.vm.orderSuccess()
+    wrapper.vm.orderSuccess({ data: 'iekgioe' })
     expect(wrapper.vm.orderState).toBe('success')
+    expect(wrapper.vm.orderId).toBe('iekgioe')
   })
 
   it('OrderError should set orderState to "error"', () => {

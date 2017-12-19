@@ -2,6 +2,8 @@ import { shallow } from 'vue-test-utils'
 
 import OrderSuccess from './OrderSuccess'
 
+jest.mock('@/assets/cute-bug.png', () => '../assets/cute-bug.png')
+
 describe('OrderSuccess Component', () => {
 
   it('should be a Vue instance', () => {

@@ -10,7 +10,12 @@ describe('OrderSuccess Component', () => {
   })
 
   it('should match snapshot', () => {
-    const wrapper = shallow(OrderSuccess)
+    const wrapper = shallow(OrderSuccess, {
+      propsData: {
+        orderId: 'ieigkeke'
+      }
+    })
+
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()
   })

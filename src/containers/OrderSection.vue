@@ -2,15 +2,11 @@
   <div class="order-section">
     <div class="columns">
 
-      <div class="column col-12">
-        <h2 class="text-center">Need A Test?</h2>
-      </div>
-
       <div class="column col-6 col-mx-auto">
         <OrderForm @submit="handleFormSubmit"
                    v-if="orderState === 'open'" />
 
-        <OrderSuccess v-if="orderState === 'success'" />
+        <OrderSuccess :orderId="orderId" v-if="orderState === 'success'" />
 
         <OrderError v-if="orderState === 'error'" />
       </div>
@@ -29,7 +25,8 @@ export default {
 
   data () {
     return {
-      orderState: 'open'
+      orderState: 'open',
+      orderId: ''
     }
   },
 
@@ -46,8 +43,9 @@ export default {
         .catch(this.orderError)
     },
 
-    orderSuccess () {
+    orderSuccess (response) {
       this.orderState = 'success'
+      this.orderId = response.data
     },
 
     orderError () {
@@ -56,4 +54,10 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.order-section
+  margin-top: 100px
+  margin-bottom: 100px
+</style>
 

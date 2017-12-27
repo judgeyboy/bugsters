@@ -3,9 +3,12 @@
   <div class="off-canvas">
 
     <div class="bugster-navbar">
-      <a class="off-canvas-toggle btn btn-link btn-action" @click="toggleSidebar">
+      <a class="off-canvas-toggle bugster-navbar__menu btn btn-link btn-action" @click="toggleSidebar">
         <i class="icon icon-menu"></i>
       </a>
+
+       <router-link class="btn btn-primary bugster-navbar__link" to="dashboard">Dashboard</router-link>
+
     </div>
 
     <div class="bugster-sidebar off-canvas-sidebar" :class="showSidebar ? 'active': ''">
@@ -86,22 +89,27 @@ export default {
 .bugster-navbar
   height: 3.8rem
   position: fixed
+  display: block
   right: 0
+  left: 12rem
   top: 0
   z-index: 200
+  background-color: white
 
-  .btn
-    position: absolute;
-    left: 1.5rem;
-    top: 1rem;
-    font-size: 1rem;
+.bugster-navbar__menu
+  position: absolute
+  left: 1.5rem
+  top: 1rem
+  font-size: 1rem
+
+.bugster-navbar__link
+  position: absolute
+  right: 1.5rem
+  top: 1rem
 
 @media (max-width: 960px)
 
   .bugster-navbar
-    -webkit-backdrop-filter: blur(5px)
-    backdrop-filter: blur(5px)
-    background: rgba(248, 249, 250, .65)
     left: 0
 
   .bugster-content
@@ -113,8 +121,6 @@ export default {
 .bugster-content
   width: calc(100vw - 12rem)
 
-
-
 .bugster-nav
   bottom: 1.5rem
   -webkit-overflow-scrolling: touch
@@ -123,4 +129,6 @@ export default {
   position: fixed
   top: 3.5rem
   width: 12rem
+
+
 </style>

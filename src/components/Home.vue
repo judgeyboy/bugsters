@@ -2,17 +2,7 @@
 
   <div class="off-canvas">
 
-    <div class="bugster-navbar">
-      <div class="bugster-navbar__menu">
-        <a class="off-canvas-toggle btn btn-link btn-action" @click="toggleSidebar">
-          <i class="icon icon-menu"></i>
-        </a>
-      </div>
-
-      <div class="bugster-navbar__link">
-        <router-link class="btn btn-primary" to="dashboard">Dashboard</router-link>
-      </div>
-    </div>
+    <nav-bar @toggleSidebar="toggleSidebar" />
 
     <div class="off-canvas-sidebar" :class="showSidebar ? 'active': ''">
       <div class="bugster-sidebar">
@@ -60,6 +50,7 @@ import HowSection from './HowSection'
 import ContactSection from '@/containers/ContactSection'
 import OrderSection from '@/containers/OrderSection'
 import ScrollLink from './ScrollLink'
+import NavBar from './NavBar'
 
 export default {
   name: 'Home',
@@ -76,7 +67,8 @@ export default {
     HowSection,
     ContactSection,
     OrderSection,
-    ScrollLink
+    ScrollLink,
+    NavBar
   },
 
   methods: {
@@ -88,27 +80,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.bugster-navbar
-  height: 3.8rem
-  position: fixed
-  display: block
-  right: 0
-  left: 12rem
-  top: 0
-  z-index: 200
-  background-color: white
-
-  &__menu
-    position: absolute
-    left: 1.5rem
-    top: 1rem
-    font-size: 1rem
-
-  &__link
-    position: absolute
-    right: 1.5rem
-    top: 1rem
-
 .bugster-content
   width: calc(100vw - 12rem)
 
@@ -123,17 +94,10 @@ export default {
 
 @media (max-width: 960px)
 
-  .bugster-navbar
-    left: 0
-
   .bugster-content
     margin: 3.8rem 0 0 0
 
 .off-canvas .off-canvas-sidebar
   width: 12rem
-
-.off-canvas .off-canvas-toggle
-  left: 0
-  top: 0
 
 </style>

@@ -1,12 +1,12 @@
 <template>
-  <div class="bugster-navbar">
-    <div class="bugster-navbar__menu">
+  <div class="bugster-menubar">
+    <div class="bugster-menubar__menu">
       <a class="off-canvas-toggle btn btn-link btn-action" @click="$emit('toggleSidebar')">
         <i class="icon icon-menu"></i>
       </a>
     </div>
 
-    <div class="bugster-navbar__link">
+    <div class="bugster-menubar__link">
       <router-link class="btn btn-primary" to="dashboard">Dashboard</router-link>
     </div>
   </div>
@@ -14,12 +14,12 @@
 
 <script>
 export default {
-  name: 'NavBar'
+  name: 'MenuBar'
 }
 </script>
 
 <style lang="sass" scoped>
-.bugster-navbar
+.bugster-menubar
   height: 3.8rem
   position: fixed
   display: block
@@ -46,7 +46,7 @@ export default {
 
 @media (max-width: 960px)
 
-  .bugster-navbar
+  .bugster-menubar
     left: 0
 
 </style>

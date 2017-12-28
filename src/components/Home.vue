@@ -2,19 +2,19 @@
 
   <div class="off-canvas">
 
-    <nav-bar @toggleSidebar="toggleSidebar" />
+    <MenuBar @toggleSidebar="toggleSidebar" />
 
-    <side-bar :showSidebar="showSidebar" />
+    <SideBar :showSidebar="showSidebar" />
 
     <a class="off-canvas-overlay" @click="toggleSidebar"></a>
 
     <div class="off-canvas-content bugster-content">
-      <HeaderSection></HeaderSection>
+      <HeaderSection />
       <div class="container">
-        <AboutSection></AboutSection>
-        <HowSection></HowSection>
-        <OrderSection></OrderSection>
-        <ContactSection></ContactSection>
+        <AboutSection />
+        <HowSection />
+        <OrderSection />
+        <ContactSection />
       </div>
     </div>
   </div>
@@ -26,7 +26,7 @@ import AboutSection from './AboutSection'
 import HowSection from './HowSection'
 import ContactSection from '@/containers/ContactSection'
 import OrderSection from '@/containers/OrderSection'
-import NavBar from './NavBar'
+import MenuBar from './MenuBar'
 import SideBar from './SideBar'
 
 export default {
@@ -44,7 +44,7 @@ export default {
     HowSection,
     ContactSection,
     OrderSection,
-    NavBar,
+    MenuBar,
     SideBar
   },
 

@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <MenuBar></MenuBar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import MenuBar from './components/MenuBar'
+import 'spectre.css/src/spectre-exp.scss'
+import 'spectre.css/src/spectre-icons.scss'
 import './styles/base.sass'
 
 export default {
-  name: 'app',
-  components: {
-    MenuBar
-  }
+  name: 'app'
 }
 </script>
 

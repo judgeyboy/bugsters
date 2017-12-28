@@ -1,14 +1,13 @@
 <template>
-  <div>
-    <div>
-      <span>
-        <router-link to="/">BUGSTERS</router-link>
-      </span>
+  <div class="bugster-menubar">
+    <div class="bugster-menubar__menu">
+      <a class="off-canvas-toggle btn btn-link btn-action" @click="$emit('toggleSidebar')">
+        <i class="icon icon-menu"></i>
+      </a>
     </div>
-    <div>
-      <span>
-        <router-link to="/dashboard">DASHBOARD</router-link>
-      </span>
+
+    <div class="bugster-menubar__link">
+      <router-link class="btn btn-primary" to="dashboard">Dashboard</router-link>
     </div>
   </div>
 </template>
@@ -18,3 +17,36 @@ export default {
   name: 'MenuBar'
 }
 </script>
+
+<style lang="sass" scoped>
+.bugster-menubar
+  height: 3.8rem
+  position: fixed
+  display: block
+  right: 0
+  left: 12rem
+  top: 0
+  z-index: 200
+  background-color: white
+
+  &__menu
+    position: absolute
+    left: 1.5rem
+    top: 1rem
+    font-size: 1rem
+
+  &__link
+    position: absolute
+    right: 1.5rem
+    top: 1rem
+
+  a
+    left: 0
+    top: 0
+
+@media (max-width: 960px)
+
+  .bugster-menubar
+    left: 0
+
+</style>

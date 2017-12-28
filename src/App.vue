@@ -5,10 +5,9 @@
 </template>
 
 <script>
+import 'spectre.css/src/spectre-exp.scss'
+import 'spectre.css/src/spectre-icons.scss'
 import './styles/base.sass'
-import 'spectre.css/dist/spectre.css'
-import 'spectre.css/dist/spectre-icons.css'
-import 'spectre.css/dist/spectre-exp.css' // is this ok what I'm doing?
 
 export default {
   name: 'app'

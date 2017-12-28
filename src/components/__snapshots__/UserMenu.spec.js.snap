@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UserMenu component should render a dropdown button if the user is logged in and the user name is displayed 1`] = `
-"<div class=\\"user-menu\\"><!----> <div class=\\"dropdown dropdown-right\\"><a href=\\"#\\" tabindex=\\"0\\" class=\\"btn btn-primary dropdown-toggle\\">
+"<div class=\\"user-menu\\"><!----> <div class=\\"dropdown dropdown-right\\"><a tabindex=\\"0\\" class=\\"btn btn-primary dropdown-toggle\\">
       Sterling Archer <i class=\\"icon icon-caret\\"></i></a> <ul class=\\"menu\\"><li class=\\"menu-item\\"><!----></li></ul></div></div>"
 `;
 
 exports[`UserMenu component should render a login button if the user is not logged in 1`] = `
-"<div class=\\"user-menu\\"><!----> <div class=\\"dropdown dropdown-right\\" style=\\"display: none;\\"><a href=\\"#\\" tabindex=\\"0\\" class=\\"btn btn-primary dropdown-toggle\\">
+"<div class=\\"user-menu\\"><!----> <div class=\\"dropdown dropdown-right\\" style=\\"display: none;\\"><a tabindex=\\"0\\" class=\\"btn btn-primary dropdown-toggle\\">
        <i class=\\"icon icon-caret\\"></i></a> <ul class=\\"menu\\"><li class=\\"menu-item\\"><!----></li></ul></div></div>"
 `;

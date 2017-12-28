@@ -3,7 +3,7 @@
     <router-link v-show="!isUserLoggedIn" class="btn btn-primary" to="login">Log In</router-link>
 
     <div v-show="isUserLoggedIn" class="dropdown dropdown-right">
-      <a href="#" class="btn btn-primary dropdown-toggle" tabindex="0">
+      <a class="btn btn-primary dropdown-toggle" tabindex="0">
         {{ name }} <i class="icon icon-caret"></i>
       </a>
 

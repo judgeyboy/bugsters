@@ -6,7 +6,10 @@ const actions = {
   [actionTypes.ACCOUNT_LOGIN] ({ commit }, loginDetails) {
     return accountService
       .logIn(loginDetails)
-      .then(() => commit(mutationTypes.ACCOUNT_LOGIN))
+      .then(response => {
+        commit(mutationTypes.ACCOUNT_NAME, response.data.name)
+        commit(mutationTypes.ACCOUNT_LOGIN)
+      })
   },
 
   [actionTypes.ACCOUNT_LOGOUT] ({ commit }) {

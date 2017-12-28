@@ -7,14 +7,19 @@
     </div>
 
     <div class="bugster-menubar__link">
-      <router-link class="btn btn-primary" to="dashboard">Dashboard</router-link>
+      <UserMenu />
     </div>
   </div>
 </template>
 
 <script>
+import UserMenu from './UserMenu'
+
 export default {
-  name: 'MenuBar'
+  name: 'MenuBar',
+  components: {
+    UserMenu
+  }
 }
 </script>
 

@@ -21,4 +21,13 @@ describe('AccountModule Mutations', () => {
     expect(state.loggedIn).toBe(false)
   })
 
+  it('ACCOUNT_NAME should set state.name to "Sterling Archer"', () => {
+    const state = {
+      name: ''
+    }
+
+    mutations[mutationTypes.ACCOUNT_NAME] (state, 'Sterling Archer')
+    expect(state.name).toBe('Sterling Archer')
+  })
+
 })

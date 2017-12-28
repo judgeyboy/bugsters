@@ -1,9 +1,11 @@
+import sinon from 'sinon'
+
 import actions from './actions'
 import * as mutationTypes from '../../mutationTypes'
 import * as actionTypes from '../../actionTypes'
 import { testAction } from '../../../../testHelpers'
 import accountService from '../../../services/account'
-import sinon from 'sinon'
+
 
 describe('AccountModule Actions', () => {
 
@@ -14,9 +16,10 @@ describe('AccountModule Actions', () => {
   })
 
   it('Login action should invoke mutation correctly', done => {
-    serviceStub = sinon.stub(accountService, 'logIn').resolves()
+    serviceStub = sinon.stub(accountService, 'logIn').resolves({ data: { name: 'Sterling Archer' } })
 
     testAction(actions[actionTypes.ACCOUNT_LOGIN], null, {}, [
+      { type: mutationTypes.ACCOUNT_NAME, payload: 'Sterling Archer' },
       { type: mutationTypes.ACCOUNT_LOGIN }
     ], done)
   })

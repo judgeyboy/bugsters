@@ -61,6 +61,8 @@ export default {
           .then(() => {
             if (this.returnUrl) {
               this.$router.push({ path: this.returnUrl })
+            } else {
+              this.$router.push({ path: '/' })
             }
           })
           .catch(() => {

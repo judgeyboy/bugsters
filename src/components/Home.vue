@@ -1,24 +1,27 @@
 <template>
-<div>
+
   <div class="off-canvas">
 
     <div class="bugster-navbar">
-      <a class="off-canvas-toggle bugster-navbar__menu btn btn-link btn-action" @click="toggleSidebar">
-        <i class="icon icon-menu"></i>
-      </a>
+      <div class="bugster-navbar__menu">
+        <a class="off-canvas-toggle btn btn-link btn-action" @click="toggleSidebar">
+          <i class="icon icon-menu"></i>
+        </a>
+      </div>
 
-       <router-link class="btn btn-primary bugster-navbar__link" to="dashboard">Dashboard</router-link>
-
+      <div class="bugster-navbar__link">
+        <router-link class="btn btn-primary" to="dashboard">Dashboard</router-link>
+      </div>
     </div>
 
-    <div class="bugster-sidebar off-canvas-sidebar" :class="showSidebar ? 'active': ''">
-      <div class="bugster-nav">
+    <div class="off-canvas-sidebar" :class="showSidebar ? 'active': ''">
+      <div class="bugster-sidebar">
         <div class="bugster-nav__content">
           <ul class="nav">
-            <li class="nav-item">
+            <li class="nav-item active">
               <scroll-link location="#about">ABOUT US</scroll-link>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a href="#">OUR PASSION</a>
             </li>
             <li class="nav-item">
@@ -48,7 +51,6 @@
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -96,16 +98,28 @@ export default {
   z-index: 200
   background-color: white
 
-.bugster-navbar__menu
-  position: absolute
-  left: 1.5rem
-  top: 1rem
-  font-size: 1rem
+  &__menu
+    position: absolute
+    left: 1.5rem
+    top: 1rem
+    font-size: 1rem
 
-.bugster-navbar__link
-  position: absolute
-  right: 1.5rem
-  top: 1rem
+  &__link
+    position: absolute
+    right: 1.5rem
+    top: 1rem
+
+.bugster-content
+  width: calc(100vw - 12rem)
+
+.bugster-sidebar
+  bottom: 1.5rem
+  -webkit-overflow-scrolling: touch
+  overflow-y: auto
+  padding: .5rem 1.5rem
+  position: fixed
+  top: 3.5rem
+  width: 12rem
 
 @media (max-width: 960px)
 
@@ -118,17 +132,8 @@ export default {
 .off-canvas .off-canvas-sidebar
   width: 12rem
 
-.bugster-content
-  width: calc(100vw - 12rem)
-
-.bugster-nav
-  bottom: 1.5rem
-  -webkit-overflow-scrolling: touch
-  overflow-y: auto
-  padding: .5rem 1.5rem
-  position: fixed
-  top: 3.5rem
-  width: 12rem
-
+.off-canvas .off-canvas-toggle
+  left: 0
+  top: 0
 
 </style>

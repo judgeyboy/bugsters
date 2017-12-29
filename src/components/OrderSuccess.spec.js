@@ -1,4 +1,8 @@
+import Vue from 'vue'
+import SectionScroll from '@/plugins/section-scroll'
 import { shallow } from 'vue-test-utils'
+
+Vue.use(SectionScroll)
 
 import OrderSuccess from './OrderSuccess'
 

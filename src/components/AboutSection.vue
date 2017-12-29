@@ -1,7 +1,7 @@
 <template>
-  <div class="columns">
+  <div class="columns bugsters-section">
     <div class="column col-12">
-      <h2 id="about" class="section-title text-center">About Us</h2>
+      <h2 id="about" class="text-center">About Us</h2>
     </div>
     <div class="column col-lg-3 col-md-6 col-xs-12">
       <h4>Dedicated Team</h4>

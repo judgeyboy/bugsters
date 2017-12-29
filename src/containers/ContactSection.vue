@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-section">
+  <div class="bugsters-section">
     <div class="columns">
 
       <div class="column col-12">

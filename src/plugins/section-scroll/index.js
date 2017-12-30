@@ -1,5 +1,5 @@
 import SectionScroll from './directives/sectionScroll'
-import ScrollMenu from './directives/ScrollMenu'
+import ScrollMenu from './directives/scrollMenu'
 
 const install = function (Vue) {
   Vue.directive(SectionScroll.name, SectionScroll)

@@ -52,4 +52,20 @@ describe('UserMenu component', () => {
     expect($html).toMatchSnapshot()
   })
 
+  it('should toggle the showMenu correctly', () => {
+    const wrapper = shallow(UserMenu, {
+      store: new Vuex.Store({
+        state: {
+          accountModule: {
+            loggedIn: true,
+            name: 'Sterling Archer'
+          }
+        }
+      }),
+    })
+    wrapper.setData({ showMenu: true })
+    wrapper.vm.toggleMenu()
+    expect(wrapper.vm.showMenu).toBe(false)
+  })
+
 })

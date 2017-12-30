@@ -4,7 +4,7 @@
 
     <MenuBar @toggleSidebar="toggleSidebar" />
 
-    <SideBar :showSidebar="showSidebar" />
+    <SideBar v-scroll-menu :showSidebar="showSidebar" />
 
     <a class="off-canvas-overlay" @click="toggleSidebar"></a>
 

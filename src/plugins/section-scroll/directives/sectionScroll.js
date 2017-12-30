@@ -7,6 +7,8 @@ function scrollToSection (clickEvent) {
 }
 
 const SectionScroll = {
+  name: 'SectionScroll',
+
   inserted (el) {
     el.addEventListener('click', scrollToSection)
   },

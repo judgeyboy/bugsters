@@ -22,21 +22,27 @@ function isLocalStorageAvailable () {
 }
 
 class StorageService {
-  localStorageAvailalbe = false
+  localStorageAvailable = false
 
   constructor () {
-    this.localStorageAvailalbe = isLocalStorageAvailable()
+    this.localStorageAvailable = isLocalStorageAvailable()
   }
 
   get (key) {
-    if (this.localStorageAvailalbe) {
+    if (this.localStorageAvailable) {
       return localStorage.getItem(key)
     }
   }
 
   set (key, value) {
-    if (this.localStorageAvailalbe) {
+    if (this.localStorageAvailable) {
       localStorage.setItem(key, value)
+    }
+  }
+
+  remove (key) {
+    if (this.localStorageAvailable) {
+      localStorage.removeItem(key)
     }
   }
 }

@@ -16,7 +16,7 @@ describe('Storage Service', () => {
 
   it('should get the correct value', () => {
     const spy = jest.spyOn(window.localStorage, 'getItem')
-    storageService.localStorageAvailalbe = true
+    storageService.localStorageAvailable = true
     storageService.set(KEY, VALUE)
     const actualValue = storageService.get(KEY)
     expect(spy).toHaveBeenCalledWith(KEY)
@@ -34,10 +34,18 @@ describe('Storage Service', () => {
 
   it('should not save to localStorage if it does not support it', () => {
     const spy = jest.spyOn(window.localStorage, 'setItem')
-    storageService.localStorageAvailalbe = false
+    storageService.localStorageAvailable = false
     window.localStorage.clear()
     storageService.set(KEY, VALUE)
     expect(spy).not.toHaveBeenCalled()
+  })
+
+  it('should remove an item', () => {
+    const spy = jest.spyOn(window.localStorage, 'removeItem')
+    storageService.localStorageAvailable = true
+    storageService.set(KEY, VALUE)
+    storageService.remove(KEY)
+    expect(spy).toHaveBeenCalledWith(KEY)
   })
 
 })

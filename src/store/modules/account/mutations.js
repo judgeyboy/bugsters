@@ -7,6 +7,7 @@ const mutations = {
 
   [mutationTypes.ACCOUNT_LOGOUT] (state) {
     state.loggedIn = false
+    state.name = ''
   },
 
   [mutationTypes.ACCOUNT_NAME] (state, name) {

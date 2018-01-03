@@ -10,6 +10,7 @@
       <ul class="menu">
         <li class="menu-item">
           <router-link to="dashboard">Dashboard</router-link>
+          <a @click="logout">Log Out</a>
         </li>
       </ul>
     </div>
@@ -19,6 +20,8 @@
 </template>
 
 <script>
+import { ACCOUNT_LOGOUT } from '@/store/actionTypes'
+
 export default {
   name: 'UserMenu',
   computed: {
@@ -28,6 +31,16 @@ export default {
     isUserLoggedIn () {
       return this.$store.state.accountModule.loggedIn
     }
+  },
+  methods: {
+    logout () {
+      this.$store.dispatch(ACCOUNT_LOGOUT)
+    }
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.menu-item a
+  cursor: pointer
+</style>

@@ -1,5 +1,6 @@
 import store from '../store'
 import api from './api'
+import storageService from './storage'
 
 class AccountService {
 
@@ -8,7 +9,16 @@ class AccountService {
   }
 
   logIn (loginDetails) {
-    return api.post('/account/login', loginDetails)
+    return new Promise((resolve, reject) => {
+      api.post('/account/login', loginDetails)
+         .then(response => {
+           storageService.set('__bugsters_token__', response.data.token)
+           resolve(response)
+         })
+         .catch(error => {
+           reject(error)
+         })
+    })
   }
 }
 

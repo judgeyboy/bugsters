@@ -1,7 +1,7 @@
 let localStorage = {}
 
 export default {
-  setItem(key, value) {
+  setItem (key, value) {
     Object.assign(localStorage, {[key]: value})
   },
   getItem (key) {

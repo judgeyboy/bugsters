@@ -1,4 +1,4 @@
-function isLocalStorageAvailable () {
+export function isLocalStorageAvailable () {
   const storage = window.localStorage
   try {
     const testKey = '__storage_test__'
@@ -20,33 +20,3 @@ function isLocalStorageAvailable () {
       storage.length !== 0
   }
 }
-
-class StorageService {
-  localStorageAvailable = false
-
-  constructor () {
-    this.localStorageAvailable = isLocalStorageAvailable()
-  }
-
-  get (key) {
-    if (this.localStorageAvailable) {
-      return localStorage.getItem(key)
-    }
-  }
-
-  set (key, value) {
-    if (this.localStorageAvailable) {
-      localStorage.setItem(key, value)
-    }
-  }
-
-  remove (key) {
-    if (this.localStorageAvailable) {
-      localStorage.removeItem(key)
-    }
-  }
-}
-
-const storageService = new StorageService()
-
-export default storageService

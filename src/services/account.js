@@ -1,6 +1,6 @@
 import store from '../store'
 import api from './api'
-import storageService from './storage'
+import storageService from './storage/'
 
 const TOKEN_KEY = '__bugsters_token__'
 

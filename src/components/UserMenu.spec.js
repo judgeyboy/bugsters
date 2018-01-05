@@ -53,18 +53,34 @@ describe('UserMenu component', () => {
     expect($html).toMatchSnapshot()
   })
 
+  it('should toggle the showMenu correctly', () => {
+    const wrapper = shallow(UserMenu, {
+      store: new Vuex.Store({
+        state: {
+          accountModule: {
+            loggedIn: true,
+            name: 'Sterling Archer'
+          }
+        }
+      }),
+    })
+    wrapper.setData({ showMenu: true })
+    wrapper.vm.toggleMenu()
+    expect(wrapper.vm.showMenu).toBe(false)
+  })
+
   it('should dispatch "ACCOUNT_LOGOUT" action when logout was clicked', () => {
     const wrapper = shallow(UserMenu, {
       store: new Vuex.Store({
         state: {
           accountModule: {
-            loggedIn: true
+            loggedIn: true,
           }
         },
         actions: {
           [ACCOUNT_LOGOUT]: jest.fn()
         }
-      })
+      }),
     })
 
     let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')

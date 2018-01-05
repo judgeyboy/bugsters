@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import SectionScroll from '@/plugins/section-scroll'
 import {shallow} from 'vue-test-utils'
 import SideBar from './SideBar'
 
 Vue.use(VueRouter)
+Vue.use(SectionScroll)
 
 describe('SideBar component', () => {
 

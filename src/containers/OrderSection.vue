@@ -1,5 +1,5 @@
 <template>
-  <div class="order-section">
+  <div class="bugsters-section">
     <div class="columns">
 
       <div class="column col-6 col-mx-auto">
@@ -54,10 +54,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass" scoped>
-.order-section
-  margin-top: 100px
-  margin-bottom: 100px
-</style>
-

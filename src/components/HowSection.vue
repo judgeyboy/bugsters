@@ -1,5 +1,5 @@
 <template>
-  <div class="columns">
+  <div class="columns bugsters-section">
     <div class="column col-12">
       <h2 class="text-center">How We Do It</h2>
     </div>

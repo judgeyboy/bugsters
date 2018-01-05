@@ -2,21 +2,18 @@
   <div class="off-canvas-sidebar" :class="showSidebar ? 'active': ''">
     <div class="bugster-sidebar">
       <div class="bugster-nav__content">
-        <ul class="nav">
-          <li class="nav-item active">
-            <scroll-link location="#about">ABOUT US</scroll-link>
+        <ul class="nav" id="foo">
+          <li class="nav-item">
+            <a v-section-scroll location="about" >ABOUT US</a>
           </li>
           <li class="nav-item">
-            <a href="#">OUR PASSION</a>
+            <a v-section-scroll location="how">HOW</a>
           </li>
           <li class="nav-item">
-            <a href="#">OUR MISSION</a>
+            <a v-section-scroll location="order">TRY US</a>
           </li>
           <li class="nav-item">
-            <a href="#">TRY US</a>
-          </li>
-          <li class="nav-item">
-            <a href="#">CONTACT</a>
+            <a v-section-scroll location="contact">CONTACT</a>
           </li>
         </ul>
       </div>
@@ -26,14 +23,10 @@
 </template>
 
 <script>
-import ScrollLink from './ScrollLink'
 
 export default {
   name: 'SideBar',
-  props: ['showSidebar'],
-  components: {
-    ScrollLink
-  }
+  props: ['showSidebar']
 }
 </script>
 

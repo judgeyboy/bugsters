@@ -7,5 +7,5 @@ exports[`OrderSuccess Component should match snapshot 1`] = `
     Your request number is <strong>ieigkeke</strong>.
   </p> <p>
     In the mean time, if you have any questions, please don't hesitate to
-    <!----></p></div>"
+    <a location=\\"contact\\">contact us</a></p></div>"
 `;

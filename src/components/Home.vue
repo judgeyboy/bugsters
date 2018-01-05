@@ -4,17 +4,17 @@
 
     <MenuBar @toggleSidebar="toggleSidebar" />
 
-    <SideBar :showSidebar="showSidebar" />
+    <SideBar v-scroll-menu :showSidebar="showSidebar" />
 
     <a class="off-canvas-overlay" @click="toggleSidebar"></a>
 
     <div class="off-canvas-content bugster-content">
       <HeaderSection />
       <div class="container">
-        <AboutSection />
-        <HowSection />
-        <OrderSection />
-        <ContactSection />
+        <AboutSection id="about" />
+        <HowSection id="how" />
+        <OrderSection id="order" />
+        <ContactSection id="contact" />
       </div>
     </div>
   </div>

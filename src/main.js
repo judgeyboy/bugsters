@@ -5,8 +5,10 @@ import App from './App'
 import router from './router'
 import store from './store/'
 import VeeValidate from 'vee-validate'
+import SectionScroll from './plugins/section-scroll'
 
 Vue.use(VeeValidate, { inject: false })
+Vue.use(SectionScroll)
 
 Vue.config.productionTip = false
 

@@ -1,25 +1,45 @@
 <template>
-  <div>
-    <form @submit.prevent="onSubmit">
+  <div class="login-form">
 
-      <input type="text"
-             name="email"
-             placeholder="email"
-             v-validate="'required'"
-             v-model="email"
-             :class="{'is-danger': errors.has('email')}">
+    <div class="container">
+      <div class="columns">
+        <div class="column col-6 col-sm-8 col-mx-auto">
+          <h2 class="section-title">Log In</h2>
 
-      <input type="password"
-             name="password"
-             placeholder="password"
-             v-validate="'required'"
-             v-model="password"
-             :class="{'is-danger': errors.has('password')}">
+          <div v-show="loginFailed">
+            <span style="color: #e85600">Username or password does not exist!</span>
+          </div>
 
-      <input type="submit" value="Login">
-    </form>
-    <div v-show="loginFailed">
-      <span>Username or password does not exist!</span>
+          <form @submit.prevent="onSubmit">
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    v-validate="'required'"
+                    v-model="email"
+                    :class="{'is-danger': errors.has('email')}">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="password" >Password</label>
+              <input class="form-input"
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                    v-validate="'required'"
+                    v-model="password"
+                    :class="{'is-danger': errors.has('password')}">
+            </div>
+
+            <input type="submit" value="Login" class="btn btn-primary">
+            <router-link to="/" class="btn btn-link">Cancel</router-link>
+          </form>
+
+
+        </div>
+      </div>
     </div>
   </div>
 

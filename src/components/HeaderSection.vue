@@ -5,7 +5,7 @@
         <div class="column col-12">
           <h1>Welcome to Bugsters</h1>
           <h2>Home of Professional Software Testers</h2>
-          <scroll-link location="#about">Read More</scroll-link>
+          <a class="btn btn-primary" v-section-scroll location="about">Read More</a>
         </div>
       </div>
     </div>
@@ -13,12 +13,7 @@
 </template>
 
 <script>
-import ScrollLink from './ScrollLink'
-
 export default {
-  name: 'HeaderSection',
-  components: {
-    ScrollLink
-  }
+  name: 'HeaderSection'
 }
 </script>

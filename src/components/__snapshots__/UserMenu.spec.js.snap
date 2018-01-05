@@ -2,10 +2,10 @@
 
 exports[`UserMenu component should render a dropdown button if the user is logged in and the user name is displayed 1`] = `
 "<div class=\\"user-menu\\"><!----> <div class=\\"dropdown dropdown-right\\"><a tabindex=\\"0\\" class=\\"btn btn-primary dropdown-toggle\\">
-      Sterling Archer <i class=\\"icon icon-caret\\"></i></a> <ul class=\\"menu\\"><li class=\\"menu-item\\"><!----></li></ul></div></div>"
+      Sterling Archer <i class=\\"icon icon-caret\\"></i></a> <ul class=\\"bugster-menu menu\\"><li class=\\"menu-item\\"><!----> <a>Log Out</a></li></ul></div> <a class=\\"user-menu-overlay\\"></a></div>"
 `;
 
 exports[`UserMenu component should render a login button if the user is not logged in 1`] = `
 "<div class=\\"user-menu\\"><!----> <div class=\\"dropdown dropdown-right\\" style=\\"display: none;\\"><a tabindex=\\"0\\" class=\\"btn btn-primary dropdown-toggle\\">
-       <i class=\\"icon icon-caret\\"></i></a> <ul class=\\"menu\\"><li class=\\"menu-item\\"><!----></li></ul></div></div>"
+       <i class=\\"icon icon-caret\\"></i></a> <ul class=\\"bugster-menu menu\\"><li class=\\"menu-item\\"><!----> <a>Log Out</a></li></ul></div> <a class=\\"user-menu-overlay\\"></a></div>"
 `;

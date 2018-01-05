@@ -9,20 +9,15 @@
     </p>
     <p>
       In the mean time, if you have any questions, please don't hesitate to
-      <scroll-link location="#contact">contact us</scroll-link>
+      <a v-section-scroll location="contact">contact us</a>
     </p>
   </div>
 </template>
 
 <script>
-import ScrollLink from '@/components/ScrollLink'
-
 export default {
   name: 'OrderSuccess',
-  props: ['orderId'],
-  components: {
-    ScrollLink
-  }
+  props: ['orderId']
 }
 </script>
 

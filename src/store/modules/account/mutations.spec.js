@@ -14,11 +14,13 @@ describe('AccountModule Mutations', () => {
 
   it('ACCOUNT_LOGOUT should set state.loggedIn to false', () => {
     const state = {
-      loggedIn: true
+      loggedIn: true,
+      name: 'Sterling Archer'
     }
 
     mutations[mutationTypes.ACCOUNT_LOGOUT] (state)
     expect(state.loggedIn).toBe(false)
+    expect(state.name).toBe('')
   })
 
   it('ACCOUNT_NAME should set state.name to "Sterling Archer"', () => {

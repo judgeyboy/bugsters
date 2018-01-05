@@ -1,6 +1,7 @@
 import sinon from 'sinon'
 
 import accountService from './account'
+import storageService from './storage'
 import store from '../store'
 import api from './api'
 
@@ -13,8 +14,9 @@ describe('Account Service', () => {
     expect(isLoggedIn).toBe(true)
   })
 
-  it('logIn should make correct POST request', async () => {
-    let apiStub = sinon.stub(api, 'post').resolves()
+  it('should call storage service if login was successfull', async () => {
+    let apiStub = sinon.stub(api, 'post').resolves({ data: { token: 'oiglwoke' } })
+    let storageStub = sinon.stub(storageService, 'set')
 
     const loginDetails = {
       username: 'sterling',
@@ -22,7 +24,26 @@ describe('Account Service', () => {
     }
 
     await accountService.logIn(loginDetails)
-    expect(apiStub.calledWith("/account/login", loginDetails)).toBe(true)
+    sinon.assert.calledWith(storageStub, '__bugsters_token__', 'oiglwoke')
+
+    apiStub.restore()
+    storageStub.restore()
+  })
+
+  it('should handle promise rejection if login was unsuccessfull', async () => {
+    let apiStub = sinon.stub(api, 'post').rejects({ error: 'something went wrong'})
+    let storageStub = sinon.stub(storageService, 'set')
+
+    const invalidLoginDetails = {
+      username: 'barry',
+      password: 'WorldsGreatestSpy'
+    }
+
+    await expect(accountService.logIn(invalidLoginDetails)).rejects.toEqual({ error: 'something went wrong'})
+    sinon.assert.notCalled(storageStub)
+
+    apiStub.restore()
+    storageStub.restore()
   })
 
 })

@@ -19,7 +19,7 @@
           <label class="form-label" for="order-budget">Budget</label>
         </div>
         <div class="col-6">
-          <input class="form-input"
+          <input class="slider"
                  type="range"
                  max="2500"
                  min="200"

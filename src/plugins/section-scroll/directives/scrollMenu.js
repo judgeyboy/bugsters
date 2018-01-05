@@ -1,10 +1,10 @@
 let menuItems = []
 
 function updateMenu () {
-  let windowPosition = document.documentElement.scrollTop || document.body.scrollTop
+  let windowPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
 
   for (let item of menuItems) {
-    let sectionPosition = document.getElementById(item).offsetTop
+    let sectionPosition = document.getElementById(item).offsetTop - 78
     let sectionHeight = document.getElementById(item).clientHeight
     let navigationItem = document.querySelector('a[location=' + item + ']').parentNode
     navigationItem.classList.remove('active')
@@ -24,9 +24,11 @@ function updateMenu () {
 function getMenuItems () {
   const menuItemsNodeList = document.querySelectorAll('.nav-item a[location]')
   let menuItems = []
-  menuItemsNodeList.forEach(element => {
+
+  for (let i = 0; i < menuItemsNodeList.length; i++) {
+    let element = menuItemsNodeList[i]
     menuItems.push(element.getAttribute('location'))
-  })
+  }
 
   return menuItems
 }
@@ -34,12 +36,12 @@ function getMenuItems () {
 const ScrollMenu = {
   name: 'ScrollMenu',
 
-  inserted (el) {
+  inserted () {
     menuItems = getMenuItems()
     window.addEventListener('scroll', updateMenu)
   },
 
-  unbind (el) {
+  unbind () {
     window.removeEventListener('scroll', updateMenu)
   }
 }

@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "axios": "0.16.2",
+    "cookies-js": "1.2.3",
     "spectre.css": "0.4.6",
     "vee-validate": "2.0.0-rc.19",
     "vue": "^2.4.2",

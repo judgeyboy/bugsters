@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import { shallow } from 'vue-test-utils'
 
 import UserMenu from './UserMenu'
+import { ACCOUNT_LOGOUT } from '../store/actionTypes'
 
 Vue.use(Vuex)
 Vue.use(VueRouter)
@@ -50,6 +51,27 @@ describe('UserMenu component', () => {
     })
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()
+  })
+
+  it('should dispatch "ACCOUNT_LOGOUT" action when logout was clicked', () => {
+    const wrapper = shallow(UserMenu, {
+      store: new Vuex.Store({
+        state: {
+          accountModule: {
+            loggedIn: true
+          }
+        },
+        actions: {
+          [ACCOUNT_LOGOUT]: jest.fn()
+        }
+      })
+    })
+
+    let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
+
+    wrapper.vm.logout()
+
+    expect(spy).toHaveBeenCalledWith('ACCOUNT_LOGOUT')
   })
 
 })

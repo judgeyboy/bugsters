@@ -13,6 +13,7 @@ const actions = {
   },
 
   [actionTypes.ACCOUNT_LOGOUT] ({ commit }) {
+    accountService.logOut()
     commit(mutationTypes.ACCOUNT_LOGOUT)
   }
 }

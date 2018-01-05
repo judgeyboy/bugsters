@@ -10,6 +10,7 @@
       <ul class="bugster-menu menu">
         <li class="menu-item">
           <router-link to="dashboard">Dashboard</router-link>
+          <a @click="logout">Log Out</a>
         </li>
       </ul>
     </div>
@@ -21,6 +22,8 @@
 </template>
 
 <script>
+import { ACCOUNT_LOGOUT } from '@/store/actionTypes'
+
 export default {
   name: 'UserMenu',
   data () {
@@ -39,6 +42,10 @@ export default {
   methods: {
     toggleMenu () {
       this.showMenu = !this.showMenu
+    },
+
+    logout () {
+      this.$store.dispatch(ACCOUNT_LOGOUT)
     }
   }
 }
@@ -64,4 +71,7 @@ export default {
   &--active
     display: block
     z-index: 200
+
+.menu-item a
+  cursor: pointer
 </style>

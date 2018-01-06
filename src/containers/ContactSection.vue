@@ -7,12 +7,13 @@
       </div>
 
       <div class="column col-6 col-mx-auto">
-        <ContactForm @submit="handleFormSubmit"
-                     v-if="contactState === 'open'" />
+        <transition mode="out-in" enter-active-class="animated zoomIn" leave-active-class="animated bounceOutRight">
+          <ContactForm @submit="handleFormSubmit" v-if="contactState === 'open'" />
 
-        <ContactSuccess v-if="contactState === 'success'" />
-
-        <ContactError v-if="contactState === 'error'" />
+          <ContactSuccess v-if="contactState === 'success'" />
+        
+          <ContactError v-if="contactState === 'error'" />
+        </transition>
       </div>
 
     </div>

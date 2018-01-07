@@ -7,6 +7,7 @@
 <script>
 import 'spectre.css/src/spectre-exp.scss'
 import 'spectre.css/src/spectre-icons.scss'
+import 'animate.css/animate.css'
 import './styles/base.sass'
 
 export default {

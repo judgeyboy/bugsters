@@ -3,12 +3,13 @@
     <div class="columns">
 
       <div class="column col-6 col-mx-auto">
-        <OrderForm @submit="handleFormSubmit"
-                   v-if="orderState === 'open'" />
+        <transition mode="out-in" enter-active-class="animated zoomIn" leave-active-class="animated bounceOutRight">
+          <OrderForm @submit="handleFormSubmit" v-if="orderState === 'open'" />
 
-        <OrderSuccess :orderId="orderId" v-if="orderState === 'success'" />
+          <OrderSuccess :orderId="orderId" v-if="orderState === 'success'" />
 
-        <OrderError v-if="orderState === 'error'" />
+          <OrderError v-if="orderState === 'error'" />
+        </transition>
       </div>
     </div>
   </div>

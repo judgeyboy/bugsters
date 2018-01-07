@@ -63,10 +63,5 @@ export default {
 .bugster-content
   width: calc(100vw - 12rem)
   padding-left: 0.4rem
-
-@media (max-width: 960px)
-
-  .bugster-content
-    margin: 3.8rem 0 0 0
-
+  margin: 3.8rem 0 0 0
 </style>

@@ -16,6 +16,7 @@
         <OrderSection id="order" />
         <ContactSection id="contact" />
       </div>
+      <FooterSection />
     </div>
   </div>
 </template>
@@ -28,6 +29,7 @@ import ContactSection from '@/containers/ContactSection'
 import OrderSection from '@/containers/OrderSection'
 import MenuBar from './MenuBar'
 import SideBar from './SideBar'
+import FooterSection from './FooterSection'
 
 export default {
   name: 'Home',
@@ -45,7 +47,8 @@ export default {
     ContactSection,
     OrderSection,
     MenuBar,
-    SideBar
+    SideBar,
+    FooterSection
   },
 
   methods: {
@@ -59,6 +62,7 @@ export default {
 <style lang="sass" scoped>
 .bugster-content
   width: calc(100vw - 12rem)
+  padding-left: 0.4rem
 
 @media (max-width: 960px)
 

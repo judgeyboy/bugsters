@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooterSection Component should match snapshot 1`] = `
+"<div class=\\"footer-section\\">
+  Made with <span class=\\"text-error\\">♥</span> by <span class=\\"footer-section_bugsters\\">Bugsters</span> <br>
+  © 2018
+</div>"
+`;

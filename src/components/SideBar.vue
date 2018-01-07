@@ -1,21 +1,22 @@
 <template>
   <div class="off-canvas-sidebar" :class="showSidebar ? 'active': ''">
     <div class="bugster-sidebar">
-      <div class="bugster-nav__content">
-        <ul class="nav" id="foo">
-          <li class="nav-item">
-            <a v-section-scroll location="about" >ABOUT US</a>
-          </li>
-          <li class="nav-item">
-            <a v-section-scroll location="how">HOW</a>
-          </li>
-          <li class="nav-item">
-            <a v-section-scroll location="order">TRY US</a>
-          </li>
-          <li class="nav-item">
-            <a v-section-scroll location="contact">CONTACT</a>
-          </li>
-        </ul>
+      <ul class="nav">
+        <li class="nav-item">
+          <a v-section-scroll location="about" >ABOUT US</a>
+        </li>
+        <li class="nav-item">
+          <a v-section-scroll location="how">HOW</a>
+        </li>
+        <li class="nav-item">
+          <a v-section-scroll location="order">TRY US</a>
+        </li>
+        <li class="nav-item">
+          <a v-section-scroll location="contact">CONTACT</a>
+        </li>
+      </ul>
+      <div class="bugster-sidebar__language">
+        <LanguageSwitcher />
       </div>
     </div>
   </div>
@@ -23,10 +24,14 @@
 </template>
 
 <script>
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default {
   name: 'SideBar',
-  props: ['showSidebar']
+  props: ['showSidebar'],
+  components: {
+    LanguageSwitcher
+  }
 }
 </script>
 
@@ -42,4 +47,8 @@ export default {
   position: fixed
   top: 3.5rem
   width: 12rem
+
+  &__language
+    position: fixed
+    bottom: 3.8rem
 </style>

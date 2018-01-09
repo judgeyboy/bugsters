@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LanguageSwitcher Component should match snapshot 1`] = `
+"<div class=\\"language-switcher\\"><a class=\\"language-switcher__language\\">DE</a> |
+
+  <a class=\\"language-switcher__language\\">EN</a></div>"
+`;

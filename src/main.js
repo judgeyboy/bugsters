@@ -6,6 +6,7 @@ import router from './router'
 import store from './store/'
 import VeeValidate from 'vee-validate'
 import SectionScroll from './plugins/section-scroll'
+import i18n from './localization/i18n'
 
 Vue.use(VeeValidate, { inject: false })
 Vue.use(SectionScroll)
@@ -17,6 +18,7 @@ new Vue({
   el: '#app',
   router,
   store,
+  i18n,
   template: '<App/>',
   components: { App }
 })

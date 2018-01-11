@@ -1,7 +1,7 @@
 <template>
   <div class="header-section">
     <img :src="require('@/assets/cute-bug.png')" width="150">
-    <h1>Welcome to Bugsters</h1>
+    <h1>{{ $t('message.welcome') }}</h1>
     <h2>Home of Professional Software Testers</h2>
     <a class="btn btn-primary" v-section-scroll location="about">Read More</a>
   </div>

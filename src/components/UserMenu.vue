@@ -1,6 +1,6 @@
 <template>
   <div class="user-menu">
-    <router-link v-show="!isUserLoggedIn" class="btn btn-primary" to="login">Log In</router-link>
+    <router-link v-show="!isUserLoggedIn" class="btn btn-primary" :to="{ path: 'login', query: { returnUrl: 'dashboard' }}">Log In</router-link>
 
     <div v-show="isUserLoggedIn" class="dropdown dropdown-right" :class="showMenu ? 'active': ''">
       <a class="btn btn-primary dropdown-toggle" @click="toggleMenu" tabindex="0">

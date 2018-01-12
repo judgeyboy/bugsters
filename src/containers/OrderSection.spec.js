@@ -70,17 +70,29 @@ describe('OrderSection Container', () => {
     serviceStub.restore()
   })
 
-  it('OrderSuccess should set orderState and set orderId', () => {
+  it('orderSuccess should set orderState and set orderId', () => {
     const wrapper = shallow(OrderSection)
     wrapper.vm.orderSuccess({ data: 'iekgioe' })
     expect(wrapper.vm.orderState).toBe('success')
     expect(wrapper.vm.orderId).toBe('iekgioe')
   })
 
-  it('OrderError should set orderState to "error"', () => {
+  it('orderError should set orderState to "error"', () => {
     const wrapper = shallow(OrderSection)
     wrapper.vm.orderError()
     expect(wrapper.vm.orderState).toBe('error')
+  })
+
+  it('handleCloseSuccess should set orderState to "open"', () => {
+    const wrapper = shallow(OrderSection)
+    wrapper.vm.handleCloseSuccess()
+    expect(wrapper.vm.orderState).toBe('open')
+  })
+
+  it('handleCloseError should set orderState to "open"', () => {
+    const wrapper = shallow(OrderSection)
+    wrapper.vm.handleCloseError()
+    expect(wrapper.vm.orderState).toBe('open')
   })
 
 })

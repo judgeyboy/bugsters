@@ -6,8 +6,6 @@ Vue.use(SectionScroll)
 
 import OrderSuccess from './OrderSuccess'
 
-jest.mock('@/assets/cute-bug.png', () => '../assets/cute-bug.png')
-
 describe('OrderSuccess Component', () => {
 
   it('should be a Vue instance', () => {
@@ -25,4 +23,13 @@ describe('OrderSuccess Component', () => {
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()
   })
+
+  it('should emit "closeSuccess" when clicking "close" link', () => {
+    const wrapper = shallow(OrderSuccess)
+    const spy = jest.spyOn(wrapper.vm, '$emit')
+    const closeLink = wrapper.find('.empty-action a')
+    closeLink.trigger('click')
+    expect(spy).toHaveBeenCalledWith('closeSuccess')
+  })
+
 })

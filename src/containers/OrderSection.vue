@@ -2,13 +2,17 @@
   <div class="bugsters-section">
     <div class="columns">
 
+      <div class="column col-12">
+        <h2 class="text-center">Need A Test?</h2>
+      </div>
+
       <div class="column col-6 col-mx-auto">
         <transition mode="out-in" enter-active-class="animated zoomIn" leave-active-class="animated bounceOutRight">
           <OrderForm @submit="handleFormSubmit" v-if="orderState === 'open'" />
 
-          <OrderSuccess :orderId="orderId" v-if="orderState === 'success'" />
+          <OrderSuccess @closeSuccess="handleCloseSuccess" :orderId="orderId" v-if="orderState === 'success'" />
 
-          <OrderError v-if="orderState === 'error'" />
+          <OrderError @closeError="handleCloseError" v-if="orderState === 'error'" />
         </transition>
       </div>
     </div>
@@ -42,6 +46,14 @@ export default {
       OrderService.send(orderDetails)
         .then(this.orderSuccess)
         .catch(this.orderError)
+    },
+
+    handleCloseSuccess () {
+      this.orderState = 'open'
+    },
+
+    handleCloseError () {
+      this.orderState = 'open'
     },
 
     orderSuccess (response) {

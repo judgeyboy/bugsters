@@ -10,27 +10,35 @@
             <span style="color: #e85600">Username or password does not exist!</span>
           </div>
 
-          <form @submit.prevent="onSubmit">
+          <form class="form-horizontal" @submit.prevent="onSubmit">
             <div class="form-group">
-              <label class="form-label" for="email">Email</label>
-              <input class="form-input"
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    v-validate="'required'"
-                    v-model="email"
-                    :class="{'is-danger': errors.has('email')}">
+              <div class="col-3 col-xs-12">
+                <label class="form-label" for="email">Email</label>
+              </div>
+              <div class="col-9 col-xs-12">
+                <input class="form-input"
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      v-validate="'required'"
+                      v-model="email"
+                      :class="{'is-danger': errors.has('email')}">
+              </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="password" >Password</label>
-              <input class="form-input"
-                    type="password"
-                    name="password"
-                    placeholder="password"
-                    v-validate="'required'"
-                    v-model="password"
-                    :class="{'is-danger': errors.has('password')}">
+              <div class="col-3 col-xs-12">
+                <label class="form-label" for="password" >Password</label>
+              </div>
+              <div class="col-9 col-xs-12">
+                <input class="form-input"
+                      type="password"
+                      name="password"
+                      placeholder="password"
+                      v-validate="'required'"
+                      v-model="password"
+                      :class="{'is-danger': errors.has('password')}">
+              </div>
             </div>
 
             <button type="submit" class="btn btn-primary" :class="isLoading? 'loading' : ''">Log In</button>

@@ -40,9 +40,10 @@
                       :class="{'is-danger': errors.has('password')}">
               </div>
             </div>
-
-            <button type="submit" class="btn btn-primary" :class="isLoading? 'loading' : ''">Log In</button>
-            <router-link to="/" class="btn btn-link">Cancel</router-link>
+            <div class="form-buttons">
+              <button type="submit" class="btn btn-primary" :class="isLoading? 'loading' : ''">Log In</button>
+              <router-link to="/" class="btn btn-link">Cancel</router-link>
+            </div>
           </form>
 
 

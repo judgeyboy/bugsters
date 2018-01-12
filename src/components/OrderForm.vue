@@ -121,8 +121,9 @@
                     :class="{'is-error': errors.has('order-form.message')}"></textarea>
         </div>
       </div>
-
-      <button type="submit" value="Send" class="btn btn-primary" :class="{loading: isLoading}">Send</button>
+      <div class="form-buttons">
+        <button type="submit" value="Send" class="btn btn-primary" :class="{loading: isLoading}">Send</button>
+      </div>
     </form>
   </div>
 </template>

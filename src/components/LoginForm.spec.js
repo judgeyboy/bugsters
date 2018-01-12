@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import VeeValidate, { Validator } from 'vee-validate'
 import { shallow } from 'vue-test-utils'
+import sinon from 'sinon'
+
 import LoginForm from './LoginForm'
 import { ACCOUNT_LOGIN } from '../store/actionTypes'
 
@@ -82,6 +84,31 @@ describe('LoginForm component', () => {
     await wrapper.vm.onSubmit()
 
     expect(spy).toHaveBeenCalledWith({ path: '/about' })
+  })
+
+  it('should set isLoading to false and loginFailed to true if login fails', async () => {
+    const wrapper = shallow(LoginForm, {
+      store,
+      router: $router,
+      provide: { $validator: new Validator() }
+    })
+    const storeStub = sinon.stub(wrapper.vm.$store, 'dispatch').rejects()
+
+    const loginDetails = {
+      email: 'duchess@spy-agency.com',
+      password: 'DangerZone!'
+    }
+
+    wrapper.setData(loginDetails)
+
+    await wrapper.vm.onSubmit()
+
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.vm.loginFailed).toBe(true)
+      expect(wrapper.vm.isLoading).toBe(false)
+    })
+
+    storeStub.restore()
   })
 
   /*

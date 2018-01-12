@@ -37,8 +37,7 @@ describe('OrderSection Container', () => {
 
     await wrapper.vm.handleFormSubmit(orderDetails)
 
-    expect(serviceStub.calledWith(orderDetails)).toBe(true)
-
+    sinon.assert.calledWith(serviceStub, orderDetails)
     serviceStub.restore()
   })
 
@@ -70,7 +69,7 @@ describe('OrderSection Container', () => {
     serviceStub.restore()
   })
 
-  it('OrderSuccess should set orderState and set orderId', () => {
+  it('OrderSuccess should set orderState and orderId', () => {
     const wrapper = shallow(OrderSection)
     wrapper.vm.orderSuccess({ data: 'iekgioe' })
     expect(wrapper.vm.orderState).toBe('success')

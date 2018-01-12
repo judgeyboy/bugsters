@@ -6,7 +6,7 @@ describe('FooterSection Component', () => {
 
   it('should be a Vue instance', () => {
     const wrapper = shallow(FooterSection)
-    expect(wrapper.isVueInstance).toBeTruthy()
+    expect(wrapper.isVueInstance()).toBe(true)
   })
 
   it('should match snapshot', () => {

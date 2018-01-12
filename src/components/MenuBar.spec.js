@@ -9,7 +9,7 @@ describe('MenuBar component', () => {
 
   it('should be a vue instance', () => {
     const wrapper = shallow(MenuBar)
-    expect(wrapper.isVueInstance()).toBeTruthy()
+    expect(wrapper.isVueInstance()).toBe(true)
   })
 
   it('should match snapshot', () => {

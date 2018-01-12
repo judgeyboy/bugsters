@@ -11,10 +11,10 @@
           data-vv-scope="order-form">
 
       <div class="form-group">
-        <div class="col-3">
+        <div class="col-3 col-xs-12">
           <label class="form-label" for="order-budget">Budget</label>
         </div>
-        <div class="col-6">
+        <div class="col-6 col-xs-8">
           <input class="slider"
                  type="range"
                  max="2500"
@@ -22,16 +22,16 @@
                  step="100"
                  v-model="budget" />
         </div>
-        <div class="col-3">
+        <div class="col-3 col-xs-4">
           <label class="form-label text-center"><strong>{{ budget }} .- CHF</strong></label>
         </div>
       </div>
 
       <div class="form-group">
-        <div class="col-3">
+        <div class="col-3 col-xs-12">
           <label class="form-label" for="order-company">Company</label>
         </div>
-        <div class="col-9">
+        <div class="col-9 col-xs-12">
           <input type="text"
                  id="order-company"
                  class="form-input"
@@ -44,10 +44,10 @@
       </div>
 
       <div class="form-group">
-        <div class="col-3">
+        <div class="col-3 col-xs-12">
           <label class="form-label" for="order-name">Name</label>
         </div>
-        <div class="col-9">
+        <div class="col-9 col-xs-12">
           <input type="text"
                  id="order-name"
                  class="form-input"
@@ -60,10 +60,10 @@
       </div>
 
       <div class="form-group">
-        <div class="col-3">
+        <div class="col-3 col-xs-12">
           <label class="form-label" for="order-email">Email</label>
         </div>
-        <div class="col-9">
+        <div class="col-9 col-xs-12">
           <input type="email"
                  id="order-email"
                  class="form-input"
@@ -76,10 +76,10 @@
       </div>
 
       <div class="form-group">
-        <div class="col-3">
+        <div class="col-3 col-xs-12">
           <label class="form-label" for="order-phone">Phone</label>
         </div>
-        <div class="col-9">
+        <div class="col-9 col-xs-12">
           <input type="text"
                  id="order-phone"
                  class="form-input"
@@ -92,10 +92,10 @@
       </div>
 
       <div class="form-group">
-        <div class="col-3">
+        <div class="col-3 col-xs-12">
           <label class="form-label" for="order-url">Page Url</label>
         </div>
-        <div class="col-9">
+        <div class="col-9 col-xs-12">
           <input type="text"
                  id="order-url"
                  class="form-input"
@@ -108,10 +108,10 @@
       </div>
 
       <div class="form-group">
-        <div class="col-3">
+        <div class="col-3 col-xs-12">
           <label class="form-label" for="order-message">Message</label>
         </div>
-        <div class="col-9">
+        <div class="col-9 col-xs-12">
           <textarea placeholder="message"
                     id="order-message"
                     class="form-input"
@@ -121,8 +121,9 @@
                     :class="{'is-error': errors.has('order-form.message')}"></textarea>
         </div>
       </div>
-
-      <button type="submit" value="Send" class="btn btn-primary" :class="{loading: isLoading}">Send</button>
+      <div class="form-buttons">
+        <button type="submit" value="Send" class="btn btn-primary" :class="{loading: isLoading}">Send</button>
+      </div>
     </form>
   </div>
 </template>

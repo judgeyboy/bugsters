@@ -6,7 +6,7 @@
         <h2 class="text-center">Contact Us</h2>
       </div>
 
-      <div class="column col-6 col-mx-auto">
+      <div class="column col-6 col-md-12 col-mx-auto">
         <transition mode="out-in" enter-active-class="animated zoomIn" leave-active-class="animated bounceOutRight">
           <ContactForm @submit="handleFormSubmit" v-if="contactState === 'open'" />
 

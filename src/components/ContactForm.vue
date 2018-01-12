@@ -67,7 +67,7 @@
         </div>
       </div>
 
-      <input type="submit" value="Send" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary" :class="{loading: isLoading}">Send</button>
     </form>
   </div>
 </template>
@@ -82,7 +82,8 @@ export default {
       name: '',
       email: '',
       subject: '',
-      message: ''
+      message: '',
+      isLoading: false
     }
   },
 
@@ -95,6 +96,8 @@ export default {
           alert('fix dem errors')
           return
         }
+
+        this.isLoading = true
 
         const contactDetails = {
           name: this.name,

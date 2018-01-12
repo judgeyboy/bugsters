@@ -14,4 +14,13 @@ describe('ContactSuccess Component', () => {
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()
   })
+
+  it('should emit "closeSuccess" when clicking "close" link', () => {
+    const wrapper = shallow(ContactSuccess)
+    const spy = jest.spyOn(wrapper.vm, '$emit')
+    const closeLink = wrapper.find('a')
+    closeLink.trigger('click')
+    expect(spy).toHaveBeenCalledWith('closeSuccess')
+  })
+
 })

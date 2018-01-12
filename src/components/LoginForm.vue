@@ -33,7 +33,7 @@
                     :class="{'is-danger': errors.has('password')}">
             </div>
 
-            <input type="submit" value="Login" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary" :class="isLoading? 'loading' : ''">Log In</button>
             <router-link to="/" class="btn btn-link">Cancel</router-link>
           </form>
 
@@ -56,7 +56,8 @@ export default {
     return {
       email: '',
       password: '',
-      loginFailed: false
+      loginFailed: false,
+      isLoading: false
     }
   },
 
@@ -72,6 +73,8 @@ export default {
           return
         }
 
+        this.isLoading = true
+
         const loginDetails = {
           email: this.email,
           password: this.password
@@ -79,6 +82,8 @@ export default {
 
         this.$store.dispatch(ACCOUNT_LOGIN, loginDetails)
           .then(() => {
+            this.isLoading = false
+
             if (this.returnUrl) {
               this.$router.push({ path: this.returnUrl })
             } else {
@@ -87,6 +92,7 @@ export default {
           })
           .catch(() => {
             this.loginFailed = true
+            this.isLoading = false
           })
       })
     }

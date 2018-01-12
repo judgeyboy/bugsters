@@ -66,16 +66,28 @@ describe('ContactSection component', () => {
     serviceStub.restore()
   })
 
-  it('ContactSuccess should set contactState to "success"', () => {
+  it('contactSuccess should set contactState to "success"', () => {
     const wrapper = shallow(ContactSection)
     wrapper.vm.contactSuccess()
     expect(wrapper.vm.contactState).toBe('success')
   })
 
-  it('ContactError should set contactState to "error"', () => {
+  it('contactError should set contactState to "error"', () => {
     const wrapper = shallow(ContactSection)
     wrapper.vm.contactError()
     expect(wrapper.vm.contactState).toBe('error')
+  })
+
+  it('handleCloseSuccess should set contactState to "open"', () => {
+    const wrapper = shallow(ContactSection)
+    wrapper.vm.handleCloseSuccess()
+    expect(wrapper.vm.contactState).toBe('open')
+  })
+
+  it('handleCloseError should set contactState to "open"', () => {
+    const wrapper = shallow(ContactSection)
+    wrapper.vm.handleCloseError()
+    expect(wrapper.vm.contactState).toBe('open')
   })
 
 })

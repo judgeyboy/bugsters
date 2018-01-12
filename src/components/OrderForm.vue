@@ -1,10 +1,6 @@
 <template>
   <div>
 
-    <div class="column col-12">
-      <h2 class="text-center">Need A Test?</h2>
-    </div>
-
     <p>
       Use the slider to select how much you would like to invest in testing your application
       and provide us with your details. We'll do the rest. Of course we'll send you an offer...
@@ -126,7 +122,7 @@
         </div>
       </div>
 
-      <input type="submit" value="Send" class="btn btn-primary">
+      <button type="submit" value="Send" class="btn btn-primary" :class="{loading: isLoading}">Send</button>
     </form>
   </div>
 </template>
@@ -144,7 +140,8 @@ export default {
       email: '',
       url: '',
       message: '',
-      phone: ''
+      phone: '',
+      isLoading: false
     }
   },
 
@@ -157,6 +154,8 @@ export default {
           alert('fix dem errors')
           return
         }
+
+        this.isLoading = true
 
         const orderDetails = {
           budget: this.budget,

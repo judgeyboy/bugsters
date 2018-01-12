@@ -46,6 +46,7 @@ export default {
 
     logout () {
       this.$store.dispatch(ACCOUNT_LOGOUT)
+      this.toggleMenu()
     }
   }
 }

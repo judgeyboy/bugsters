@@ -10,9 +10,9 @@
         <transition mode="out-in" enter-active-class="animated zoomIn" leave-active-class="animated bounceOutRight">
           <ContactForm @submit="handleFormSubmit" v-if="contactState === 'open'" />
 
-          <ContactSuccess v-if="contactState === 'success'" />
-        
-          <ContactError v-if="contactState === 'error'" />
+          <ContactSuccess @closeSuccess="handleCloseSuccess" v-if="contactState === 'success'" />
+
+          <ContactError @closeError="handleCloseError" v-if="contactState === 'error'" />
         </transition>
       </div>
 
@@ -48,6 +48,14 @@ export default {
       ContactService.send(contactDetails)
         .then(this.contactSuccess)
         .catch(this.contactError)
+    },
+
+    handleCloseSuccess () {
+      this.contactState = 'open'
+    },
+
+    handleCloseError () {
+      this.contactState = 'open'
     },
 
     contactSuccess () {

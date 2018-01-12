@@ -34,8 +34,7 @@ describe('ContactSection component', () => {
 
     await wrapper.vm.handleFormSubmit(contactDetails)
 
-    expect(serviceStub.calledWith(contactDetails)).toBe(true)
-
+    sinon.assert.calledWith(serviceStub, contactDetails)
     serviceStub.restore()
   })
 

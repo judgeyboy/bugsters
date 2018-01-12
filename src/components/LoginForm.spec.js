@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VueRouter from 'vue-router'
 import VeeValidate, { Validator } from 'vee-validate'
 import { shallow } from 'vue-test-utils'
 import LoginForm from './LoginForm'
@@ -7,10 +8,9 @@ import { ACCOUNT_LOGIN } from '../store/actionTypes'
 
 Vue.use(Vuex)
 Vue.use(VeeValidate)
+Vue.use(VueRouter)
 
-const $router = {
-  push: jest.fn()
-}
+const $router = new VueRouter()
 
 describe('LoginForm component', () => {
   let store
@@ -27,6 +27,7 @@ describe('LoginForm component', () => {
   it('should dispatch "login" with login details', async () => {
     const wrapper = shallow(LoginForm, {
       store,
+      router: $router,
       provide: { $validator: new Validator() }
     })
     const spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
@@ -66,9 +67,7 @@ describe('LoginForm component', () => {
   it('should redirect to a path after login success', async () => {
     const wrapper = shallow(LoginForm, {
       store,
-      mocks: {
-        $router
-      },
+      router: $router,
       provide: { $validator: new Validator() }
     })
     const spy = jest.spyOn(wrapper.vm.$router, 'push')

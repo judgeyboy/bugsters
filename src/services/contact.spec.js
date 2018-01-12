@@ -16,7 +16,8 @@ describe('Contact Service', () => {
     }
 
     await contactService.send(contactDetails)
-    expect(apiStub.calledWith("/mail/contact", contactDetails)).toBe(true)
+
+    sinon.assert.calledWith(apiStub, "/mail/contact", contactDetails)
   })
 
 })

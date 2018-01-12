@@ -37,8 +37,7 @@ describe('OrderSection Container', () => {
 
     await wrapper.vm.handleFormSubmit(orderDetails)
 
-    expect(serviceStub.calledWith(orderDetails)).toBe(true)
-
+    sinon.assert.calledWith(serviceStub, orderDetails)
     serviceStub.restore()
   })
 

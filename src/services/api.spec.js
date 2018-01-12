@@ -21,7 +21,8 @@ describe('API Service', () => {
     }
 
     await api.post(url, contactDetails)
-    expect(axiosStub.calledWith(url, contactDetails)).toBe(true)
+
+    sinon.assert.calledWith(axiosStub, url, contactDetails)
   })
 
 })

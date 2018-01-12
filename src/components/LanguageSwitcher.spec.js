@@ -13,7 +13,7 @@ describe('LanguageSwitcher Component', () => {
   it('should be a vue instance', () => {
     const wrapper = shallow(LanguageSwitcher, { i18n })
 
-    expect(wrapper.isVueInstance).toBeTruthy()
+    expect(wrapper.isVueInstance()).toBe(true)
   })
 
   it('should match snapshot', () => {

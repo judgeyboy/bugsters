@@ -19,8 +19,8 @@ describe('Order Service', () => {
     }
 
     await orderService.send(orderDetails)
-    expect(apiStub.calledWith("/order", orderDetails)).toBe(true)
 
+    sinon.assert.calledWith(apiStub, '/order', orderDetails)
   })
 
 })

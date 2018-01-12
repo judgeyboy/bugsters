@@ -126,7 +126,7 @@
         </div>
       </div>
 
-      <input type="submit" value="Send" class="btn btn-primary">
+      <button type="submit" value="Send" class="btn btn-primary" :class="{loading: isLoading}">Send</button>
     </form>
   </div>
 </template>
@@ -144,7 +144,8 @@ export default {
       email: '',
       url: '',
       message: '',
-      phone: ''
+      phone: '',
+      isLoading: false
     }
   },
 
@@ -157,6 +158,8 @@ export default {
           alert('fix dem errors')
           return
         }
+
+        this.isLoading = true
 
         const orderDetails = {
           budget: this.budget,

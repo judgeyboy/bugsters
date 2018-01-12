@@ -24,7 +24,7 @@ describe('ContactForm component', () => {
     })
     let spy = jest.spyOn(wrapper.vm, 'handleSubmit')
 
-    const submitButton = wrapper.find('input[type=submit]')
+    const submitButton = wrapper.find('button[type=submit]')
     submitButton.trigger('click')
 
     expect(spy).toHaveBeenCalledWith('contact-form')

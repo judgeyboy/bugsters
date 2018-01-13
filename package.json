@@ -8,7 +8,7 @@
     "dev": "node build/dev-server.js",
     "start": "npm run dev",
     "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src",
+    "lint": "eslint --ext .js,.vue src tests",
     "test": "jest"
   },
   "dependencies": {
@@ -89,7 +89,7 @@
   "jest": {
     "coveragePathIgnorePatterns": [
       "/node_modules/",
-      "<rootDir>/testHelpers.js"
+      "<rootDir>/tests/testHelpers.js"
     ],
     "mapCoverage": true,
     "moduleNameMapper": {

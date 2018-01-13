@@ -6,9 +6,7 @@ import * as actionTypes from '@/store/actionTypes'
 import { testAction } from '../../../testHelpers'
 import accountService from '@/services/account'
 
-
 describe('AccountModule Actions', () => {
-
   let serviceStub
 
   afterEach(() => {
@@ -29,5 +27,4 @@ describe('AccountModule Actions', () => {
       { type: mutationTypes.ACCOUNT_LOGOUT }
     ], done)
   })
-
 })

@@ -6,9 +6,7 @@ import localStorageMock from '../__mocks__/localStorage'
 window.localStorage = localStorageMock
 
 describe('Utils', () => {
-
   describe('isLocalStorageAvailable Function', () => {
-
     it('should return true if localStorage is available', () => {
       const actual = isLocalStorageAvailable()
       expect(actual).toBeTruthy()
@@ -39,6 +37,5 @@ describe('Utils', () => {
       expect(actual).toBeTruthy()
       localStorageStub.restore()
     })
-
   })
 })

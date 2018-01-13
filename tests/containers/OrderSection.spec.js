@@ -5,7 +5,6 @@ import OrderSection from '@/containers/OrderSection'
 import OrderService from '@/services/order'
 
 describe('OrderSection Container', () => {
-
   it('should be a Vue instance', () => {
     const wrapper = shallow(OrderSection)
     expect(wrapper.isVueInstance()).toBe(true)
@@ -93,5 +92,4 @@ describe('OrderSection Container', () => {
     wrapper.vm.handleCloseError()
     expect(wrapper.vm.orderState).toBe('open')
   })
-
 })

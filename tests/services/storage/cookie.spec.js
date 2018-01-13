@@ -1,7 +1,6 @@
 import cookie from '@/services/storage/cookie'
 
 describe('Cookie', () => {
-
   const KEY = '__test__'
   const VALUE = 'Sterling Archer'
 
@@ -20,5 +19,4 @@ describe('Cookie', () => {
     const actualValue = cookie.get(KEY)
     expect(actualValue).toBe(undefined)
   })
-
 })

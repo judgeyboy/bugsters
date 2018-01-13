@@ -4,7 +4,6 @@ import api from '@/services/api'
 import orderService from '@/services/order'
 
 describe('Order Service', () => {
-
   it('should send order details with correct POST request', async () => {
     let apiStub = sinon.stub(api, 'post').resolves()
 
@@ -22,5 +21,4 @@ describe('Order Service', () => {
 
     sinon.assert.calledWith(apiStub, '/order', orderDetails)
   })
-
 })

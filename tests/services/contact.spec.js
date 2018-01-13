@@ -4,7 +4,6 @@ import api from '@/services/api'
 import contactService from '@/services/contact'
 
 describe('Contact Service', () => {
-
   it('should send contact details with correct POST request', async () => {
     let apiStub = sinon.stub(api, 'post').resolves()
 
@@ -17,7 +16,6 @@ describe('Contact Service', () => {
 
     await contactService.send(contactDetails)
 
-    sinon.assert.calledWith(apiStub, "/mail/contact", contactDetails)
+    sinon.assert.calledWith(apiStub, '/mail/contact', contactDetails)
   })
-
 })

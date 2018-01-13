@@ -5,22 +5,20 @@ jest.mock('@/services/account', () => { return {} })
 const accountService = require('@/services/account')
 
 describe('Route guards', () => {
-
   describe('Authenticate guard', () => {
-
     it('should redirect to login if user is not logged in containing the correct returnUrl', () => {
       accountService.isLoggedIn = () => false
       const next = jest.fn()
       const to = {
-        path: "/about"
+        path: '/about'
       }
 
       authenticate(to, null, next)
 
       expect(next).toHaveBeenCalledWith({
-        "path": "/login",
-        "query": {
-          "returnUrl": "/about"
+        'path': '/login',
+        'query': {
+          'returnUrl': '/about'
         }
       })
     })
@@ -33,7 +31,5 @@ describe('Route guards', () => {
 
       expect(next).toHaveBeenCalledWith()
     })
-
   })
-
 })

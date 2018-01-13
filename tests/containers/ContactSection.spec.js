@@ -5,7 +5,6 @@ import ContactSection from '@/containers/ContactSection'
 import ContactService from '@/services/contact'
 
 describe('ContactSection component', () => {
-
   it('should be a Vue instance', () => {
     const wrapper = shallow(ContactSection)
     expect(wrapper.isVueInstance()).toBe(true)
@@ -89,5 +88,4 @@ describe('ContactSection component', () => {
     wrapper.vm.handleCloseError()
     expect(wrapper.vm.contactState).toBe('open')
   })
-
 })

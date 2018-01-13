@@ -4,7 +4,6 @@ import sinon from 'sinon'
 import api from '@/services/api'
 
 describe('API Service', () => {
-
   it('axios should be configured correctly', () => {
     expect(axios.defaults.baseURL).toBe('https://bugsters-api.herokuapp.com')
     expect(axios.defaults.headers.post['Content-Type']).toBe('application/json')
@@ -24,5 +23,4 @@ describe('API Service', () => {
 
     sinon.assert.calledWith(axiosStub, url, contactDetails)
   })
-
 })

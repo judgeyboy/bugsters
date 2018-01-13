@@ -6,7 +6,6 @@ import api from '@/services/api'
 import store from '@/store'
 
 describe('Account Service', () => {
-
   it('isLoggedIn should return true', () => {
     store.state.accountModule.loggedIn = true
 
@@ -31,7 +30,7 @@ describe('Account Service', () => {
   })
 
   it('should handle promise rejection if login was unsuccessfull', async () => {
-    let apiStub = sinon.stub(api, 'post').rejects({ error: 'something went wrong'})
+    let apiStub = sinon.stub(api, 'post').rejects({ error: 'something went wrong' })
     let storageStub = sinon.stub(storageService, 'set')
 
     const invalidLoginDetails = {
@@ -39,11 +38,10 @@ describe('Account Service', () => {
       password: 'WorldsGreatestSpy'
     }
 
-    await expect(accountService.logIn(invalidLoginDetails)).rejects.toEqual({ error: 'something went wrong'})
+    await expect(accountService.logIn(invalidLoginDetails)).rejects.toEqual({ error: 'something went wrong' })
     sinon.assert.notCalled(storageStub)
 
     apiStub.restore()
     storageStub.restore()
   })
-
 })

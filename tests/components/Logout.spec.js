@@ -35,5 +35,4 @@ describe('Logout component', () => {
     expect(spy).toHaveBeenCalled()
     expect(spy).toHaveBeenCalledWith(ACCOUNT_LOGOUT)
   })
-
 })

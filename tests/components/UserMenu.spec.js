@@ -10,7 +10,6 @@ Vue.use(Vuex)
 Vue.use(VueRouter)
 
 describe('UserMenu component', () => {
-
   it('should be a vue instance', () => {
     const wrapper = shallow(UserMenu, {
       store: new Vuex.Store({
@@ -62,7 +61,7 @@ describe('UserMenu component', () => {
             name: 'Sterling Archer'
           }
         }
-      }),
+      })
     })
     wrapper.setData({ showMenu: true })
     wrapper.vm.toggleMenu()
@@ -74,13 +73,13 @@ describe('UserMenu component', () => {
       store: new Vuex.Store({
         state: {
           accountModule: {
-            loggedIn: true,
+            loggedIn: true
           }
         },
         actions: {
           [ACCOUNT_LOGOUT]: jest.fn()
         }
-      }),
+      })
     })
 
     let spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
@@ -89,5 +88,4 @@ describe('UserMenu component', () => {
 
     expect(spy).toHaveBeenCalledWith('ACCOUNT_LOGOUT')
   })
-
 })

@@ -7,7 +7,6 @@ import MenuBar from '@/components/MenuBar'
 Vue.use(VueRouter)
 
 describe('MenuBar component', () => {
-
   it('should be a vue instance', () => {
     const wrapper = shallow(MenuBar)
     expect(wrapper.isVueInstance()).toBe(true)
@@ -18,5 +17,4 @@ describe('MenuBar component', () => {
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()
   })
-
 })

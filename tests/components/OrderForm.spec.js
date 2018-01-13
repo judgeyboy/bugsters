@@ -7,7 +7,6 @@ import OrderForm from '@/components/OrderForm'
 Vue.use(VeeValidate)
 
 describe('OrderForm component', () => {
-
   it('should be a vue instance', () => {
     const wrapper = shallow(OrderForm, {
       provide: {
@@ -82,5 +81,4 @@ describe('OrderForm component', () => {
 
     expect(spy).not.toHaveBeenCalled()
   })
-
 })

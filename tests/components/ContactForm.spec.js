@@ -7,7 +7,6 @@ import ContactForm from '@/components/ContactForm'
 Vue.use(VeeValidate)
 
 describe('ContactForm component', () => {
-
   it('should be a vue instance', () => {
     const wrapper = shallow(ContactForm, {
       provide: {
@@ -69,5 +68,4 @@ describe('ContactForm component', () => {
 
     expect(spy).not.toHaveBeenCalled()
   })
-
 })

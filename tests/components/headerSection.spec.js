@@ -13,7 +13,6 @@ const i18n = new VueI18n()
 jest.mock('@/assets/cute-bug.png', () => 'bugsters-logo.png')
 
 describe('HeaderSection Component', () => {
-
   it('should be a Vue instance', () => {
     const wrapper = shallow(HeaderSection, { i18n })
     expect(wrapper.isVueInstance).toBeTruthy()
@@ -24,5 +23,4 @@ describe('HeaderSection Component', () => {
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()
   })
-
 })

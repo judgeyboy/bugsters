@@ -3,7 +3,6 @@ import { shallow } from 'vue-test-utils'
 import ContactError from '@/components/ContactError'
 
 describe('ContactError Component', () => {
-
   it('should be a Vue instance', () => {
     const wrapper = shallow(ContactError)
     expect(wrapper.isVueInstance()).toBe(true)
@@ -22,5 +21,4 @@ describe('ContactError Component', () => {
     closeLink.trigger('click')
     expect(spy).toHaveBeenCalledWith('closeError')
   })
-
 })

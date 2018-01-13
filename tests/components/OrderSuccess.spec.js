@@ -7,7 +7,6 @@ import OrderSuccess from '@/components/OrderSuccess'
 Vue.use(SectionScroll)
 
 describe('OrderSuccess Component', () => {
-
   it('should be a Vue instance', () => {
     const wrapper = shallow(OrderSuccess)
     expect(wrapper.isVueInstance()).toBe(true)
@@ -31,5 +30,4 @@ describe('OrderSuccess Component', () => {
     closeLink.trigger('click')
     expect(spy).toHaveBeenCalledWith('closeSuccess')
   })
-
 })

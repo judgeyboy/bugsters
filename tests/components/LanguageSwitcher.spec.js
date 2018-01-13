@@ -9,7 +9,6 @@ Vue.use(VueI18n)
 const i18n = new VueI18n()
 
 describe('LanguageSwitcher Component', () => {
-
   it('should be a vue instance', () => {
     const wrapper = shallow(LanguageSwitcher, { i18n })
 
@@ -25,7 +24,7 @@ describe('LanguageSwitcher Component', () => {
 
   it('should set locale to "de" when user clicks on "DE"', () => {
     const wrapper = shallow(LanguageSwitcher, { i18n })
-    const germanLink = wrapper.find(".language-switcher a:first-child")
+    const germanLink = wrapper.find('.language-switcher a:first-child')
 
     germanLink.trigger('click')
 
@@ -34,11 +33,10 @@ describe('LanguageSwitcher Component', () => {
 
   it('should set locale to "en" when user clicks on "EN"', () => {
     const wrapper = shallow(LanguageSwitcher, { i18n })
-    const englishLink = wrapper.find(".language-switcher a:last-child")
+    const englishLink = wrapper.find('.language-switcher a:last-child')
 
     englishLink.trigger('click')
 
     expect(wrapper.vm.$i18n.locale).toBe('en')
   })
-
 })

@@ -130,5 +130,4 @@ describe('LoginForm component', () => {
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()
   })
-
 })

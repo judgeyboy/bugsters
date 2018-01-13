@@ -1,12 +1,9 @@
-import sinon from 'sinon'
-
 import localStore from '@/services/storage/localStore'
 import localStorageMock from '../__mocks__/localStorage'
 
 window.localStorage = localStorageMock
 
 describe('LocalStore', () => {
-
   const KEY = '__test__'
   const VALUE = 'Sterling Archer'
 
@@ -37,5 +34,4 @@ describe('LocalStore', () => {
     localStore.remove(KEY)
     expect(spy).toHaveBeenCalledWith(KEY)
   })
-
 })

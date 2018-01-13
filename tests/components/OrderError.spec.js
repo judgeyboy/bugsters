@@ -3,7 +3,6 @@ import { shallow } from 'vue-test-utils'
 import OrderError from '@/components/OrderError'
 
 describe('OrderError Component', () => {
-
   it('should be a Vue instance', () => {
     const wrapper = shallow(OrderError)
     expect(wrapper.isVueInstance()).toBe(true)
@@ -22,5 +21,4 @@ describe('OrderError Component', () => {
     closeLink.trigger('click')
     expect(spy).toHaveBeenCalledWith('closeError')
   })
-
 })

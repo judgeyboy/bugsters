@@ -21,7 +21,7 @@
                       placeholder="Email"
                       v-validate="'required'"
                       v-model="email"
-                      :class="{'is-danger': errors.has('email')}">
+                      :class="{'is-error': errors.has('email')}">
               </div>
             </div>
 
@@ -36,7 +36,7 @@
                       placeholder="password"
                       v-validate="'required'"
                       v-model="password"
-                      :class="{'is-danger': errors.has('password')}">
+                      :class="{'is-error': errors.has('password')}">
               </div>
             </div>
             <div class="form-buttons">

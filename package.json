@@ -10,7 +10,7 @@
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src test",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest"
+    "test": "jest --projects eslint-jest.config.js jest.config.js --watch"
   },
   "dependencies": {
     "animate.css": "^3.5.2",
@@ -55,6 +55,7 @@
     "html-webpack-plugin": "^2.28.0",
     "http-proxy-middleware": "^0.17.3",
     "jest": "21.2.1",
+    "jest-runner-eslint": "0.3.0",
     "jest-vue-preprocessor": "1.2.0",
     "node-sass": "4.5.3",
     "opn": "^5.1.0",
@@ -86,24 +87,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "jest": {
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "<rootDir>/test/testHelpers.js"
-    ],
-    "mapCoverage": true,
-    "moduleNameMapper": {
-      "^@(.*)$": "<rootDir>/src$1",
-      "^vue$": "vue/dist/vue.common.js"
-    },
-    "moduleFileExtensions": [
-      "js",
-      "vue"
-    ],
-    "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-      ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
-    }
-  }
+  ]
 }

@@ -7,6 +7,7 @@
           <h2 class="section-title">Log In</h2>
 
           <FormErrorMessage v-show="loginFailed" message="Username or password does not exist!" />
+          <FormErrorMessage v-if="hasError"/>
 
           <form class="form-horizontal" @submit.prevent="onSubmit">
             <div class="form-group">
@@ -65,7 +66,8 @@ export default {
       email: '',
       password: '',
       loginFailed: false,
-      isLoading: false
+      isLoading: false,
+      hasError: false
     }
   },
 
@@ -81,10 +83,11 @@ export default {
     onSubmit: function () {
       return this.$validator.validateAll().then(valid => {
         if (!valid) {
-          alert('fix dem errors')
+          this.hasError = true
           return
         }
 
+        this.hasError = false
         this.isLoading = true
 
         const loginDetails = {

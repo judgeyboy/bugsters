@@ -10,8 +10,8 @@
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src test",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest --projects eslint-jest.config.js jest.config.js",
-    "tdd": "npm test -- --watch"
+    "test": "jest",
+    "tdd": "jest --projects eslint-jest.config.js jest.config.js --watch"
   },
   "dependencies": {
     "animate.css": "^3.5.2",

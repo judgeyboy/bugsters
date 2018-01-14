@@ -17,6 +17,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+div
+  padding: 0.4rem 0
 span
   color: #e85600
 </style>

@@ -6,9 +6,7 @@
         <div class="column col-6 col-sm-8 col-mx-auto">
           <h2 class="section-title">Log In</h2>
 
-          <div v-show="loginFailed">
-            <span style="color: #e85600">Username or password does not exist!</span>
-          </div>
+          <FormErrorMessage v-show="loginFailed" message="Username or password does not exist!" />
 
           <form class="form-horizontal" @submit.prevent="onSubmit">
             <div class="form-group">
@@ -56,6 +54,7 @@
 
 <script>
 import { ACCOUNT_LOGIN } from '../store/actionTypes'
+import FormErrorMessage from '@/components/FormErrorMessage'
 
 export default {
 
@@ -71,6 +70,10 @@ export default {
   },
 
   props: ['returnUrl'],
+
+  components: {
+    FormErrorMessage
+  },
 
   inject: ['$validator'],
 

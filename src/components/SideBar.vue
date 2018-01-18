@@ -1,20 +1,11 @@
 <template>
   <div class="off-canvas-sidebar" :class="showSidebar ? 'active': ''">
     <div class="bugster-sidebar">
-      <ul class="nav">
-        <li class="nav-item">
-          <a v-section-scroll location="about" >ABOUT US</a>
-        </li>
-        <li class="nav-item">
-          <a v-section-scroll location="how">HOW</a>
-        </li>
-        <li class="nav-item">
-          <a v-section-scroll location="order">TRY US</a>
-        </li>
-        <li class="nav-item">
-          <a v-section-scroll location="contact">CONTACT</a>
-        </li>
-      </ul>
+
+      <div class="bugster-sidebar__menu">
+        <slot></slot>
+      </div>
+
       <div class="bugster-sidebar__language">
         <LanguageSwitcher />
       </div>
@@ -38,6 +29,7 @@ export default {
 <style lang="sass" scoped>
 .off-canvas-sidebar
   width: 12rem
+  min-height: 100vh
 
 .bugster-sidebar
   bottom: 1.5rem

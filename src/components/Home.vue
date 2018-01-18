@@ -8,7 +8,14 @@
       </a>
     </MenuBar>
 
-   <SideBar v-scroll-menu :showSidebar="showSidebar" />
+    <SideBar :showSidebar="showSidebar">
+      <ScrollMenu>
+        <ScrollMenuItem location="about">ABOUT US</ScrollMenuItem>
+        <ScrollMenuItem location="how">HOW</ScrollMenuItem>
+        <ScrollMenuItem location="order">TRY US</ScrollMenuItem>
+        <ScrollMenuItem location="contact">CONTACT</ScrollMenuItem>
+      </ScrollMenu>
+    </SideBar>
 
     <a class="off-canvas-overlay" @click="toggleSidebar"></a>
 
@@ -34,6 +41,8 @@ import OrderSection from '@/containers/OrderSection'
 import MenuBar from './MenuBar'
 import SideBar from './SideBar'
 import FooterSection from './FooterSection'
+import ScrollMenu from './ScrollMenu'
+import ScrollMenuItem from './ScrollMenuItem'
 
 export default {
   name: 'Home',
@@ -52,7 +61,9 @@ export default {
     OrderSection,
     MenuBar,
     SideBar,
-    FooterSection
+    FooterSection,
+    ScrollMenu,
+    ScrollMenuItem
   },
 
   methods: {

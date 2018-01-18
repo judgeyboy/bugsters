@@ -5,6 +5,11 @@ module.exports = {
     "<rootDir>/test/testHelpers.js"
   ],
 
+  collectCoverageFrom: [
+    "src/**/*.{js,vue}",
+    "!**/node_modules/**",
+  ],
+
   mapCoverage: true,
 
   moduleNameMapper: {

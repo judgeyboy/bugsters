@@ -1,12 +1,22 @@
 <template>
   <div class="dashboard">
-    <h2>DASHBOARD</h2>
+
+    <MenuBar :foo="true">
+      <router-link slot="menu" to="/">BUGSTERS</router-link>
+    </MenuBar>
+
+    <h2>My Dashboard</h2>
   </div>
 </template>
 
 <script>
+import MenuBar from './MenuBar'
+
 export default {
-  name: 'Dashboard'
+  name: 'Dashboard',
+  components: {
+    MenuBar
+  }
 }
 </script>
 

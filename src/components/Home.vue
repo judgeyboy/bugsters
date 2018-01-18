@@ -2,9 +2,13 @@
 
   <div class="off-canvas">
 
-    <MenuBar @toggleSidebar="toggleSidebar" />
+    <MenuBar :hasSideBar="true">
+      <a slot="menu" class="off-canvas-toggle btn btn-link btn-action" @click="toggleSidebar">
+        <i class="icon icon-menu"></i>
+      </a>
+    </MenuBar>
 
-    <SideBar v-scroll-menu :showSidebar="showSidebar" />
+   <SideBar v-scroll-menu :showSidebar="showSidebar" />
 
     <a class="off-canvas-overlay" @click="toggleSidebar"></a>
 

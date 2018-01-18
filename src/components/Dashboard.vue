@@ -5,7 +5,10 @@
       <router-link slot="menu" to="/">BUGSTERS</router-link>
     </MenuBar>
 
-    <h2>My Dashboard</h2>
+    <div class="dashboard-content">
+      <h2>My Dashboard</h2>
+    </div>
+
   </div>
 </template>
 
@@ -21,5 +24,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+
+.dashboard-content
+  margin: 3.8rem 0 0 0
+  padding: .4rem
 
 </style>

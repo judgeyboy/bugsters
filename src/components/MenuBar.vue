@@ -39,7 +39,7 @@ export default {
   left: 0
   top: 0
   z-index: 200
-  background-color: white
+  background: rgba(248, 249, 250, .65)
 
   &__menu
     position: absolute

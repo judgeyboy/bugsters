@@ -1,5 +1,5 @@
 import VeeValidate, { Validator } from 'vee-validate'
-import { shallow, createLocalVue } from 'vue-test-utils'
+import { shallow, createLocalVue, mount } from 'vue-test-utils'
 
 import ContactForm from '@/components/ContactForm'
 
@@ -71,5 +71,30 @@ describe('ContactForm component', () => {
     await wrapper.vm.handleSubmit('contact-form')
 
     expect(spy).not.toHaveBeenCalled()
+  })
+
+  it('snapshot', () => {
+    const wrapper = mount(ContactForm, {
+      localVue,
+      provide: {
+        $validator: new Validator()
+      }
+    })
+    const $html = wrapper.vm.$el.outerHTML
+    expect($html).toMatchSnapshot()
+  })
+
+  it('snapshot with form error', () => {
+    const wrapper = mount(ContactForm, {
+      localVue,
+      provide: {
+        $validator: new Validator()
+      }
+    })
+
+    wrapper.setData({ hasError: true })
+
+    const $html = wrapper.vm.$el.outerHTML
+    expect($html).toMatchSnapshot()
   })
 })

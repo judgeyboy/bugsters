@@ -1,5 +1,5 @@
 import VeeValidate, { Validator } from 'vee-validate'
-import { shallow, createLocalVue } from 'vue-test-utils'
+import { shallow, createLocalVue, mount } from 'vue-test-utils'
 
 import OrderForm from '@/components/OrderForm'
 
@@ -85,5 +85,30 @@ describe('OrderForm component', () => {
     await wrapper.vm.handleSubmit('order-form')
 
     expect(spy).not.toHaveBeenCalled()
+  })
+
+  it('snapshot', () => {
+    const wrapper = mount(OrderForm, {
+      localVue,
+      provide: {
+        $validator: new Validator()
+      }
+    })
+    const $html = wrapper.vm.$el.outerHTML
+    expect($html).toMatchSnapshot()
+  })
+
+  it('snapshot with form error', () => {
+    const wrapper = mount(OrderForm, {
+      localVue,
+      provide: {
+        $validator: new Validator()
+      }
+    })
+
+    wrapper.setData({ hasError: true })
+
+    const $html = wrapper.vm.$el.outerHTML
+    expect($html).toMatchSnapshot()
   })
 })

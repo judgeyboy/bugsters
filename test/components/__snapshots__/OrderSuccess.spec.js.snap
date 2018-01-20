@@ -1,9 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OrderSuccess Component should match snapshot 1`] = `
-"<div class=\\"order-success\\"><div class=\\"empty\\"><div class=\\"empty-icon\\"><i class=\\"icon icon-3x icon-check\\"></i></div> <p class=\\"empty-title h5\\">Great! We've received your request</p> <p class=\\"empty-subtitle\\">
+
+<div class="order-success">
+  <div class="empty">
+    <div class="empty-icon">
+      <i class="icon icon-3x icon-check">
+      </i>
+    </div>
+    <p class="empty-title h5">
+      Great! We've received your request
+    </p>
+    <p class="empty-subtitle">
       We'll plan the test and send you an offer within two working days.
-      Your request number is <strong>ieigkeke</strong> <br> <br>
+      Your request number is
+      <strong>
+        ieigkeke
+      </strong>
+      <br>
+      <br>
       In the mean time, if you have any questions, please don't hesitate to
-      <a location=\\"contact\\">contact us</a></p> <div class=\\"empty-action\\"><a>Close</a></div></div></div>"
+      <a location="contact">
+        contact us
+      </a>
+    </p>
+    <div class="empty-action">
+      <a>
+        Close
+      </a>
+    </div>
+  </div>
+</div>
+
 `;

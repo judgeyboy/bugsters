@@ -1,16 +1,18 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
-import { shallow } from 'vue-test-utils'
+import { shallow, createLocalVue } from 'vue-test-utils'
 
 import RegisterForm from '@/components/RegisterForm'
 
-Vue.use(Vuex)
+const localVue = createLocalVue()
+
+localVue.use(Vuex)
 
 describe('RegisterForm component', () => {
   let store
 
   beforeEach(() => {
     store = new Vuex.Store({
+      localVue,
       state: {},
       actions: {
         register: jest.fn()
@@ -25,7 +27,10 @@ describe('RegisterForm component', () => {
   })
 
   it('should dispatch "register" with register details', () => {
-    const wrapper = shallow(RegisterForm, { store })
+    const wrapper = shallow(RegisterForm, {
+      localVue,
+      store
+    })
     const spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
 
     const registerDetails = {

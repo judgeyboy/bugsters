@@ -1,14 +1,15 @@
-import Vue from 'vue'
 import VeeValidate, { Validator } from 'vee-validate'
-import { shallow } from 'vue-test-utils'
+import { shallow, createLocalVue } from 'vue-test-utils'
 
 import ContactForm from '@/components/ContactForm'
 
-Vue.use(VeeValidate)
+const localVue = createLocalVue()
+localVue.use(VeeValidate)
 
 describe('ContactForm component', () => {
   it('should be a vue instance', () => {
     const wrapper = shallow(ContactForm, {
+      localVue,
       provide: {
         $validator: new Validator()
       }
@@ -19,6 +20,7 @@ describe('ContactForm component', () => {
 
   it('should call handleSubmit when clicking the send button', () => {
     const wrapper = shallow(ContactForm, {
+      localVue,
       provide: { $validator: new Validator() }
     })
     let spy = jest.spyOn(wrapper.vm, 'handleSubmit')
@@ -31,6 +33,7 @@ describe('ContactForm component', () => {
 
   it('should emit "submit" event with contact details', async () => {
     const wrapper = shallow(ContactForm, {
+      localVue,
       provide: { $validator: new Validator() }
     })
     let spy = jest.spyOn(wrapper.vm, '$emit')
@@ -51,6 +54,7 @@ describe('ContactForm component', () => {
 
   it('should not emit "submit" event if the form has errors', async () => {
     const wrapper = shallow(ContactForm, {
+      localVue,
       provide: { $validator: new Validator() }
     })
     let spy = jest.spyOn(wrapper.vm, '$emit')

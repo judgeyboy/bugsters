@@ -1,11 +1,12 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
-import { shallow } from 'vue-test-utils'
+import { shallow, createLocalVue } from 'vue-test-utils'
 
 import Logout from '@/components/Logout'
 import { ACCOUNT_LOGOUT } from '@/store/actionTypes'
 
-Vue.use(Vuex)
+const localVue = createLocalVue()
+
+localVue.use(Vuex)
 
 describe('Logout component', () => {
   let store
@@ -26,7 +27,10 @@ describe('Logout component', () => {
   })
 
   it('should dispatch "logout" when link is clicked', () => {
-    const wrapper = shallow(Logout, { store })
+    const wrapper = shallow(Logout, {
+      localVue,
+      store
+    })
     const spy = jest.spyOn(wrapper.vm.$store, 'dispatch')
 
     const logoutButton = wrapper.find('.logout a')

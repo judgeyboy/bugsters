@@ -6,9 +6,8 @@
         <div class="column col-6 col-sm-8 col-mx-auto">
           <h2 class="section-title">Log In</h2>
 
-          <div v-show="loginFailed">
-            <span style="color: #e85600">Username or password does not exist!</span>
-          </div>
+          <FormErrorMessage v-show="loginFailed" message="Username or password does not exist!" />
+          <FormErrorMessage v-if="hasError"/>
 
           <form class="form-horizontal" @submit.prevent="onSubmit">
             <div class="form-group">
@@ -22,7 +21,7 @@
                       placeholder="Email"
                       v-validate="'required'"
                       v-model="email"
-                      :class="{'is-danger': errors.has('email')}">
+                      :class="{'is-error': errors.has('email')}">
               </div>
             </div>
 
@@ -37,7 +36,7 @@
                       placeholder="password"
                       v-validate="'required'"
                       v-model="password"
-                      :class="{'is-danger': errors.has('password')}">
+                      :class="{'is-error': errors.has('password')}">
               </div>
             </div>
             <div class="form-buttons">
@@ -56,6 +55,7 @@
 
 <script>
 import { ACCOUNT_LOGIN } from '../store/actionTypes'
+import FormErrorMessage from '@/components/FormErrorMessage'
 
 export default {
 
@@ -66,11 +66,16 @@ export default {
       email: '',
       password: '',
       loginFailed: false,
-      isLoading: false
+      isLoading: false,
+      hasError: false
     }
   },
 
   props: ['returnUrl'],
+
+  components: {
+    FormErrorMessage
+  },
 
   inject: ['$validator'],
 
@@ -78,10 +83,11 @@ export default {
     onSubmit: function () {
       return this.$validator.validateAll().then(valid => {
         if (!valid) {
-          alert('fix dem errors')
+          this.hasError = true
           return
         }
 
+        this.hasError = false
         this.isLoading = true
 
         const loginDetails = {

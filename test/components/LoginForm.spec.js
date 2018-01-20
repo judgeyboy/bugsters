@@ -112,18 +112,25 @@ describe('LoginForm component', () => {
   })
 
   /*
-    Skipping the snapshot tests because I don't know how to do a snapshot test with vee-validate!
-    A data-vv-id is generated each time the test runs
+  * Skipping the snapshot tests because the shallow rendering does dont provide all the necessary elements
   */
 
   it.skip('snapshot', () => {
-    const wrapper = shallow(LoginForm)
+    const wrapper = shallow(LoginForm, {
+      provide: {
+        $validator: new Validator()
+      }
+    })
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()
   })
 
   it.skip('snapshot with login error', () => {
-    const wrapper = shallow(LoginForm)
+    const wrapper = shallow(LoginForm, {
+      provide: {
+        $validator: new Validator()
+      }
+    })
 
     wrapper.setData({ loginFailed: true })
 

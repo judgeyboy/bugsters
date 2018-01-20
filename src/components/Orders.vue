@@ -10,24 +10,24 @@
 
       <div class="panel-body">
 
-        <div v-if="loading" class="loading loading-lg"></div>
+        <Loader v-if="loading" />
 
-          <div v-else-if="orders.length > 0" class="tile bugster-tile" v-for="order in orders" :key="order.id">
-            <div class="tile-icon">
-              <div class="example-tile-icon">
-                <i class="icon icon-link centered"></i>
-              </div>
-            </div>
-            <div class="tile-content">
-              <div class="tile-title">{{order.id}}</div>
-              <div class="tile-subtitle text-gray">{{order.status}} · 1 Jan, 2018</div>
-            </div>
-            <div class="tile-action">
-              <button class="btn btn-link">
-                <i class="icon icon-arrow-right"></i>
-              </button>
+        <div v-else-if="orders.length > 0" class="tile bugster-tile" v-for="order in orders" :key="order.id">
+          <div class="tile-icon">
+            <div class="example-tile-icon">
+              <i class="icon icon-link centered"></i>
             </div>
           </div>
+          <div class="tile-content">
+            <div class="tile-title">{{order.id}}</div>
+            <div class="tile-subtitle text-gray">{{order.status}} · 1 Jan, 2018</div>
+          </div>
+          <div class="tile-action">
+            <button class="btn btn-link">
+              <i class="icon icon-arrow-right"></i>
+            </button>
+          </div>
+        </div>
 
         <NoOrders v-else />
       </div>
@@ -43,6 +43,7 @@
 
 <script>
 import NoOrders from './NoOrders'
+import Loader from './Loader'
 
 export default {
   name: 'Orders',
@@ -59,7 +60,8 @@ export default {
   },
 
   components: {
-    NoOrders
+    NoOrders,
+    Loader
   },
 
   methods: {

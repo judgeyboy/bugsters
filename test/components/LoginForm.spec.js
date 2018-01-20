@@ -1,7 +1,7 @@
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import VeeValidate, { Validator } from 'vee-validate'
-import { shallow, createLocalVue } from 'vue-test-utils'
+import { shallow, createLocalVue, mount } from 'vue-test-utils'
 import sinon from 'sinon'
 
 import LoginForm from '@/components/LoginForm'
@@ -116,13 +116,11 @@ describe('LoginForm component', () => {
     storeStub.restore()
   })
 
-  /*
-  * Skipping the snapshot tests because the shallow rendering does dont provide all the necessary elements
-  */
-
-  it.skip('snapshot', () => {
-    const wrapper = shallow(LoginForm, {
+  it('snapshot', () => {
+    const wrapper = mount(LoginForm, {
       localVue,
+      store,
+      router: $router,
       provide: {
         $validator: new Validator()
       }
@@ -131,15 +129,33 @@ describe('LoginForm component', () => {
     expect($html).toMatchSnapshot()
   })
 
-  it.skip('snapshot with login error', () => {
-    const wrapper = shallow(LoginForm, {
+  it('snapshot with login error', () => {
+    const wrapper = mount(LoginForm, {
       localVue,
+      store,
+      router: $router,
       provide: {
         $validator: new Validator()
       }
     })
 
     wrapper.setData({ loginFailed: true })
+
+    const $html = wrapper.vm.$el.outerHTML
+    expect($html).toMatchSnapshot()
+  })
+
+  it('snapshot with form error', () => {
+    const wrapper = mount(LoginForm, {
+      localVue,
+      store,
+      router: $router,
+      provide: {
+        $validator: new Validator()
+      }
+    })
+
+    wrapper.setData({ hasError: true })
 
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()

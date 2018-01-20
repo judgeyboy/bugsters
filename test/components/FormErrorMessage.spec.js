@@ -1,6 +1,6 @@
 import { shallow } from 'vue-test-utils'
 
-import FormErrorMessage from './FormErrorMessage'
+import FormErrorMessage from '@/components/FormErrorMessage'
 
 describe('FormErrorMessage Component', () => {
 

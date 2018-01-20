@@ -2,7 +2,7 @@
   <div class="dashboard">
     <h2>DASHBOARD</h2>
     <div class="columns">
-      <div class="column col-4">
+      <div class="column col-sm-12 col-6">
         <Orders />
       </div>
     </div>

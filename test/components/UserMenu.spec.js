@@ -20,7 +20,7 @@ describe('UserMenu component', () => {
         }
       })
     })
-    expect(wrapper.isVueInstance()).toBeTruthy()
+    expect(wrapper.isVueInstance()).toBe(true)
   })
 
   it('should render a login button if the user is not logged in', () => {

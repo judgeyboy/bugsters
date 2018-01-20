@@ -2,3 +2,9 @@
 .form-horizontal .form-group
   -ms-flex-wrap: wrap
   flex-wrap: wrap
+
+// this might be solved by using postcss - spectre.css > forms only has rule for 'appearance' without any vendor prefix
+.form-input
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none

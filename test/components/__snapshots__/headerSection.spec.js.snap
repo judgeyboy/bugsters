@@ -1,3 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeaderSection Component should match snapshot 1`] = `"<div class=\\"header-section\\"><img src=\\"bugsters-logo.png\\" width=\\"150\\"> <h1>message.welcome</h1> <h2>Home of Professional Software Testers</h2> <a location=\\"about\\" class=\\"btn btn-primary\\">Read More</a></div>"`;
+exports[`HeaderSection Component should match snapshot 1`] = `
+
+<div class="header-section">
+  <img src="bugsters-logo.png"
+       width="150"
+  >
+  <h1>
+    message.welcome
+  </h1>
+  <h2>
+    Home of Professional Software Testers
+  </h2>
+  <a location="about"
+     class="btn btn-primary"
+  >
+    Read More
+  </a>
+</div>
+
+`;

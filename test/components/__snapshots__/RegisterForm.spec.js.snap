@@ -1,3 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RegisterForm component snapshot 1`] = `"<form><legend>Register</legend> <input type=\\"text\\" placeholder=\\"name\\"> <br> <input type=\\"email\\" placeholder=\\"email\\"> <br> <input type=\\"password\\" placeholder=\\"password\\"> <br> <input type=\\"password\\" placeholder=\\"password repeat\\"> <br> <input type=\\"submit\\" value=\\"Register\\"></form>"`;
+exports[`RegisterForm component snapshot 1`] = `
+
+<form>
+  <legend>
+    Register
+  </legend>
+  <input type="text"
+         placeholder="name"
+  >
+  <br>
+  <input type="email"
+         placeholder="email"
+  >
+  <br>
+  <input type="password"
+         placeholder="password"
+  >
+  <br>
+  <input type="password"
+         placeholder="password repeat"
+  >
+  <br>
+  <input type="submit"
+         value="Register"
+  >
+</form>
+
+`;

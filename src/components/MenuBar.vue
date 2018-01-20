@@ -1,9 +1,7 @@
 <template>
-  <div class="bugster-menubar">
+  <div class="bugster-menubar" :class="{'responsive': hasSideBar}">
     <div class="bugster-menubar__menu">
-      <a class="off-canvas-toggle btn btn-link btn-action" @click="$emit('toggleSidebar')">
-        <i class="icon icon-menu"></i>
-      </a>
+      <slot name="menu"></slot>
     </div>
 
     <div class="bugster-menubar__link">
@@ -17,6 +15,12 @@ import UserMenu from './UserMenu'
 
 export default {
   name: 'MenuBar',
+  props: {
+    hasSideBar: {
+      required: false,
+      default: false
+    }
+  },
   components: {
     UserMenu
   }
@@ -24,15 +28,18 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.responsive
+  left: 12rem
+
 .bugster-menubar
   height: 3.8rem
   position: fixed
   display: block
   right: 0
-  left: 12rem
+  left: 0
   top: 0
   z-index: 200
-  background-color: white
+  background: rgba(248, 249, 250, .65)
 
   &__menu
     position: absolute

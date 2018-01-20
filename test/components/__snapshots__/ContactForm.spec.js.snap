@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactForm component snapshot 1`] = `
+
+<div>
+  <form data-vv-scope="contact-form"
+        class="form-horizontal"
+  >
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="contact-name"
+               class="form-label"
+        >
+          Name
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="text"
+               id="contact-name"
+               name="name"
+               placeholder="name"
+               class="form-input"
+               data-vv-id="17"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="contact-email"
+               class="form-label"
+        >
+          Email
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="email"
+               id="contact-email"
+               name="email"
+               placeholder="email"
+               class="form-input"
+               data-vv-id="18"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="contact-subject"
+               class="form-label"
+        >
+          Subject
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="text"
+               id="contact-subject"
+               name="subject"
+               placeholder="subject"
+               class="form-input"
+               data-vv-id="19"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="contact-message"
+               class="form-label"
+        >
+          Message
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <textarea placeholder="message"
+                  id="contact-message"
+                  name="message"
+                  class="form-input"
+                  data-vv-id="20"
+                  aria-required="true"
+                  aria-invalid="false"
+        >
+        </textarea>
+      </div>
+    </div>
+    <div class="form-buttons">
+      <button type="submit"
+              class="btn btn-primary"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+
+`;
+
+exports[`ContactForm component snapshot with form error 1`] = `
+
+<div>
+  <form data-vv-scope="contact-form"
+        class="form-horizontal"
+  >
+    <div>
+      <span>
+        Form contains errors, please check the red fields.
+      </span>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="contact-name"
+               class="form-label"
+        >
+          Name
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="text"
+               id="contact-name"
+               name="name"
+               placeholder="name"
+               class="form-input"
+               data-vv-id="21"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="contact-email"
+               class="form-label"
+        >
+          Email
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="email"
+               id="contact-email"
+               name="email"
+               placeholder="email"
+               class="form-input"
+               data-vv-id="22"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="contact-subject"
+               class="form-label"
+        >
+          Subject
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="text"
+               id="contact-subject"
+               name="subject"
+               placeholder="subject"
+               class="form-input"
+               data-vv-id="23"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="contact-message"
+               class="form-label"
+        >
+          Message
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <textarea placeholder="message"
+                  id="contact-message"
+                  name="message"
+                  class="form-input"
+                  data-vv-id="24"
+                  aria-required="true"
+                  aria-invalid="false"
+        >
+        </textarea>
+      </div>
+    </div>
+    <div class="form-buttons">
+      <button type="submit"
+              class="btn btn-primary"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+
+`;

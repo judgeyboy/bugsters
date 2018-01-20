@@ -10,6 +10,8 @@
           @submit.prevent="handleSubmit('order-form')"
           data-vv-scope="order-form">
 
+      <FormErrorMessage v-if="hasError"/>
+
       <div class="form-group">
         <div class="col-3 col-xs-12">
           <label class="form-label" for="order-budget">Budget</label>
@@ -129,7 +131,7 @@
 </template>
 
 <script>
-
+import FormErrorMessage from '@/components/FormErrorMessage'
 export default {
   name: 'OrderForm',
 
@@ -142,8 +144,13 @@ export default {
       url: '',
       message: '',
       phone: '',
-      isLoading: false
+      isLoading: false,
+      hasError: false
     }
+  },
+
+  components: {
+    FormErrorMessage
   },
 
   inject: ['$validator'],
@@ -152,10 +159,11 @@ export default {
     handleSubmit (scope) {
       return this.$validator.validateAll(scope).then(valid => {
         if (!valid) {
-          alert('fix dem errors')
+          this.hasError = true
           return
         }
 
+        this.hasError = false
         this.isLoading = true
 
         const orderDetails = {

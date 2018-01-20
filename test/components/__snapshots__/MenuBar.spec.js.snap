@@ -1,3 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MenuBar component should match snapshot 1`] = `"<div class=\\"bugster-menubar\\"><div class=\\"bugster-menubar__menu\\"><a class=\\"off-canvas-toggle btn btn-link btn-action\\"><i class=\\"icon icon-menu\\"></i></a></div> <div class=\\"bugster-menubar__link\\"><!----></div></div>"`;
+exports[`MenuBar component should match snapshot 1`] = `
+
+<div class="bugster-menubar">
+  <div class="bugster-menubar__menu">
+  </div>
+  <div class="bugster-menubar__link">
+  </div>
+</div>
+
+`;

@@ -1,10 +1,6 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import {shallow} from 'vue-test-utils'
+import { shallow } from 'vue-test-utils'
 
 import MenuBar from '@/components/MenuBar'
-
-Vue.use(VueRouter)
 
 describe('MenuBar component', () => {
   it('should be a vue instance', () => {

@@ -1,17 +1,19 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
-import { shallow } from 'vue-test-utils'
+import { shallow, createLocalVue } from 'vue-test-utils'
 
 import UserMenu from '@/components/UserMenu'
 import { ACCOUNT_LOGOUT } from '@/store/actionTypes'
 
-Vue.use(Vuex)
-Vue.use(VueRouter)
+const localVue = createLocalVue()
+
+localVue.use(Vuex)
+localVue.use(VueRouter)
 
 describe('UserMenu component', () => {
   it('should be a vue instance', () => {
     const wrapper = shallow(UserMenu, {
+      localVue,
       store: new Vuex.Store({
         state: {
           accountModule: {
@@ -20,11 +22,12 @@ describe('UserMenu component', () => {
         }
       })
     })
-    expect(wrapper.isVueInstance()).toBeTruthy()
+    expect(wrapper.isVueInstance()).toBe(true)
   })
 
   it('should render a login button if the user is not logged in', () => {
     const wrapper = shallow(UserMenu, {
+      localVue,
       store: new Vuex.Store({
         state: {
           accountModule: {
@@ -39,6 +42,7 @@ describe('UserMenu component', () => {
 
   it('should render a dropdown button if the user is logged in and the user name is displayed', () => {
     const wrapper = shallow(UserMenu, {
+      localVue,
       store: new Vuex.Store({
         state: {
           accountModule: {
@@ -54,6 +58,7 @@ describe('UserMenu component', () => {
 
   it('should toggle the showMenu correctly', () => {
     const wrapper = shallow(UserMenu, {
+      localVue,
       store: new Vuex.Store({
         state: {
           accountModule: {
@@ -70,6 +75,7 @@ describe('UserMenu component', () => {
 
   it('should dispatch "ACCOUNT_LOGOUT" action when logout was clicked', () => {
     const wrapper = shallow(UserMenu, {
+      localVue,
       store: new Vuex.Store({
         state: {
           accountModule: {

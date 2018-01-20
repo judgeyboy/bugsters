@@ -1,16 +1,17 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import VeeValidate, { Validator } from 'vee-validate'
-import { shallow } from 'vue-test-utils'
+import { shallow, createLocalVue, mount } from 'vue-test-utils'
 import sinon from 'sinon'
 
 import LoginForm from '@/components/LoginForm'
 import { ACCOUNT_LOGIN } from '@/store/actionTypes'
 
-Vue.use(Vuex)
-Vue.use(VeeValidate)
-Vue.use(VueRouter)
+const localVue = createLocalVue()
+
+localVue.use(Vuex)
+localVue.use(VeeValidate)
+localVue.use(VueRouter)
 
 const $router = new VueRouter()
 
@@ -28,6 +29,7 @@ describe('LoginForm component', () => {
 
   it('should dispatch "login" with login details', async () => {
     const wrapper = shallow(LoginForm, {
+      localVue,
       store,
       router: $router,
       provide: { $validator: new Validator() }
@@ -49,6 +51,7 @@ describe('LoginForm component', () => {
 
   it('should not dispatch "login" if the form has errors', async () => {
     const wrapper = shallow(LoginForm, {
+      localVue,
       store,
       provide: { $validator: new Validator() }
     })
@@ -68,6 +71,7 @@ describe('LoginForm component', () => {
 
   it('should redirect to a path after login success', async () => {
     const wrapper = shallow(LoginForm, {
+      localVue,
       store,
       router: $router,
       provide: { $validator: new Validator() }
@@ -88,6 +92,7 @@ describe('LoginForm component', () => {
 
   it('should set isLoading to false and loginFailed to true if login fails', async () => {
     const wrapper = shallow(LoginForm, {
+      localVue,
       store,
       router: $router,
       provide: { $validator: new Validator() }
@@ -111,21 +116,46 @@ describe('LoginForm component', () => {
     storeStub.restore()
   })
 
-  /*
-    Skipping the snapshot tests because I don't know how to do a snapshot test with vee-validate!
-    A data-vv-id is generated each time the test runs
-  */
-
-  it.skip('snapshot', () => {
-    const wrapper = shallow(LoginForm)
+  it('snapshot', () => {
+    const wrapper = mount(LoginForm, {
+      localVue,
+      store,
+      router: $router,
+      provide: {
+        $validator: new Validator()
+      }
+    })
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()
   })
 
-  it.skip('snapshot with login error', () => {
-    const wrapper = shallow(LoginForm)
+  it('snapshot with login error', () => {
+    const wrapper = mount(LoginForm, {
+      localVue,
+      store,
+      router: $router,
+      provide: {
+        $validator: new Validator()
+      }
+    })
 
     wrapper.setData({ loginFailed: true })
+
+    const $html = wrapper.vm.$el.outerHTML
+    expect($html).toMatchSnapshot()
+  })
+
+  it('snapshot with form error', () => {
+    const wrapper = mount(LoginForm, {
+      localVue,
+      store,
+      router: $router,
+      provide: {
+        $validator: new Validator()
+      }
+    })
+
+    wrapper.setData({ hasError: true })
 
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()

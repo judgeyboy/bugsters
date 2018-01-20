@@ -1,3 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SideBar component should match snapshot 1`] = `"<div class=\\"off-canvas-sidebar\\"><div class=\\"bugster-sidebar\\"><div class=\\"bugster-sidebar__menu\\"></div> <div class=\\"bugster-sidebar__language\\"><!----></div></div></div>"`;
+exports[`SideBar component should match snapshot 1`] = `
+
+<div class="off-canvas-sidebar">
+  <div class="bugster-sidebar">
+    <div class="bugster-sidebar__menu">
+    </div>
+    <div class="bugster-sidebar__language">
+    </div>
+  </div>
+</div>
+
+`;

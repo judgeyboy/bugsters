@@ -1,3 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ScrollMenu component should match snapshot 1`] = `"<ul class=\\"nav\\"></ul>"`;
+exports[`ScrollMenu component should match snapshot 1`] = `
+
+<ul class="nav">
+</ul>
+
+`;

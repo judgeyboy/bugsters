@@ -10,7 +10,7 @@ export default {
   props: ['message'],
   computed: {
     msg () {
-      return this.message || 'Form contains error, please check the red fields.'
+      return this.message || 'Form contains errors, please check the red fields.'
     }
   }
 }

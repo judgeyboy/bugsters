@@ -1,14 +1,16 @@
-import Vue from 'vue'
 import VeeValidate, { Validator } from 'vee-validate'
-import { shallow } from 'vue-test-utils'
+import { shallow, createLocalVue, mount } from 'vue-test-utils'
 
 import OrderForm from '@/components/OrderForm'
 
-Vue.use(VeeValidate)
+const localVue = createLocalVue()
+
+localVue.use(VeeValidate)
 
 describe('OrderForm component', () => {
   it('should be a vue instance', () => {
     const wrapper = shallow(OrderForm, {
+      localVue,
       provide: {
         $validator: new Validator()
       }
@@ -19,6 +21,7 @@ describe('OrderForm component', () => {
 
   it('should call handleSubmit when clicking the send button', () => {
     const wrapper = shallow(OrderForm, {
+      localVue,
       provide: {
         $validator: new Validator()
       }
@@ -34,6 +37,7 @@ describe('OrderForm component', () => {
 
   it('should emit "submit" event with order details', async () => {
     const wrapper = shallow(OrderForm, {
+      localVue,
       provide: {
         $validator: new Validator()
       }
@@ -59,6 +63,7 @@ describe('OrderForm component', () => {
 
   it('should not emit "submit" event if the form has errors', async () => {
     const wrapper = shallow(OrderForm, {
+      localVue,
       provide: {
         $validator: new Validator()
       }
@@ -80,5 +85,30 @@ describe('OrderForm component', () => {
     await wrapper.vm.handleSubmit('order-form')
 
     expect(spy).not.toHaveBeenCalled()
+  })
+
+  it('snapshot', () => {
+    const wrapper = mount(OrderForm, {
+      localVue,
+      provide: {
+        $validator: new Validator()
+      }
+    })
+    const $html = wrapper.vm.$el.outerHTML
+    expect($html).toMatchSnapshot()
+  })
+
+  it('snapshot with form error', () => {
+    const wrapper = mount(OrderForm, {
+      localVue,
+      provide: {
+        $validator: new Validator()
+      }
+    })
+
+    wrapper.setData({ hasError: true })
+
+    const $html = wrapper.vm.$el.outerHTML
+    expect($html).toMatchSnapshot()
   })
 })

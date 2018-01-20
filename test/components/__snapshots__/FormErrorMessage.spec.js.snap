@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormErrorMessage Component should match snapshot 1`] = `"<div><span>Form contains error, please check the red fields.</span></div>"`;
+exports[`FormErrorMessage Component should match snapshot 1`] = `"<div><span>Form contains errors, please check the red fields.</span></div>"`;
 
 exports[`FormErrorMessage Component should match snapshot with custom message 1`] = `"<div><span>Custom error message</span></div>"`;

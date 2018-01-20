@@ -6,7 +6,7 @@
         <div class="column col-6 col-sm-8 col-mx-auto">
           <h2 class="section-title">Log In</h2>
 
-          <FormErrorMessage v-show="loginFailed" message="Username or password does not exist!" />
+          <FormErrorMessage v-if="loginFailed" message="Username or password does not exist!" />
           <FormErrorMessage v-if="hasError"/>
 
           <form class="form-horizontal" @submit.prevent="onSubmit">

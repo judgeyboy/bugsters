@@ -3,7 +3,6 @@ import { shallow } from 'vue-test-utils'
 import FormErrorMessage from '@/components/FormErrorMessage'
 
 describe('FormErrorMessage Component', () => {
-
   it('should be a Vue instance', () => {
     const wrapper = shallow(FormErrorMessage)
     expect(wrapper.isVueInstance()).toBe(true)
@@ -16,7 +15,7 @@ describe('FormErrorMessage Component', () => {
   })
 
   it('should match snapshot with custom message', () => {
-    const wrapper = shallow(FormErrorMessage,{
+    const wrapper = shallow(FormErrorMessage, {
       propsData: {
         message: 'Custom error message'
       }
@@ -24,5 +23,4 @@ describe('FormErrorMessage Component', () => {
     const $html = wrapper.vm.$el.outerHTML
     expect($html).toMatchSnapshot()
   })
-
 })

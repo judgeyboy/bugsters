@@ -1,13 +1,27 @@
 <template>
-  <div class="tile tile-centered bugster-tile">
-    <div class="tile-icon">
+  <div class="tile bugster-tile">
+    <div class="tile-icon bugster-tile-icon">
       <div class="example-tile-icon">
-        <i class="icon icon-link centered"></i>
+        <figure class="avatar bugster-avatar">
+          <img :src="'http://' + order.site + '/favicon.ico'" alt="Avatar">
+          <i class="avatar-presence online"></i>
+        </figure>
       </div>
     </div>
     <div class="tile-content">
-      <div class="tile-title">{{order.id}}</div>
-      <div class="tile-subtitle text-gray">{{order.state}} · 1 Jan, 2018</div>
+      <p class="tile-title">{{ order.site }}</p>
+
+      <span class="badge badge-passed" :data-badge="order.passed"></span>
+
+      <span class="badge badge-partial" :data-badge="order.partial"></span>
+
+      <span class="badge badge-failed" :data-badge="order.failed"></span>
+
+      <span class="badge badge-open" :data-badge="order.open"></span>
+
+      <div class="bar bar-sm">
+        <div class="bar-item tooltip" :data-tooltip="order.percentage + '%'" :style="{width:order.percentage + '%'}"></div>
+      </div>
     </div>
     <div class="tile-action">
       <button class="btn btn-link">
@@ -25,6 +39,27 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.bugster-avatar
+  background: transparent
+
 .bugster-tile
-  margin: 0.4rem 0
+  margin: 1.5rem 0
+
+  &:first-of-type
+    margin: .4rem 0
+
+.bugster-tile-icon
+  padding-right: .4rem
+
+.badge-passed::after
+  background-color: green
+
+.badge-failed::after
+  background-color: red
+
+.badge-partial::after
+  background-color: orange
+
+.badge-open::after
+  background-color: #50596c
 </style>

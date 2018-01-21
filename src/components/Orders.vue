@@ -59,8 +59,39 @@ export default {
       this.loading = true
       setTimeout(() => {
         this.orders = [
-          { id: 'dlkelelege', state: 'in progress' },
-          { id: '5e5ge6egeg', state: 'in progress' }
+          {
+            id: 'dlkelelege',
+            site: 'www.zeplin.io',
+            state: 'in progress',
+            date: new Date().toISOString(),
+            passed: 55,
+            partial: 13,
+            failed: 8,
+            open: 44,
+            percentage: 75
+          },
+          {
+            id: 'lgeoleogel',
+            site: 'www.github.com',
+            state: 'completed',
+            date: new Date().toISOString(),
+            passed: 120,
+            partial: 32,
+            failed: 4,
+            open: 0,
+            percentage: 100
+          },
+          {
+            id: 'kgoelslgoe',
+            site: 'www.gitlab.com',
+            state: 'in progress',
+            date: new Date().toISOString(),
+            passed: 50,
+            partial: 23,
+            failed: 28,
+            open: 38,
+            percentage: 60
+          }
         ]
         this.loading = false
       }, 5000)

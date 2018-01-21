@@ -2,19 +2,34 @@
 
 exports[`OrderTile component should match snapshot 1`] = `
 
-<div class="tile tile-centered bugster-tile">
-  <div class="tile-icon">
+<div class="tile bugster-tile">
+  <div class="tile-icon bugster-tile-icon">
     <div class="example-tile-icon">
-      <i class="icon icon-link centered">
-      </i>
+      <figure class="avatar bugster-avatar">
+        <img src="http://undefined/favicon.ico"
+             alt="Avatar"
+        >
+        <i class="avatar-presence online">
+        </i>
+      </figure>
     </div>
   </div>
   <div class="tile-content">
-    <div class="tile-title">
-      kejkelge
-    </div>
-    <div class="tile-subtitle text-gray">
-      in progress · 1 Jan, 2018
+    <p class="tile-title">
+    </p>
+    <span class="badge badge-passed">
+    </span>
+    <span class="badge badge-partial">
+    </span>
+    <span class="badge badge-failed">
+    </span>
+    <span class="badge badge-open">
+    </span>
+    <div class="bar bar-sm">
+      <div data-tooltip="undefined%"
+           class="bar-item tooltip"
+      >
+      </div>
     </div>
   </div>
   <div class="tile-action">

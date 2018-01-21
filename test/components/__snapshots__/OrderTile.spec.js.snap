@@ -1,3 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OrderTile component should match snapshot 1`] = `"<div class=\\"tile tile-centered bugster-tile\\"><div class=\\"tile-icon\\"><div class=\\"example-tile-icon\\"><i class=\\"icon icon-link centered\\"></i></div></div> <div class=\\"tile-content\\"><div class=\\"tile-title\\">kejkelge</div> <div class=\\"tile-subtitle text-gray\\">in progress · 1 Jan, 2018</div></div> <div class=\\"tile-action\\"><button class=\\"btn btn-link\\"><i class=\\"icon icon-arrow-right\\"></i></button></div></div>"`;
+exports[`OrderTile component should match snapshot 1`] = `
+
+<div class="tile tile-centered bugster-tile">
+  <div class="tile-icon">
+    <div class="example-tile-icon">
+      <i class="icon icon-link centered">
+      </i>
+    </div>
+  </div>
+  <div class="tile-content">
+    <div class="tile-title">
+      kejkelge
+    </div>
+    <div class="tile-subtitle text-gray">
+      in progress · 1 Jan, 2018
+    </div>
+  </div>
+  <div class="tile-action">
+    <button class="btn btn-link">
+      <i class="icon icon-arrow-right">
+      </i>
+    </button>
+  </div>
+</div>
+
+`;

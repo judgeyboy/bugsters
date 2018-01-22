@@ -1,10 +1,19 @@
-import {shallow} from 'vue-test-utils'
+import VueRouter from 'vue-router'
+import { shallow, mount, createLocalVue } from 'vue-test-utils'
 
 import OrderTile from '@/components/OrderTile'
+
+const localVue = createLocalVue()
+
+localVue.use(VueRouter)
+
+const $router = new VueRouter()
 
 describe('OrderTile component', () => {
   it('should be a vue instance', () => {
     const wrapper = shallow(OrderTile, {
+      localVue,
+      router: $router,
       propsData: {
         order: {
           id: 'kejkelge',
@@ -16,7 +25,9 @@ describe('OrderTile component', () => {
   })
 
   it('should match snapshot', () => {
-    const wrapper = shallow(OrderTile, {
+    const wrapper = mount(OrderTile, {
+      localVue,
+      router: $router,
       propsData: {
         order: {
           id: 'kejkelge',

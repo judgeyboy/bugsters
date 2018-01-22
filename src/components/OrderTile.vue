@@ -24,9 +24,9 @@
       </div>
     </div>
     <div class="tile-action">
-      <button class="btn btn-link">
+      <router-link class="btn btn-link" :to="'orders/' + order.id">
         <i class="icon icon-arrow-right"></i>
-      </button>
+      </router-link>
     </div>
   </div>
 </template>

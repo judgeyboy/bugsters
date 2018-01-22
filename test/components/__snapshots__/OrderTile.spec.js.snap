@@ -33,10 +33,12 @@ exports[`OrderTile component should match snapshot 1`] = `
     </div>
   </div>
   <div class="tile-action">
-    <button class="btn btn-link">
+    <router-link to="orders/kejkelge"
+                 class="btn btn-link"
+    >
       <i class="icon icon-arrow-right">
       </i>
-    </button>
+    </router-link>
   </div>
 </div>
 

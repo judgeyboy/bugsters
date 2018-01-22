@@ -99,8 +99,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass" scoped>
-.panel-body
-  min-height: 3rem
-</style>

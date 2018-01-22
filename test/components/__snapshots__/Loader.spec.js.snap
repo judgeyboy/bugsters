@@ -2,7 +2,9 @@
 
 exports[`Loader component should match snapshot 1`] = `
 
-<div class="loading loading-lg">
+<div class="bugster-loader">
+  <div class="loading loading-lg">
+  </div>
 </div>
 
 `;

@@ -2,6 +2,7 @@ import Home from '@/components/Home'
 import Dashboard from '@/components/Dashboard'
 import LoginForm from '@/components/LoginForm'
 import { authenticate } from './route-guards'
+import OrderDetails from '@/components/OrderDetails'
 
 const routes = [
   {
@@ -20,6 +21,11 @@ const routes = [
     name: 'Login',
     component: LoginForm,
     props: (route) => ({ returnUrl: route.query.returnUrl })
+  },
+  {
+    path: '/orders/:id',
+    name: 'OrderDetails',
+    component: OrderDetails
   }
 ]
 

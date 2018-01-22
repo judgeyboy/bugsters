@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderTile component should match snapshot 1`] = `
+
+<div class="tile bugster-tile">
+  <div class="tile-icon bugster-tile-icon">
+    <div class="example-tile-icon">
+      <figure class="avatar bugster-avatar">
+        <img src="http://undefined/favicon.ico"
+             alt="Avatar"
+        >
+        <i class="avatar-presence online">
+        </i>
+      </figure>
+    </div>
+  </div>
+  <div class="tile-content">
+    <p class="tile-title">
+    </p>
+    <span class="badge badge-passed">
+    </span>
+    <span class="badge badge-partial">
+    </span>
+    <span class="badge badge-failed">
+    </span>
+    <span class="badge badge-open">
+    </span>
+    <div class="bar bar-sm">
+      <div data-tooltip="undefined%"
+           class="bar-item tooltip"
+      >
+      </div>
+    </div>
+  </div>
+  <div class="tile-action">
+    <a href="#/orders/kejkelge"
+       class="btn btn-link"
+    >
+      <i class="icon icon-arrow-right">
+      </i>
+    </a>
+  </div>
+</div>
+
+`;

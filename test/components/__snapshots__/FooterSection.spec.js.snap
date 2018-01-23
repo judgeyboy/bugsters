@@ -2,17 +2,17 @@
 
 exports[`FooterSection Component should match snapshot 1`] = `
 
-<div class="footer-section">
+<footer>
   Made with
-  <span class="footer-section_heart">
+  <span class="heart">
     ♥
   </span>
   by
-  <span class="footer-section_bugsters">
+  <span class="bugsters">
     Bugsters
   </span>
   <br>
   © 2018
-</div>
+</footer>
 
 `;

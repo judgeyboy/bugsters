@@ -11,19 +11,24 @@
           <Orders />
         </div>
       </div>
+
     </div>
+
+    <FooterSection />
   </div>
 </template>
 
 <script>
 import Orders from './Orders'
 import MenuBar from './MenuBar'
+import FooterSection from './FooterSection'
 
 export default {
   name: 'Dashboard',
   components: {
+    Orders,
     MenuBar,
-    Orders
+    FooterSection
   }
 }
 </script>

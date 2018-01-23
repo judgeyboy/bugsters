@@ -13,7 +13,7 @@ export default {
 
 <style lang="sass" scoped>
 .bugster-loader
-  min-height: 3rem
+  height: 3rem
   display: flex
   justify-content: center
 </style>

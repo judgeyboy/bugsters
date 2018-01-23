@@ -1,8 +1,8 @@
 <template>
-  <div class="footer-section">
-    Made with <span class="footer-section_heart">♥</span> by <span class="footer-section_bugsters">Bugsters</span> <br>
+  <footer>
+    Made with <span class="heart">♥</span> by <span class="bugsters">Bugsters</span> <br>
     © 2018
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -12,14 +12,14 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.footer-section
+footer
   text-align: center
   padding: 3rem 0
   color: #acb3c2
 
-  &_heart
-    color: #e85600
+.heart
+  color: #e85600
 
-  &_bugsters
-    color: #667189
+.bugsters
+  color: #667189
 </style>

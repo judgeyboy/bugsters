@@ -6,18 +6,22 @@
     <div class="content">
       <OrderSection />
     </div>
+
+    <FooterSection />
   </div>
 </template>
 
 <script>
 import OrderSection from '@/containers/OrderSection'
 import MenuBar from './MenuBar'
+import FooterSection from './FooterSection'
 
 export default {
   name: 'NewOrder',
   components: {
     OrderSection,
-    MenuBar
+    MenuBar,
+    FooterSection
   }
 }
 </script>

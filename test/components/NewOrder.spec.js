@@ -1,12 +1,30 @@
-import { shallow } from 'vue-test-utils'
+import VueRouter from 'vue-router'
+import { shallow, createLocalVue } from 'vue-test-utils'
 
 import NewOrder from '@/components/NewOrder'
 
-describe('NewOrder component', () => {
+const localVue = createLocalVue()
 
+localVue.use(VueRouter)
+
+const $router = new VueRouter()
+
+describe('NewOrder component', () => {
   it('should be a vue instance', () => {
     const wrapper = shallow(NewOrder)
     expect(wrapper.isVueInstance()).toBe(true)
+  })
+
+  it('should navigate back when back linked clicked', () => {
+    const wrapper = shallow(NewOrder, {
+      localVue,
+      router: $router
+    })
+    const spy = jest.spyOn(wrapper.vm.$router, 'back')
+
+    wrapper.vm.goBack()
+
+    expect(spy).toHaveBeenCalled()
   })
 
   /*

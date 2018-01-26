@@ -4,6 +4,7 @@
       <router-link slot="menu" to="/">BUGSTERS</router-link>
     </MenuBar>
     <div class="content">
+      <a @click="goBack" class="btn">Go Back</a>
       <OrderSection />
     </div>
 
@@ -18,10 +19,17 @@ import FooterSection from './FooterSection'
 
 export default {
   name: 'NewOrder',
+
   components: {
     OrderSection,
     MenuBar,
     FooterSection
+  },
+
+  methods: {
+    goBack () {
+      this.$router.back()
+    }
   }
 }
 </script>

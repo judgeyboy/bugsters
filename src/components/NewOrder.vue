@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MenuBar :foo="true">
+    <MenuBar>
       <router-link slot="menu" to="/">BUGSTERS</router-link>
     </MenuBar>
     <div class="content">

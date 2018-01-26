@@ -21,7 +21,7 @@
       </div>
       <div class="panel-footer">
         <div v-if="orders.length > 0">
-          <router-link class="btn btn-primary" to="/">Submit an order</router-link>
+          <router-link class="btn btn-primary" to="/orders/submit">Submit an order</router-link>
         </div>
       </div>
     </div>

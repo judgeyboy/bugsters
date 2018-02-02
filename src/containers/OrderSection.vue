@@ -8,7 +8,7 @@
 
       <div class="column col-6 col-md-12 col-mx-auto">
         <transition mode="out-in" enter-active-class="animated zoomIn" leave-active-class="animated bounceOutRight">
-          <OrderForm @submit="handleFormSubmit" v-if="orderState === 'open'" />
+          <OrderForm @submit="handleFormSubmit" v-if="orderState === 'open'" :showCancel="showCancel" />
 
           <OrderSuccess @closeSuccess="handleCloseSuccess" :orderId="orderId" v-if="orderState === 'success'" />
 
@@ -27,6 +27,8 @@ import OrderService from '@/services/order'
 
 export default {
   name: 'OrderSection',
+
+  props: ['showCancel'],
 
   data () {
     return {

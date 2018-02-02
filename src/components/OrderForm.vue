@@ -124,6 +124,7 @@
         </div>
       </div>
       <div class="form-buttons">
+        <a v-if="showCancel" @click="goBack" class="btn cancel-button">Cancel</a>
         <button type="submit" value="Send" class="btn btn-primary" :class="{loading: isLoading}">Send</button>
       </div>
     </form>
@@ -134,6 +135,8 @@
 import FormErrorMessage from '@/components/FormErrorMessage'
 export default {
   name: 'OrderForm',
+
+  props: ['showCancel'],
 
   data () {
     return {
@@ -178,7 +181,16 @@ export default {
 
         this.$emit('submit', orderDetails)
       })
+    },
+
+    goBack () {
+      this.$router.back()
     }
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.cancel-button
+  margin-right: 0.4rem
+</style>

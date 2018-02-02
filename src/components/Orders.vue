@@ -5,6 +5,9 @@
       <div class="panel-header">
         <div class="panel-title">
           <h2>My Orders</h2>
+          <div v-if="orders.length > 0">
+            <router-link class="btn btn-primary" to="/orders/submit">New Order</router-link>
+          </div>
         </div>
       </div>
 
@@ -18,11 +21,6 @@
                    :order="order" />
 
         <NoOrders v-else />
-      </div>
-      <div class="panel-footer">
-        <div v-if="orders.length > 0">
-          <router-link class="btn btn-primary" to="/orders/submit">Submit an order</router-link>
-        </div>
       </div>
     </div>
 

@@ -1,17 +1,10 @@
 <template>
-  <div class="dashboard">
+  <div>
     <MenuBar>
       <router-link slot="menu" to="/">BUGSTERS</router-link>
     </MenuBar>
-
-    <div class="dashboard-content">
-      <h2>DASHBOARD</h2>
-      <div class="columns">
-        <div class="column col-sm-12 col-6">
-          <Orders />
-        </div>
-      </div>
-
+    <div class="content">
+      <OrderSection :showCancel="true" />
     </div>
 
     <FooterSection />
@@ -19,14 +12,14 @@
 </template>
 
 <script>
-import Orders from './Orders'
+import OrderSection from '@/containers/OrderSection'
 import MenuBar from './MenuBar'
 import FooterSection from './FooterSection'
 
 export default {
-  name: 'Dashboard',
+  name: 'NewOrder',
   components: {
-    Orders,
+    OrderSection,
     MenuBar,
     FooterSection
   }
@@ -34,7 +27,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.dashboard-content
+.content
   margin: 3.8rem 0 0 0
   padding: .4rem
 </style>

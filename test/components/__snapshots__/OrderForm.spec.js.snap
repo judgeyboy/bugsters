@@ -48,178 +48,6 @@ exports[`OrderForm component snapshot 1`] = `
                name="company"
                placeholder="company"
                class="form-input"
-               data-vv-id="25"
-               aria-required="true"
-               aria-invalid="false"
-        >
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-3 col-xs-12">
-        <label for="order-name"
-               class="form-label"
-        >
-          Name
-        </label>
-      </div>
-      <div class="col-9 col-xs-12">
-        <input type="text"
-               id="order-name"
-               name="name"
-               placeholder="name"
-               class="form-input"
-               data-vv-id="26"
-               aria-required="true"
-               aria-invalid="false"
-        >
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-3 col-xs-12">
-        <label for="order-email"
-               class="form-label"
-        >
-          Email
-        </label>
-      </div>
-      <div class="col-9 col-xs-12">
-        <input type="email"
-               id="order-email"
-               name="email"
-               placeholder="email"
-               class="form-input"
-               data-vv-id="27"
-               aria-required="true"
-               aria-invalid="false"
-        >
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-3 col-xs-12">
-        <label for="order-phone"
-               class="form-label"
-        >
-          Phone
-        </label>
-      </div>
-      <div class="col-9 col-xs-12">
-        <input type="text"
-               id="order-phone"
-               name="phone"
-               placeholder="phone"
-               class="form-input"
-               data-vv-id="28"
-               aria-required="true"
-               aria-invalid="false"
-        >
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-3 col-xs-12">
-        <label for="order-url"
-               class="form-label"
-        >
-          Page Url
-        </label>
-      </div>
-      <div class="col-9 col-xs-12">
-        <input type="text"
-               id="order-url"
-               name="url"
-               placeholder="url"
-               class="form-input"
-               data-vv-id="29"
-               aria-required="true"
-               aria-invalid="false"
-        >
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-3 col-xs-12">
-        <label for="order-message"
-               class="form-label"
-        >
-          Message
-        </label>
-      </div>
-      <div class="col-9 col-xs-12">
-        <textarea placeholder="message"
-                  id="order-message"
-                  name="message"
-                  class="form-input"
-                  data-vv-id="30"
-                  aria-required="false"
-                  aria-invalid="false"
-        >
-        </textarea>
-      </div>
-    </div>
-    <div class="form-buttons">
-      <button type="submit"
-              value="Send"
-              class="btn btn-primary"
-      >
-        Send
-      </button>
-    </div>
-  </form>
-</div>
-
-`;
-
-exports[`OrderForm component snapshot with form error 1`] = `
-
-<div>
-  <p>
-    Use the slider to select how much you would like to invest in testing your application
-    and provide us with your details. We'll do the rest. Of course we'll send you an offer...
-  </p>
-  <form data-vv-scope="order-form"
-        class="form-horizontal"
-  >
-    <div>
-      <span>
-        Form contains errors, please check the red fields.
-      </span>
-    </div>
-    <div class="form-group">
-      <div class="col-3 col-xs-12">
-        <label for="order-budget"
-               class="form-label"
-        >
-          Budget
-        </label>
-      </div>
-      <div class="col-6 col-xs-8">
-        <input type="range"
-               max="2500"
-               min="200"
-               step="100"
-               class="slider"
-        >
-      </div>
-      <div class="col-3 col-xs-4">
-        <label class="form-label text-center">
-          <strong>
-            500 .- CHF
-          </strong>
-        </label>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-3 col-xs-12">
-        <label for="order-company"
-               class="form-label"
-        >
-          Company
-        </label>
-      </div>
-      <div class="col-9 col-xs-12">
-        <input type="text"
-               id="order-company"
-               name="company"
-               placeholder="company"
-               class="form-input"
                data-vv-id="31"
                aria-required="true"
                aria-invalid="false"
@@ -320,6 +148,348 @@ exports[`OrderForm component snapshot with form error 1`] = `
                   name="message"
                   class="form-input"
                   data-vv-id="36"
+                  aria-required="false"
+                  aria-invalid="false"
+        >
+        </textarea>
+      </div>
+    </div>
+    <div class="form-buttons">
+      <button type="submit"
+              value="Send"
+              class="btn btn-primary"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+
+`;
+
+exports[`OrderForm component snapshot with cancel button 1`] = `
+
+<div>
+  <p>
+    Use the slider to select how much you would like to invest in testing your application
+    and provide us with your details. We'll do the rest. Of course we'll send you an offer...
+  </p>
+  <form data-vv-scope="order-form"
+        class="form-horizontal"
+  >
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-budget"
+               class="form-label"
+        >
+          Budget
+        </label>
+      </div>
+      <div class="col-6 col-xs-8">
+        <input type="range"
+               max="2500"
+               min="200"
+               step="100"
+               class="slider"
+        >
+      </div>
+      <div class="col-3 col-xs-4">
+        <label class="form-label text-center">
+          <strong>
+            500 .- CHF
+          </strong>
+        </label>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-company"
+               class="form-label"
+        >
+          Company
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="text"
+               id="order-company"
+               name="company"
+               placeholder="company"
+               class="form-input"
+               data-vv-id="43"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-name"
+               class="form-label"
+        >
+          Name
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="text"
+               id="order-name"
+               name="name"
+               placeholder="name"
+               class="form-input"
+               data-vv-id="44"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-email"
+               class="form-label"
+        >
+          Email
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="email"
+               id="order-email"
+               name="email"
+               placeholder="email"
+               class="form-input"
+               data-vv-id="45"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-phone"
+               class="form-label"
+        >
+          Phone
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="text"
+               id="order-phone"
+               name="phone"
+               placeholder="phone"
+               class="form-input"
+               data-vv-id="46"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-url"
+               class="form-label"
+        >
+          Page Url
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="text"
+               id="order-url"
+               name="url"
+               placeholder="url"
+               class="form-input"
+               data-vv-id="47"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-message"
+               class="form-label"
+        >
+          Message
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <textarea placeholder="message"
+                  id="order-message"
+                  name="message"
+                  class="form-input"
+                  data-vv-id="48"
+                  aria-required="false"
+                  aria-invalid="false"
+        >
+        </textarea>
+      </div>
+    </div>
+    <div class="form-buttons">
+      <a class="btn cancel-button">
+        Cancel
+      </a>
+      <button type="submit"
+              value="Send"
+              class="btn btn-primary"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div>
+
+`;
+
+exports[`OrderForm component snapshot with form error 1`] = `
+
+<div>
+  <p>
+    Use the slider to select how much you would like to invest in testing your application
+    and provide us with your details. We'll do the rest. Of course we'll send you an offer...
+  </p>
+  <form data-vv-scope="order-form"
+        class="form-horizontal"
+  >
+    <div>
+      <span>
+        Form contains errors, please check the red fields.
+      </span>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-budget"
+               class="form-label"
+        >
+          Budget
+        </label>
+      </div>
+      <div class="col-6 col-xs-8">
+        <input type="range"
+               max="2500"
+               min="200"
+               step="100"
+               class="slider"
+        >
+      </div>
+      <div class="col-3 col-xs-4">
+        <label class="form-label text-center">
+          <strong>
+            500 .- CHF
+          </strong>
+        </label>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-company"
+               class="form-label"
+        >
+          Company
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="text"
+               id="order-company"
+               name="company"
+               placeholder="company"
+               class="form-input"
+               data-vv-id="37"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-name"
+               class="form-label"
+        >
+          Name
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="text"
+               id="order-name"
+               name="name"
+               placeholder="name"
+               class="form-input"
+               data-vv-id="38"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-email"
+               class="form-label"
+        >
+          Email
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="email"
+               id="order-email"
+               name="email"
+               placeholder="email"
+               class="form-input"
+               data-vv-id="39"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-phone"
+               class="form-label"
+        >
+          Phone
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="text"
+               id="order-phone"
+               name="phone"
+               placeholder="phone"
+               class="form-input"
+               data-vv-id="40"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-url"
+               class="form-label"
+        >
+          Page Url
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <input type="text"
+               id="order-url"
+               name="url"
+               placeholder="url"
+               class="form-input"
+               data-vv-id="41"
+               aria-required="true"
+               aria-invalid="false"
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-3 col-xs-12">
+        <label for="order-message"
+               class="form-label"
+        >
+          Message
+        </label>
+      </div>
+      <div class="col-9 col-xs-12">
+        <textarea placeholder="message"
+                  id="order-message"
+                  name="message"
+                  class="form-input"
+                  data-vv-id="42"
                   aria-required="false"
                   aria-invalid="false"
         >
